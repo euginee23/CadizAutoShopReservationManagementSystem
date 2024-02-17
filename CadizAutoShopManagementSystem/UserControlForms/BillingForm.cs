@@ -114,6 +114,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
             InvoiceForm invoiceFrm = new InvoiceForm(reservationId, billingId, customerName, serviceType, extraExpenseReason, extraExpenseCost, totalCost);
             invoiceFrm.ShowDialog();
+            LoadReservationsBillingQueueData();
         }
     }
 }

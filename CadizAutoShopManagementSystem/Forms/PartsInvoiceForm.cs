@@ -23,11 +23,13 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             InitializeComponent();
 
+            // DATA PASSED FROM PARTS BILLING FORM
             customerName_lbl.Text = customerName;
             customerAddress_lbl.Text = customerAddress;
             transactionId_lbl.Text = transactionId;
             totalCost_lbl.Text = totalCost;
 
+            // PASSING AND INSERTING PARTS INTO DATAGRID
             foreach (var part in partsData)
             {
                 partsDataGridView.Rows.Add(part.PartName, part.Quantity, part.TotalCost);
@@ -35,6 +37,8 @@ namespace CadizAutoShopManagementSystem.Forms
 
             panelToPrint = panelPrint;
         }
+
+        // BITMAP PANEL TO IMAGE
         private void PrintPanelPage(object sender, PrintPageEventArgs e)
         {
             Bitmap bmp = new Bitmap(panelToPrint.Width, panelToPrint.Height);
@@ -43,6 +47,7 @@ namespace CadizAutoShopManagementSystem.Forms
             e.Graphics.DrawImage(bmp, 0, 0);
         }
 
+        // OPEN PREVIEW OF PANEL FOR PRINTING
         private void print_btn_Click(object sender, EventArgs e)
         {
             PrintDocument pd = new PrintDocument();
@@ -53,6 +58,7 @@ namespace CadizAutoShopManagementSystem.Forms
             printPreviewDialog.ShowDialog();
         }
 
+        // BILLING FUNCTION AND SAVING TO DATABASE
         private void billing_button_Click(object sender, EventArgs e)
         {
             try
