@@ -31,10 +31,14 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartsInvoiceForm));
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.partsDataGridView = new System.Windows.Forms.DataGridView();
+            this.unit_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.totalCost_txt = new System.Windows.Forms.Label();
+            this.totalCost_lbl = new System.Windows.Forms.Label();
             this.customerAddress_lbl = new System.Windows.Forms.Label();
             this.transactionId_lbl = new System.Windows.Forms.Label();
             this.customerName_lbl = new System.Windows.Forms.Label();
@@ -49,24 +53,20 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.billing_button = new Guna.UI2.WinForms.Guna2Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label24 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.unit_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.print_btn = new System.Windows.Forms.PictureBox();
             this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPrint
             // 
-            this.panelPrint.Controls.Add(this.dataGridView1);
+            this.panelPrint.Controls.Add(this.partsDataGridView);
             this.panelPrint.Controls.Add(this.label23);
             this.panelPrint.Controls.Add(this.label22);
             this.panelPrint.Controls.Add(this.label20);
-            this.panelPrint.Controls.Add(this.totalCost_txt);
+            this.panelPrint.Controls.Add(this.totalCost_lbl);
             this.panelPrint.Controls.Add(this.customerAddress_lbl);
             this.panelPrint.Controls.Add(this.transactionId_lbl);
             this.panelPrint.Controls.Add(this.customerName_lbl);
@@ -84,6 +84,38 @@ namespace CadizAutoShopManagementSystem.Forms
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(817, 887);
             this.panelPrint.TabIndex = 1;
+            // 
+            // partsDataGridView
+            // 
+            this.partsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.unit_Column,
+            this.quantity_Column,
+            this.cost_Column});
+            this.partsDataGridView.Location = new System.Drawing.Point(28, 296);
+            this.partsDataGridView.Name = "partsDataGridView";
+            this.partsDataGridView.RowHeadersVisible = false;
+            this.partsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.partsDataGridView.Size = new System.Drawing.Size(756, 475);
+            this.partsDataGridView.TabIndex = 17;
+            // 
+            // unit_Column
+            // 
+            this.unit_Column.HeaderText = "UNIT";
+            this.unit_Column.Name = "unit_Column";
+            this.unit_Column.Width = 500;
+            // 
+            // quantity_Column
+            // 
+            this.quantity_Column.HeaderText = "QUANTITY";
+            this.quantity_Column.Name = "quantity_Column";
+            // 
+            // cost_Column
+            // 
+            this.cost_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cost_Column.HeaderText = "COST";
+            this.cost_Column.Name = "cost_Column";
             // 
             // label23
             // 
@@ -115,15 +147,15 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label20.TabIndex = 15;
             this.label20.Text = "TOTAL COST:";
             // 
-            // totalCost_txt
+            // totalCost_lbl
             // 
-            this.totalCost_txt.AutoSize = true;
-            this.totalCost_txt.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalCost_txt.Location = new System.Drawing.Point(598, 774);
-            this.totalCost_txt.Name = "totalCost_txt";
-            this.totalCost_txt.Size = new System.Drawing.Size(29, 37);
-            this.totalCost_txt.TabIndex = 14;
-            this.totalCost_txt.Text = "?";
+            this.totalCost_lbl.AutoSize = true;
+            this.totalCost_lbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCost_lbl.Location = new System.Drawing.Point(598, 774);
+            this.totalCost_lbl.Name = "totalCost_lbl";
+            this.totalCost_lbl.Size = new System.Drawing.Size(29, 37);
+            this.totalCost_lbl.TabIndex = 14;
+            this.totalCost_lbl.Text = "?";
             // 
             // customerAddress_lbl
             // 
@@ -276,21 +308,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.billing_button.Size = new System.Drawing.Size(227, 45);
             this.billing_button.TabIndex = 42;
             this.billing_button.Text = "BILL";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.unit_Column,
-            this.quantity_Column,
-            this.cost_Column});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 296);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 475);
-            this.dataGridView1.TabIndex = 17;
+            this.billing_button.Click += new System.EventHandler(this.billing_button_Click);
             // 
             // label24
             // 
@@ -302,32 +320,16 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label24.TabIndex = 44;
             this.label24.Text = "PRINT";
             // 
-            // pictureBox1
+            // print_btn
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(794, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            // 
-            // unit_Column
-            // 
-            this.unit_Column.HeaderText = "UNIT";
-            this.unit_Column.Name = "unit_Column";
-            this.unit_Column.Width = 500;
-            // 
-            // quantity_Column
-            // 
-            this.quantity_Column.HeaderText = "QUANTITY";
-            this.quantity_Column.Name = "quantity_Column";
-            // 
-            // cost_Column
-            // 
-            this.cost_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cost_Column.HeaderText = "COST";
-            this.cost_Column.Name = "cost_Column";
+            this.print_btn.Image = ((System.Drawing.Image)(resources.GetObject("print_btn.Image")));
+            this.print_btn.Location = new System.Drawing.Point(794, 6);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(51, 40);
+            this.print_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.print_btn.TabIndex = 43;
+            this.print_btn.TabStop = false;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // PartsInvoiceForm
             // 
@@ -335,15 +337,16 @@ namespace CadizAutoShopManagementSystem.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 1006);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.print_btn);
             this.Controls.Add(this.billing_button);
             this.Controls.Add(this.panelPrint);
             this.Name = "PartsInvoiceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartsInvoiceForm";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,7 +358,7 @@ namespace CadizAutoShopManagementSystem.Forms
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label totalCost_txt;
+        private System.Windows.Forms.Label totalCost_lbl;
         private System.Windows.Forms.Label customerAddress_lbl;
         private System.Windows.Forms.Label transactionId_lbl;
         private System.Windows.Forms.Label customerName_lbl;
@@ -370,9 +373,9 @@ namespace CadizAutoShopManagementSystem.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button billing_button;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView partsDataGridView;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox print_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unit_Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity_Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost_Column;

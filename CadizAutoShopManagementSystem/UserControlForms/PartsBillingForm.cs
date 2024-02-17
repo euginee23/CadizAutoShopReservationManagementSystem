@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -154,6 +155,52 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
 
             totalCost_txt.Text = totalCost.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
+        }
+
+        private List<PartsBillingInfo> GetPartsData()
+        {
+            List<PartsBillingInfo> partsData = new List<PartsBillingInfo>();
+
+            foreach (DataGridViewRow row in partsBillingDataGrid.Rows)
+            {
+                if (row.Cells["partNameColumn"].Value != null &&
+                    row.Cells["quantityColumn"].Value != null &&
+                    row.Cells["total_costColumn"].Value != null)
+                {
+                    string partName = row.Cells["partNameColumn"].Value.ToString();
+                    int quantity = Convert.ToInt32(row.Cells["quantityColumn"].Value);
+                    decimal totalCost = Convert.ToDecimal(row.Cells["total_costColumn"].Value);
+
+                    partsData.Add(new PartsBillingInfo { PartName = partName, Quantity = quantity, TotalCost = totalCost });
+                }
+            }
+
+            return partsData;
+        }
+
+        private void invoice_btn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(firstName_txt.Text) ||
+                string.IsNullOrEmpty(lastName_txt.Text) ||
+                string.IsNullOrEmpty(address_txt.Text) ||
+                string.IsNullOrEmpty(transactionId_txt.Text) ||
+                string.IsNullOrEmpty(totalCost_txt.Text))
+                    {
+                MessageBox.Show("Please select a transaction and ensure all required fields are filled.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the necessary data
+            string customerName = $"{firstName_txt.Text} {lastName_txt.Text}";
+            string customerAddress = address_txt.Text;
+            string transactionId = transactionId_txt.Text;
+            string totalCost = totalCost_txt.Text;
+
+            // Create an instance of PartsInvoiceForm and pass the data
+            PartsInvoiceForm partsInvoiceForm = new PartsInvoiceForm(customerName, customerAddress, transactionId, totalCost, GetPartsData());
+
+            // Show the PartsInvoiceForm
+            partsInvoiceForm.ShowDialog();
         }
     }
 }

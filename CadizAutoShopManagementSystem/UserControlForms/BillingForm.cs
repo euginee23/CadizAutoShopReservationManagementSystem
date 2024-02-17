@@ -90,6 +90,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void invoice_btn_Click(object sender, EventArgs e)
         {
+            // Check if any of the required fields is empty
             if (string.IsNullOrEmpty(reservationId_txt.Text) ||
                 string.IsNullOrEmpty(billingId_txt.Text) ||
                 string.IsNullOrEmpty(customerName_txt.Text) ||
@@ -102,6 +103,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 return;
             }
 
+            // If all required fields are filled, proceed to create the InvoiceForm
             string reservationId = reservationId_txt.Text;
             string billingId = billingId_txt.Text;
             string customerName = customerName_txt.Text;
