@@ -19,6 +19,15 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             InitializeComponent();
         }
 
+        //PANEL USER CONTROL NAVIGATION
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
         //FORM LOAD
         private void ApprovedReservationsForm_Load(object sender, EventArgs e)
         {
@@ -402,6 +411,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             LoadApprovedReservationsData();
         }
 
+        //DATAGRID BUTTON CLICK
         private void buttonClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -429,6 +439,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        //NAVIGATE TO PENDING RESERVATIONS
+        private void pendingReservation_btn_Click(object sender, EventArgs e)
+        {
+            ReservationsForm reservationFrm = new ReservationsForm();
+            addUserControl(reservationFrm);
+        }
+
+        //NAVIGATE TO COMPLETED RESERVATIONS
+        private void completedReservations_btn_Click(object sender, EventArgs e)
+        {
+            CompletedReservationsForm completedForm = new CompletedReservationsForm();
+            addUserControl(completedForm);
         }
     }
 }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.settings_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.approvedReservations_btn = new Guna.UI2.WinForms.Guna2Button();
             this.soldParts_btn = new Guna.UI2.WinForms.Guna2Button();
             this.mechanicProfile_btn = new Guna.UI2.WinForms.Guna2Button();
             this.dashboard_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -57,7 +56,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.settings_btn);
-            this.panel2.Controls.Add(this.approvedReservations_btn);
             this.panel2.Controls.Add(this.soldParts_btn);
             this.panel2.Controls.Add(this.mechanicProfile_btn);
             this.panel2.Controls.Add(this.dashboard_btn);
@@ -93,25 +91,6 @@
             this.settings_btn.Text = "SETTINGS";
             this.settings_btn.Click += new System.EventHandler(this.settings_btn_Click);
             // 
-            // approvedReservations_btn
-            // 
-            this.approvedReservations_btn.BorderRadius = 12;
-            this.approvedReservations_btn.BorderThickness = 1;
-            this.approvedReservations_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.approvedReservations_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.approvedReservations_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.approvedReservations_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.approvedReservations_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.approvedReservations_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.approvedReservations_btn.ForeColor = System.Drawing.Color.White;
-            this.approvedReservations_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.approvedReservations_btn.Location = new System.Drawing.Point(6, 220);
-            this.approvedReservations_btn.Name = "approvedReservations_btn";
-            this.approvedReservations_btn.Size = new System.Drawing.Size(151, 54);
-            this.approvedReservations_btn.TabIndex = 9;
-            this.approvedReservations_btn.Text = "Approved Reservations";
-            this.approvedReservations_btn.Click += new System.EventHandler(this.approvedReservations_btn_Click);
-            // 
             // soldParts_btn
             // 
             this.soldParts_btn.BorderRadius = 12;
@@ -124,7 +103,7 @@
             this.soldParts_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soldParts_btn.ForeColor = System.Drawing.Color.White;
             this.soldParts_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.soldParts_btn.Location = new System.Drawing.Point(6, 520);
+            this.soldParts_btn.Location = new System.Drawing.Point(6, 460);
             this.soldParts_btn.Name = "soldParts_btn";
             this.soldParts_btn.Size = new System.Drawing.Size(151, 54);
             this.soldParts_btn.TabIndex = 8;
@@ -143,7 +122,7 @@
             this.mechanicProfile_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mechanicProfile_btn.ForeColor = System.Drawing.Color.White;
             this.mechanicProfile_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.mechanicProfile_btn.Location = new System.Drawing.Point(6, 340);
+            this.mechanicProfile_btn.Location = new System.Drawing.Point(6, 280);
             this.mechanicProfile_btn.Name = "mechanicProfile_btn";
             this.mechanicProfile_btn.Size = new System.Drawing.Size(151, 54);
             this.mechanicProfile_btn.TabIndex = 7;
@@ -204,7 +183,7 @@
             this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billing_btn.ForeColor = System.Drawing.Color.White;
             this.billing_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.billing_btn.Location = new System.Drawing.Point(6, 580);
+            this.billing_btn.Location = new System.Drawing.Point(6, 520);
             this.billing_btn.Name = "billing_btn";
             this.billing_btn.Size = new System.Drawing.Size(151, 54);
             this.billing_btn.TabIndex = 4;
@@ -223,7 +202,7 @@
             this.servicesMng_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicesMng_btn.ForeColor = System.Drawing.Color.White;
             this.servicesMng_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.servicesMng_btn.Location = new System.Drawing.Point(6, 400);
+            this.servicesMng_btn.Location = new System.Drawing.Point(6, 340);
             this.servicesMng_btn.Name = "servicesMng_btn";
             this.servicesMng_btn.Size = new System.Drawing.Size(151, 54);
             this.servicesMng_btn.TabIndex = 3;
@@ -242,7 +221,7 @@
             this.inventoryMng_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryMng_btn.ForeColor = System.Drawing.Color.White;
             this.inventoryMng_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.inventoryMng_btn.Location = new System.Drawing.Point(6, 460);
+            this.inventoryMng_btn.Location = new System.Drawing.Point(6, 400);
             this.inventoryMng_btn.Name = "inventoryMng_btn";
             this.inventoryMng_btn.Size = new System.Drawing.Size(151, 54);
             this.inventoryMng_btn.TabIndex = 2;
@@ -261,7 +240,7 @@
             this.mechanicReg_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mechanicReg_btn.ForeColor = System.Drawing.Color.White;
             this.mechanicReg_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.mechanicReg_btn.Location = new System.Drawing.Point(6, 280);
+            this.mechanicReg_btn.Location = new System.Drawing.Point(6, 220);
             this.mechanicReg_btn.Name = "mechanicReg_btn";
             this.mechanicReg_btn.Size = new System.Drawing.Size(151, 54);
             this.mechanicReg_btn.TabIndex = 1;
@@ -386,7 +365,6 @@
         private Guna.UI2.WinForms.Guna2Button dashboard_btn;
         private Guna.UI2.WinForms.Guna2Button mechanicProfile_btn;
         private Guna.UI2.WinForms.Guna2Button soldParts_btn;
-        private Guna.UI2.WinForms.Guna2Button approvedReservations_btn;
         private Guna.UI2.WinForms.Guna2Button settings_btn;
     }
 }

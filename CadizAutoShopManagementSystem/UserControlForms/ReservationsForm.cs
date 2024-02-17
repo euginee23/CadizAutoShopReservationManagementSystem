@@ -21,6 +21,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             InitializeComponent();
         }
 
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            reservationPanel.Controls.Clear();
+            reservationPanel.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
         private void ReservationsForm_Load(object sender, EventArgs e)
         {
             connection = DatabaseManager.GetConnection();
@@ -33,7 +41,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
-                string query = "SELECT r.reservation_id, r.problem_description, r.date, r.time, r.status, " +
+                string query = "SELECT r.reservation_id, r.problem_description, r.date, r.time, " +
                                "CONCAT(c.firstName, ' ', c.lastName) AS customerName, " +
                                "s.serviceType AS serviceType, " +
                                "CONCAT(v.make, ' ', v.model, ' ', v.year) AS vehicleName " +
@@ -131,7 +139,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         connection.Open();
 
-                        string selectQuery = "SELECT r.reservation_id, r.problem_description, r.date, r.time, r.status, " +
+                        string selectQuery = "SELECT r.reservation_id, r.problem_description, r.date, r.time, " +
                                              "CONCAT(c.firstName, ' ', c.lastName) AS customerName, " +
                                              "s.serviceType AS serviceType, " +
                                              "CONCAT(v.make, ' ', v.model, ' ', v.year) AS vehicleName " +
@@ -170,9 +178,22 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        private void approvedReservation_btn_Click_1(object sender, EventArgs e)
+        {
+            ApprovedReservationsForm approvedRes = new ApprovedReservationsForm();
+            addUserControl(approvedRes);
+        }
+
+        private void completedReservations_btn_Click(object sender, EventArgs e)
+        {
+            CompletedReservationsForm completedRes = new CompletedReservationsForm();
+            addUserControl(completedRes);
+        }
+
         private void refresh_btn_Click(object sender, EventArgs e)
         {
             LoadData();
         }
+
     }
 }

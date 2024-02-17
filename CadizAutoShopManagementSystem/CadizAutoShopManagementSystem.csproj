@@ -171,6 +171,12 @@
     <Compile Include="UserControlForms\BillingForm.Designer.cs">
       <DependentUpon>BillingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlForms\CompletedReservationsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\CompletedReservationsForm.Designer.cs">
+      <DependentUpon>CompletedReservationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlForms\DashboardForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\BillingForm.resx">
       <DependentUpon>BillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\CompletedReservationsForm.resx">
+      <DependentUpon>CompletedReservationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
