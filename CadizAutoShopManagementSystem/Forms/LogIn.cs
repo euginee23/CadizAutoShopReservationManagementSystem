@@ -16,6 +16,15 @@ namespace CadizAutoShopManagementSystem
         public LogIn()
         {
             InitializeComponent();
+
+            //IF ENTER KEY IS PRESSED PERFORM LOG IN
+            password_txt.KeyPress += (sender, e) =>
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    Login_btn_Click(sender, e);
+                }
+            };
         }
 
         //RETRIEVING THE USER ROLE UPON LOGIN
@@ -67,6 +76,13 @@ namespace CadizAutoShopManagementSystem
             {
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
+        }
+
+        //CLOSE THE APPLICATION PROPERLY WHEN CLOSING THE LOGIN FORM
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            Application.Exit();
         }
     }
 }
