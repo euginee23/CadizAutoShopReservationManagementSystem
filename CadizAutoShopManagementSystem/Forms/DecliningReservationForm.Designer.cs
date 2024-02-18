@@ -29,14 +29,15 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DecliningReservationForm));
             this.declining_btn = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.declineReason_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.customerName_txt = new System.Windows.Forms.TextBox();
             this.reservationId_txt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.declineReason_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,25 +75,6 @@ namespace CadizAutoShopManagementSystem.Forms
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservation Decline Reason";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 107);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Decline Reason:";
-            // 
-            // declineReason_txt
-            // 
-            this.declineReason_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.declineReason_txt.Location = new System.Drawing.Point(144, 107);
-            this.declineReason_txt.Multiline = true;
-            this.declineReason_txt.Name = "declineReason_txt";
-            this.declineReason_txt.Size = new System.Drawing.Size(376, 223);
-            this.declineReason_txt.TabIndex = 11;
             // 
             // label2
             // 
@@ -132,6 +114,25 @@ namespace CadizAutoShopManagementSystem.Forms
             this.reservationId_txt.Size = new System.Drawing.Size(376, 27);
             this.reservationId_txt.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Decline Reason:";
+            // 
+            // declineReason_txt
+            // 
+            this.declineReason_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.declineReason_txt.Location = new System.Drawing.Point(144, 107);
+            this.declineReason_txt.Multiline = true;
+            this.declineReason_txt.Name = "declineReason_txt";
+            this.declineReason_txt.Size = new System.Drawing.Size(376, 223);
+            this.declineReason_txt.TabIndex = 11;
+            // 
             // DecliningReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +141,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.declining_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DecliningReservationForm";

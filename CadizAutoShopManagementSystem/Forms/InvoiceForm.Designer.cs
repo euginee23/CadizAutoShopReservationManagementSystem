@@ -31,30 +31,30 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceForm));
             this.panelPrint = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.totalCost_lbl = new System.Windows.Forms.Label();
+            this.extraExpenseCost_lbl = new System.Windows.Forms.Label();
+            this.extraExpenseReason_lbl = new System.Windows.Forms.Label();
+            this.serviceType_lbl = new System.Windows.Forms.Label();
+            this.customerName_lbl = new System.Windows.Forms.Label();
+            this.reservationId_lbl = new System.Windows.Forms.Label();
+            this.billingId_lbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.billingId_lbl = new System.Windows.Forms.Label();
-            this.reservationId_lbl = new System.Windows.Forms.Label();
-            this.customerName_lbl = new System.Windows.Forms.Label();
-            this.serviceType_lbl = new System.Windows.Forms.Label();
-            this.extraExpenseReason_lbl = new System.Windows.Forms.Label();
-            this.extraExpenseCost_lbl = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.totalCost_lbl = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.billing_button = new Guna.UI2.WinForms.Guna2Button();
             this.panelPrint.SuspendLayout();
@@ -91,90 +91,105 @@ namespace CadizAutoShopManagementSystem.Forms
             this.panelPrint.Size = new System.Drawing.Size(817, 885);
             this.panelPrint.TabIndex = 0;
             // 
-            // pictureBox1
+            // label23
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(795, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.print_Click);
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(13, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 20);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "INVOICE";
             // 
-            // label1
+            // label22
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(252, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CADIZ AUTO REPAIR SHOP";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(391, 802);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(393, 28);
+            this.label22.TabIndex = 15;
+            this.label22.Text = "SIGNATURE:   _______________________________";
             // 
-            // label2
+            // label20
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(17, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Phone No:";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(448, 581);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(104, 21);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "TOTAL COST:";
             // 
-            // label3
+            // totalCost_lbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(39, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "E-Mail:";
+            this.totalCost_lbl.AutoSize = true;
+            this.totalCost_lbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCost_lbl.Location = new System.Drawing.Point(558, 568);
+            this.totalCost_lbl.Name = "totalCost_lbl";
+            this.totalCost_lbl.Size = new System.Drawing.Size(29, 37);
+            this.totalCost_lbl.TabIndex = 14;
+            this.totalCost_lbl.Text = "?";
             // 
-            // label4
+            // extraExpenseCost_lbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(29, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Address:";
+            this.extraExpenseCost_lbl.AutoSize = true;
+            this.extraExpenseCost_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraExpenseCost_lbl.Location = new System.Drawing.Point(342, 440);
+            this.extraExpenseCost_lbl.Name = "extraExpenseCost_lbl";
+            this.extraExpenseCost_lbl.Size = new System.Drawing.Size(16, 20);
+            this.extraExpenseCost_lbl.TabIndex = 14;
+            this.extraExpenseCost_lbl.Text = "?";
             // 
-            // label5
+            // extraExpenseReason_lbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(100, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "(+63) 946 847 7861";
+            this.extraExpenseReason_lbl.AutoSize = true;
+            this.extraExpenseReason_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraExpenseReason_lbl.Location = new System.Drawing.Point(342, 373);
+            this.extraExpenseReason_lbl.Name = "extraExpenseReason_lbl";
+            this.extraExpenseReason_lbl.Size = new System.Drawing.Size(16, 20);
+            this.extraExpenseReason_lbl.TabIndex = 14;
+            this.extraExpenseReason_lbl.Text = "?";
             // 
-            // label6
+            // serviceType_lbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(100, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "molaveengineering@gmail.com";
+            this.serviceType_lbl.AutoSize = true;
+            this.serviceType_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serviceType_lbl.Location = new System.Drawing.Point(342, 340);
+            this.serviceType_lbl.Name = "serviceType_lbl";
+            this.serviceType_lbl.Size = new System.Drawing.Size(16, 20);
+            this.serviceType_lbl.TabIndex = 14;
+            this.serviceType_lbl.Text = "?";
             // 
-            // label7
+            // customerName_lbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(100, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(381, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "104 Quezon Street, Molave, Zamboanga del Sur 7023";
+            this.customerName_lbl.AutoSize = true;
+            this.customerName_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerName_lbl.Location = new System.Drawing.Point(342, 304);
+            this.customerName_lbl.Name = "customerName_lbl";
+            this.customerName_lbl.Size = new System.Drawing.Size(16, 20);
+            this.customerName_lbl.TabIndex = 14;
+            this.customerName_lbl.Text = "?";
+            // 
+            // reservationId_lbl
+            // 
+            this.reservationId_lbl.AutoSize = true;
+            this.reservationId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservationId_lbl.Location = new System.Drawing.Point(342, 270);
+            this.reservationId_lbl.Name = "reservationId_lbl";
+            this.reservationId_lbl.Size = new System.Drawing.Size(16, 20);
+            this.reservationId_lbl.TabIndex = 14;
+            this.reservationId_lbl.Text = "?";
+            // 
+            // billingId_lbl
+            // 
+            this.billingId_lbl.AutoSize = true;
+            this.billingId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billingId_lbl.Location = new System.Drawing.Point(342, 239);
+            this.billingId_lbl.Name = "billingId_lbl";
+            this.billingId_lbl.Size = new System.Drawing.Size(16, 20);
+            this.billingId_lbl.TabIndex = 14;
+            this.billingId_lbl.Text = "?";
             // 
             // label8
             // 
@@ -236,105 +251,90 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label13.TabIndex = 13;
             this.label13.Text = "BILLING ID:";
             // 
-            // billingId_lbl
+            // label4
             // 
-            this.billingId_lbl.AutoSize = true;
-            this.billingId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billingId_lbl.Location = new System.Drawing.Point(342, 239);
-            this.billingId_lbl.Name = "billingId_lbl";
-            this.billingId_lbl.Size = new System.Drawing.Size(16, 20);
-            this.billingId_lbl.TabIndex = 14;
-            this.billingId_lbl.Text = "?";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(29, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Address:";
             // 
-            // reservationId_lbl
+            // label3
             // 
-            this.reservationId_lbl.AutoSize = true;
-            this.reservationId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationId_lbl.Location = new System.Drawing.Point(342, 270);
-            this.reservationId_lbl.Name = "reservationId_lbl";
-            this.reservationId_lbl.Size = new System.Drawing.Size(16, 20);
-            this.reservationId_lbl.TabIndex = 14;
-            this.reservationId_lbl.Text = "?";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(39, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "E-Mail:";
             // 
-            // customerName_lbl
+            // label7
             // 
-            this.customerName_lbl.AutoSize = true;
-            this.customerName_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerName_lbl.Location = new System.Drawing.Point(342, 304);
-            this.customerName_lbl.Name = "customerName_lbl";
-            this.customerName_lbl.Size = new System.Drawing.Size(16, 20);
-            this.customerName_lbl.TabIndex = 14;
-            this.customerName_lbl.Text = "?";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(100, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(381, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "104 Quezon Street, Molave, Zamboanga del Sur 7023";
             // 
-            // serviceType_lbl
+            // label6
             // 
-            this.serviceType_lbl.AutoSize = true;
-            this.serviceType_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceType_lbl.Location = new System.Drawing.Point(342, 340);
-            this.serviceType_lbl.Name = "serviceType_lbl";
-            this.serviceType_lbl.Size = new System.Drawing.Size(16, 20);
-            this.serviceType_lbl.TabIndex = 14;
-            this.serviceType_lbl.Text = "?";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(100, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(230, 20);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "molaveengineering@gmail.com";
             // 
-            // extraExpenseReason_lbl
+            // label5
             // 
-            this.extraExpenseReason_lbl.AutoSize = true;
-            this.extraExpenseReason_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extraExpenseReason_lbl.Location = new System.Drawing.Point(342, 373);
-            this.extraExpenseReason_lbl.Name = "extraExpenseReason_lbl";
-            this.extraExpenseReason_lbl.Size = new System.Drawing.Size(16, 20);
-            this.extraExpenseReason_lbl.TabIndex = 14;
-            this.extraExpenseReason_lbl.Text = "?";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(100, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "(+63) 946 847 7861";
             // 
-            // extraExpenseCost_lbl
+            // label2
             // 
-            this.extraExpenseCost_lbl.AutoSize = true;
-            this.extraExpenseCost_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extraExpenseCost_lbl.Location = new System.Drawing.Point(342, 440);
-            this.extraExpenseCost_lbl.Name = "extraExpenseCost_lbl";
-            this.extraExpenseCost_lbl.Size = new System.Drawing.Size(16, 20);
-            this.extraExpenseCost_lbl.TabIndex = 14;
-            this.extraExpenseCost_lbl.Text = "?";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(17, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Phone No:";
             // 
-            // label20
+            // label1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(448, 581);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 21);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "TOTAL COST:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(252, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(359, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CADIZ AUTO REPAIR SHOP";
             // 
-            // totalCost_lbl
+            // pictureBox1
             // 
-            this.totalCost_lbl.AutoSize = true;
-            this.totalCost_lbl.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalCost_lbl.Location = new System.Drawing.Point(558, 568);
-            this.totalCost_lbl.Name = "totalCost_lbl";
-            this.totalCost_lbl.Size = new System.Drawing.Size(29, 37);
-            this.totalCost_lbl.TabIndex = 14;
-            this.totalCost_lbl.Text = "?";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(391, 802);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(393, 28);
-            this.label22.TabIndex = 15;
-            this.label22.Text = "SIGNATURE:   _______________________________";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(13, 17);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 20);
-            this.label23.TabIndex = 16;
-            this.label23.Text = "INVOICE";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(795, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.print_Click);
             // 
             // label24
             // 
@@ -375,6 +375,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelPrint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InvoiceForm";

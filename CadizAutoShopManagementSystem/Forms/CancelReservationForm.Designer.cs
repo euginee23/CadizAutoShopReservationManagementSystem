@@ -29,6 +29,7 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelReservationForm));
             this.cancel_btn = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -116,6 +117,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.ClientSize = new System.Drawing.Size(615, 342);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CancelReservationForm";

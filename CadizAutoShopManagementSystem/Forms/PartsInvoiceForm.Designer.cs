@@ -31,6 +31,10 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartsInvoiceForm));
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.partsDataGridView = new System.Windows.Forms.DataGridView();
+            this.unit_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -51,13 +55,9 @@ namespace CadizAutoShopManagementSystem.Forms
             this.billing_button = new Guna.UI2.WinForms.Guna2Button();
             this.label24 = new System.Windows.Forms.Label();
             this.print_btn = new System.Windows.Forms.PictureBox();
-            this.partsDataGridView = new System.Windows.Forms.DataGridView();
-            this.unit_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPrint
@@ -84,6 +84,40 @@ namespace CadizAutoShopManagementSystem.Forms
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(817, 887);
             this.panelPrint.TabIndex = 1;
+            // 
+            // partsDataGridView
+            // 
+            this.partsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.partsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.unit_Column,
+            this.quantity_Column,
+            this.cost_Column});
+            this.partsDataGridView.Location = new System.Drawing.Point(33, 293);
+            this.partsDataGridView.Name = "partsDataGridView";
+            this.partsDataGridView.RowHeadersVisible = false;
+            this.partsDataGridView.Size = new System.Drawing.Size(764, 478);
+            this.partsDataGridView.TabIndex = 17;
+            // 
+            // unit_Column
+            // 
+            this.unit_Column.HeaderText = "UNIT";
+            this.unit_Column.Name = "unit_Column";
+            this.unit_Column.ReadOnly = true;
+            this.unit_Column.Width = 500;
+            // 
+            // quantity_Column
+            // 
+            this.quantity_Column.HeaderText = "QUANTITY";
+            this.quantity_Column.Name = "quantity_Column";
+            this.quantity_Column.ReadOnly = true;
+            // 
+            // cost_Column
+            // 
+            this.cost_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cost_Column.HeaderText = "COST";
+            this.cost_Column.Name = "cost_Column";
+            this.cost_Column.ReadOnly = true;
             // 
             // label23
             // 
@@ -299,40 +333,6 @@ namespace CadizAutoShopManagementSystem.Forms
             this.print_btn.TabStop = false;
             this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
-            // partsDataGridView
-            // 
-            this.partsDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.partsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.unit_Column,
-            this.quantity_Column,
-            this.cost_Column});
-            this.partsDataGridView.Location = new System.Drawing.Point(33, 293);
-            this.partsDataGridView.Name = "partsDataGridView";
-            this.partsDataGridView.RowHeadersVisible = false;
-            this.partsDataGridView.Size = new System.Drawing.Size(764, 478);
-            this.partsDataGridView.TabIndex = 17;
-            // 
-            // unit_Column
-            // 
-            this.unit_Column.HeaderText = "UNIT";
-            this.unit_Column.Name = "unit_Column";
-            this.unit_Column.ReadOnly = true;
-            this.unit_Column.Width = 500;
-            // 
-            // quantity_Column
-            // 
-            this.quantity_Column.HeaderText = "QUANTITY";
-            this.quantity_Column.Name = "quantity_Column";
-            this.quantity_Column.ReadOnly = true;
-            // 
-            // cost_Column
-            // 
-            this.cost_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cost_Column.HeaderText = "COST";
-            this.cost_Column.Name = "cost_Column";
-            this.cost_Column.ReadOnly = true;
-            // 
             // PartsInvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,13 +342,14 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Controls.Add(this.print_btn);
             this.Controls.Add(this.billing_button);
             this.Controls.Add(this.panelPrint);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PartsInvoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartsInvoiceForm";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.print_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

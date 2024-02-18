@@ -29,6 +29,7 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoneReservationForm));
             this.laborCostTextBox = new System.Windows.Forms.TextBox();
             this.customerTextBox = new System.Windows.Forms.TextBox();
             this.serviceTypeTextBox = new System.Windows.Forms.TextBox();
@@ -141,6 +142,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.totalPriceTextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalPriceTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.totalPriceTextBox.Location = new System.Drawing.Point(269, 397);
+            this.totalPriceTextBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.totalPriceTextBox.Name = "totalPriceTextBox";
             this.totalPriceTextBox.PasswordChar = '\0';
             this.totalPriceTextBox.PlaceholderText = "";
@@ -259,6 +261,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Controls.Add(this.serviceTypeTextBox);
             this.Controls.Add(this.customerTextBox);
             this.Controls.Add(this.laborCostTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DoneReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoneReservationForm";
