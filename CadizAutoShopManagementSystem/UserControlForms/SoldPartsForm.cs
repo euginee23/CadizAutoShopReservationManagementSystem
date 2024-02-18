@@ -87,7 +87,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
             if (quantity > availability)
             {
-                MessageBox.Show("Quantity should not exceed availability.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Quantity exceeds availability.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -95,10 +95,44 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             decimal partPrice = decimal.Parse(partPrice_txt.Text, CultureInfo.GetCultureInfo("en-PH"));
             decimal totalCost = partPrice * quantity;
 
-            DataGridViewRow cartRow = new DataGridViewRow();
-            cartRow.CreateCells(cartDataGridView, partName_txt.Text, quantity, totalCost);
-            cartRow.Tag = partId;
-            cartDataGridView.Rows.Add(cartRow);
+            DataGridViewRow existingRow = null;
+
+            foreach (DataGridViewRow row in cartDataGridView.Rows)
+            {
+                if (row.Tag != null && (int)row.Tag == partId)
+                {
+                    existingRow = row;
+                    break;
+                }
+            }
+
+            if (existingRow != null)
+            {
+                int existingQuantity = (int)existingRow.Cells["Quantity"].Value;
+                decimal existingTotalCost = (decimal)existingRow.Cells["TotalCost"].Value;
+
+                if (existingQuantity + quantity > availability)
+                {
+                    MessageBox.Show("Maximum quantity reached.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                existingRow.Cells["Quantity"].Value = existingQuantity + quantity;
+                existingRow.Cells["TotalCost"].Value = existingTotalCost + totalCost;
+            }
+            else
+            {
+                if (quantity > availability)
+                {
+                    MessageBox.Show("Maximum quantity reached.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DataGridViewRow cartRow = new DataGridViewRow();
+                cartRow.CreateCells(cartDataGridView, partName_txt.Text, quantity, totalCost);
+                cartRow.Tag = partId;
+                cartDataGridView.Rows.Add(cartRow);
+            }
 
             UpdateTotalCost();
         }

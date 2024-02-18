@@ -72,8 +72,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label10 = new System.Windows.Forms.Label();
             this.showAll_btn = new Guna.UI2.WinForms.Guna2Button();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cartDeleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -486,8 +486,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.cartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.cartDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
-            this.Column9,
-            this.Column8,
+            this.Quantity,
+            this.TotalCost,
             this.cartDeleteColumn});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -581,17 +581,17 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column7.HeaderText = "Name";
             this.Column7.Name = "Column7";
             // 
-            // Column9
+            // Quantity
             // 
-            this.Column9.FillWeight = 62.22399F;
-            this.Column9.HeaderText = "Quantity";
-            this.Column9.Name = "Column9";
+            this.Quantity.FillWeight = 62.22399F;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
             // 
-            // Column8
+            // TotalCost
             // 
-            this.Column8.FillWeight = 114.7349F;
-            this.Column8.HeaderText = "Price";
-            this.Column8.Name = "Column8";
+            this.TotalCost.FillWeight = 114.7349F;
+            this.TotalCost.HeaderText = "Price";
+            this.TotalCost.Name = "TotalCost";
             // 
             // cartDeleteColumn
             // 
@@ -671,8 +671,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button showAll_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCost;
         private System.Windows.Forms.DataGridViewButtonColumn cartDeleteColumn;
     }
 }
