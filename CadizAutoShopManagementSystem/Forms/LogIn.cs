@@ -18,7 +18,8 @@ namespace CadizAutoShopManagementSystem
             InitializeComponent();
         }
 
-        private bool AuthenticateUser(string username, string password)
+        //RETRIEVING THE USER ROLE UPON LOGIN
+        private string GetUserRole(string username, string password)
         {
             using (MySqlConnection connection = DatabaseManager.GetConnection())
             {
@@ -26,36 +27,38 @@ namespace CadizAutoShopManagementSystem
                 {
                     connection.Open();
 
-                    string query = "SELECT * FROM admin WHERE username = @username AND password = @password";
+                    string query = "SELECT userRole FROM users WHERE username = @username AND password = @password";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            return reader.HasRows;
-                        }
+                        object result = cmd.ExecuteScalar();
+
+                        return result?.ToString();
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
-                    return false;
+                    return null;
                 }
             }
         }
 
+        //LOG IN AND PASSING THE USER ROLE TO THE MAIN FORM
         private void Login_btn_Click(object sender, EventArgs e)
         {
             string username = username_txt.Text;
             string password = password_txt.Text;
 
-            if (AuthenticateUser(username, password))
+            string userRole = GetUserRole(username, password);
+
+            if (userRole != null)
             {
                 MessageBox.Show("Login successful!");
 
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(userRole);
                 mainForm.Show();
 
                 this.Hide();

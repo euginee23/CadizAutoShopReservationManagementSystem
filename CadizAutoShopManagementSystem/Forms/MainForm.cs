@@ -13,13 +13,33 @@ namespace CadizAutoShopManagementSystem
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private string userRole;
+
+        public MainForm(string userRole)
         {
             InitializeComponent();
             Timer timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += UpdateDateTime;
             timer.Start();
+
+            this.userRole = userRole;
+            UpdateButtonVisibility();
+        }
+
+        private void UpdateButtonVisibility()
+        {
+            if (userRole == "Employee")
+            {
+                dashboard_btn.Enabled = false;
+                reservations_btn.Enabled = true;
+                mechanicReg_btn.Enabled = false;
+                servicesMng_btn.Enabled = false;
+                inventoryMng_btn.Enabled = true;
+                soldParts_btn.Enabled = true;
+                billing_btn.Enabled = true;
+                settings_btn.Enabled = false;
+            }
         }
 
         private void UpdateDateTime(object sender, EventArgs e)
@@ -90,12 +110,6 @@ namespace CadizAutoShopManagementSystem
         {
             SoldPartsForm soldParts = new SoldPartsForm();
             addUserControl(soldParts);
-        }
-
-        private void approvedReservations_btn_Click(object sender, EventArgs e)
-        {
-            ApprovedReservationsForm approveRes = new ApprovedReservationsForm();
-            addUserControl(approveRes);
         }
 
         private void settings_btn_Click(object sender, EventArgs e)
