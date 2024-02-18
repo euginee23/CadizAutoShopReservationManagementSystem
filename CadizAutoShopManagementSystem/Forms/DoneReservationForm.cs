@@ -120,6 +120,24 @@ namespace CadizAutoShopManagementSystem.Forms
 
                     decimal totalCost = laborCost + extraExpenseCost;
 
+                    // Retrieve mechanic_id
+                    int mechanicId = 0;
+                    string selectMechanicIdQuery = "SELECT assigned_mechanic FROM reservations WHERE reservation_id = @reservationId";
+                    using (MySqlCommand cmdMechanicId = new MySqlCommand(selectMechanicIdQuery, connection))
+                    {
+                        cmdMechanicId.Parameters.AddWithValue("@reservationId", reservationId);
+
+                        object result = cmdMechanicId.ExecuteScalar();
+                        if (result != null)
+                        {
+                            mechanicId = Convert.ToInt32(result);
+                        }
+                    }
+
+                    // Calculate mechanic payout (60% of the totalCost)
+                    decimal mechanicPayout = 0.6m * totalCost;
+
+                    // Insert billing information into billing_queue table
                     string insertQuery = "INSERT INTO billing_queue (reservation_id, extraExpense_reason, extraExpense_cost, total_cost) " +
                                          "VALUES (@reservationId, @extraExpenseReason, @extraExpenseCost, @totalCost)";
 
@@ -133,6 +151,19 @@ namespace CadizAutoShopManagementSystem.Forms
                         cmdInsert.ExecuteNonQuery();
                     }
 
+                    // Insert mechanic payout information into mechanic_work_history table
+                    string insertPayoutQuery = "INSERT INTO mechanic_work_history (mechanic_id, payAmount) " +
+                                               "VALUES (@mechanicId, @payoutAmount)";
+
+                    using (MySqlCommand cmdInsertPayout = new MySqlCommand(insertPayoutQuery, connection))
+                    {
+                        cmdInsertPayout.Parameters.AddWithValue("@mechanicId", mechanicId);
+                        cmdInsertPayout.Parameters.AddWithValue("@payoutAmount", mechanicPayout);
+
+                        cmdInsertPayout.ExecuteNonQuery();
+                    }
+
+                    // Update reservation status to 'Done'
                     string updateStatusQuery = "UPDATE reservations SET status = 'Done' WHERE reservation_id = @reservationId";
 
                     using (MySqlCommand cmdUpdateStatus = new MySqlCommand(updateStatusQuery, connection))

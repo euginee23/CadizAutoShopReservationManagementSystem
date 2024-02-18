@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CadizAutoShopManagementSystem.Forms;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
@@ -191,45 +192,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 }
             }
         }
-
-        private void deleteMechanic_cellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == DeleteColumn.Index)
-            {
-                if (mechanicDataGrid.Rows[e.RowIndex].Cells["mechanicId_column"].Value is int mechanicId)
-                {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this mechanic?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            using (MySqlConnection connection = DatabaseManager.GetConnection())
-                            {
-                                connection.Open();
-
-                                string deleteQuery = "DELETE FROM mechanic_info WHERE mechanic_id = @mechanicId";
-
-                                using (MySqlCommand cmd = new MySqlCommand(deleteQuery, connection))
-                                {
-                                    cmd.Parameters.AddWithValue("@mechanicId", mechanicId);
-                                    cmd.ExecuteNonQuery();
-                                }
-
-                                MessageBox.Show("Mechanic deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                LoadMechanicData();
-                                ClearMechanicFields(); 
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error: {ex.Message}");
-                        }
-                    }
-                }
-            }
-        }
         private void ClearMechanicFields()
         {
             mechanicFnametxt.Clear();
@@ -280,6 +242,56 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private void MechanicRegForm_Load(object sender, EventArgs e)
         {
             ClearMechanicFields();
+        }
+
+        private void action_cellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == DeleteColumn.Index)
+                {
+                    if (mechanicDataGrid.Rows[e.RowIndex].Cells["mechanicId_column"].Value is int mechanicId)
+                    {
+                        DialogResult result = MessageBox.Show("Are you sure you want to delete this mechanic?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                                {
+                                    connection.Open();
+
+                                    string deleteQuery = "DELETE FROM mechanic_info WHERE mechanic_id = @mechanicId";
+
+                                    using (MySqlCommand cmd = new MySqlCommand(deleteQuery, connection))
+                                    {
+                                        cmd.Parameters.AddWithValue("@mechanicId", mechanicId);
+                                        cmd.ExecuteNonQuery();
+                                    }
+
+                                    MessageBox.Show("Mechanic deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    LoadMechanicData();
+                                    ClearMechanicFields();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+                        }
+                    }
+                }
+                else if (e.ColumnIndex == ViewColumn.Index)
+                {
+                    if (mechanicDataGrid.Rows[e.RowIndex].Cells["mechanicId_column"].Value is int mechanicId)
+                    {
+                        MechanicProfileForm mechanicProfileForm = new MechanicProfileForm(mechanicId);
+                        mechanicProfileForm.ShowDialog();
+                    }
+                }
+            }
         }
     }
 }

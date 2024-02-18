@@ -86,12 +86,6 @@ namespace CadizAutoShopManagementSystem
             addUserControl(dash);
         }
 
-        private void mechanicProfile_btn_Click(object sender, EventArgs e)
-        {
-            MechanicProfileForm mechanicProf = new MechanicProfileForm();
-            addUserControl(mechanicProf);
-        }
-
         private void soldParts_btn_Click(object sender, EventArgs e)
         {
             SoldPartsForm soldParts = new SoldPartsForm();

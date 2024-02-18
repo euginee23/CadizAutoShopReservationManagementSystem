@@ -151,6 +151,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MechanicProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MechanicProfileForm.Designer.cs">
+      <DependentUpon>MechanicProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PartsInvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,12 +194,6 @@
     </Compile>
     <Compile Include="UserControlForms\InventoryManagementForm.Designer.cs">
       <DependentUpon>InventoryManagementForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlForms\MechanicProfileForm.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlForms\MechanicProfileForm.Designer.cs">
-      <DependentUpon>MechanicProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlForms\MechanicRegForm.cs">
       <SubType>UserControl</SubType>
@@ -252,6 +252,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MechanicProfileForm.resx">
+      <DependentUpon>MechanicProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartsInvoiceForm.resx">
       <DependentUpon>PartsInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,9 +281,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\InventoryManagementForm.resx">
       <DependentUpon>InventoryManagementForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlForms\MechanicProfileForm.resx">
-      <DependentUpon>MechanicProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\MechanicRegForm.resx">
       <DependentUpon>MechanicRegForm.cs</DependentUpon>

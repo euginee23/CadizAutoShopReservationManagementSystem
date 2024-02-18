@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.settings_btn = new Guna.UI2.WinForms.Guna2Button();
             this.soldParts_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.mechanicProfile_btn = new Guna.UI2.WinForms.Guna2Button();
             this.dashboard_btn = new Guna.UI2.WinForms.Guna2Button();
             this.timetxt = new System.Windows.Forms.TextBox();
             this.datetxt = new System.Windows.Forms.TextBox();
@@ -57,7 +56,6 @@
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.settings_btn);
             this.panel2.Controls.Add(this.soldParts_btn);
-            this.panel2.Controls.Add(this.mechanicProfile_btn);
             this.panel2.Controls.Add(this.dashboard_btn);
             this.panel2.Controls.Add(this.timetxt);
             this.panel2.Controls.Add(this.datetxt);
@@ -103,31 +101,12 @@
             this.soldParts_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soldParts_btn.ForeColor = System.Drawing.Color.White;
             this.soldParts_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.soldParts_btn.Location = new System.Drawing.Point(6, 460);
+            this.soldParts_btn.Location = new System.Drawing.Point(6, 400);
             this.soldParts_btn.Name = "soldParts_btn";
             this.soldParts_btn.Size = new System.Drawing.Size(151, 54);
             this.soldParts_btn.TabIndex = 8;
             this.soldParts_btn.Text = "Sell Parts";
             this.soldParts_btn.Click += new System.EventHandler(this.soldParts_btn_Click);
-            // 
-            // mechanicProfile_btn
-            // 
-            this.mechanicProfile_btn.BorderRadius = 12;
-            this.mechanicProfile_btn.BorderThickness = 1;
-            this.mechanicProfile_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.mechanicProfile_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.mechanicProfile_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.mechanicProfile_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.mechanicProfile_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mechanicProfile_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mechanicProfile_btn.ForeColor = System.Drawing.Color.White;
-            this.mechanicProfile_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.mechanicProfile_btn.Location = new System.Drawing.Point(6, 280);
-            this.mechanicProfile_btn.Name = "mechanicProfile_btn";
-            this.mechanicProfile_btn.Size = new System.Drawing.Size(151, 54);
-            this.mechanicProfile_btn.TabIndex = 7;
-            this.mechanicProfile_btn.Text = "Mechanic Profiles";
-            this.mechanicProfile_btn.Click += new System.EventHandler(this.mechanicProfile_btn_Click);
             // 
             // dashboard_btn
             // 
@@ -183,7 +162,7 @@
             this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billing_btn.ForeColor = System.Drawing.Color.White;
             this.billing_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.billing_btn.Location = new System.Drawing.Point(6, 520);
+            this.billing_btn.Location = new System.Drawing.Point(6, 460);
             this.billing_btn.Name = "billing_btn";
             this.billing_btn.Size = new System.Drawing.Size(151, 54);
             this.billing_btn.TabIndex = 4;
@@ -202,7 +181,7 @@
             this.servicesMng_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicesMng_btn.ForeColor = System.Drawing.Color.White;
             this.servicesMng_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.servicesMng_btn.Location = new System.Drawing.Point(6, 340);
+            this.servicesMng_btn.Location = new System.Drawing.Point(6, 280);
             this.servicesMng_btn.Name = "servicesMng_btn";
             this.servicesMng_btn.Size = new System.Drawing.Size(151, 54);
             this.servicesMng_btn.TabIndex = 3;
@@ -221,7 +200,7 @@
             this.inventoryMng_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryMng_btn.ForeColor = System.Drawing.Color.White;
             this.inventoryMng_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.inventoryMng_btn.Location = new System.Drawing.Point(6, 400);
+            this.inventoryMng_btn.Location = new System.Drawing.Point(6, 340);
             this.inventoryMng_btn.Name = "inventoryMng_btn";
             this.inventoryMng_btn.Size = new System.Drawing.Size(151, 54);
             this.inventoryMng_btn.TabIndex = 2;
@@ -363,7 +342,6 @@
         private System.Windows.Forms.TextBox timetxt;
         private System.Windows.Forms.TextBox datetxt;
         private Guna.UI2.WinForms.Guna2Button dashboard_btn;
-        private Guna.UI2.WinForms.Guna2Button mechanicProfile_btn;
         private Guna.UI2.WinForms.Guna2Button soldParts_btn;
         private Guna.UI2.WinForms.Guna2Button settings_btn;
     }
