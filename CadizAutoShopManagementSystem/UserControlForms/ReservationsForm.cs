@@ -21,6 +21,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             InitializeComponent();
         }
 
+        //USER CONTROL PANEL NAVIGATION
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -29,6 +30,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             userControl.BringToFront();
         }
 
+        //FORM LOAD
         private void ReservationsForm_Load(object sender, EventArgs e)
         {
             connection = DatabaseManager.GetConnection();
@@ -37,6 +39,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             PopulateServiceComboBox();
         }
 
+        //DATA LOAD
         private void LoadData()
         {
             try
@@ -66,6 +69,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //DATAGRID BUTTON CLICK FUNCTION
         private void buttonClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -95,6 +99,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //POPULATE COMBOBOX WITH SERVICES FOR FILTERING
         private void PopulateServiceComboBox()
         {
             try
@@ -127,6 +132,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //COMBOBOX FILTER FUCNTION
         private void servicesComboBox_SelectedIndex(object sender, EventArgs e)
         {
             try
@@ -178,18 +184,21 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //NAVIGATE TO APPROVED RESERVATIONS
         private void approvedReservation_btn_Click_1(object sender, EventArgs e)
         {
             ApprovedReservationsForm approvedRes = new ApprovedReservationsForm();
             addUserControl(approvedRes);
         }
 
+        //NAVIGATE TO COMPLETED RESERVATIONS
         private void completedReservations_btn_Click(object sender, EventArgs e)
         {
             CompletedReservationsForm completedRes = new CompletedReservationsForm();
             addUserControl(completedRes);
         }
 
+        //REFRESH BUTTON / SHOW ALL
         private void refresh_btn_Click(object sender, EventArgs e)
         {
             LoadData();
