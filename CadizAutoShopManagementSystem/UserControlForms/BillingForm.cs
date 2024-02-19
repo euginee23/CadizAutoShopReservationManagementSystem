@@ -90,20 +90,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void invoice_btn_Click(object sender, EventArgs e)
         {
-            // Check if any of the required fields is empty
             if (string.IsNullOrEmpty(reservationId_txt.Text) ||
                 string.IsNullOrEmpty(billingId_txt.Text) ||
                 string.IsNullOrEmpty(customerName_txt.Text) ||
                 string.IsNullOrEmpty(serviceType_txt.Text) ||
-                string.IsNullOrEmpty(extraExpenseReason_txt.Text) ||
-                string.IsNullOrEmpty(extraExpenseCost_txt.Text) ||
                 string.IsNullOrEmpty(totalCost_txt.Text))
             {
                 MessageBox.Show("Please select billing information before generating the invoice.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // If all required fields are filled, proceed to create the InvoiceForm
             string reservationId = reservationId_txt.Text;
             string billingId = billingId_txt.Text;
             string customerName = customerName_txt.Text;
