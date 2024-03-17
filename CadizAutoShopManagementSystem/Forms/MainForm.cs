@@ -129,5 +129,11 @@ namespace CadizAutoShopManagementSystem
             LocalReservationForm lclRes = new LocalReservationForm();
             addUserControl(lclRes);
         }
+
+        private void report_btn_Click(object sender, EventArgs e)
+        {
+            ReportsForm rprtsfrm = new ReportsForm();
+            addUserControl(rprtsfrm);
+        }
     }
 }

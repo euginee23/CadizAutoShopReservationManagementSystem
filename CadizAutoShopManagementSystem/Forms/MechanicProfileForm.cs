@@ -83,7 +83,7 @@ namespace CadizAutoShopManagementSystem.Forms
                 {
                     connection.Open();
 
-                    string selectQuery = "SELECT created_at, workType, CONCAT('₱ ', payAmount) AS payAmount " +
+                    string selectQuery = "SELECT created_at, workType, CONCAT('₱ ', totalCost) AS totalCost, CONCAT('₱ ', payAmount) AS payAmount " +
                                          "FROM mechanic_work_history " +
                                          "WHERE mechanic_id = @mechanicId";
 

@@ -29,9 +29,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelContainer = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.exportExcel_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.filter_cmbx = new System.Windows.Forms.ComboBox();
@@ -43,29 +42,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approvedReservation_btn = new Guna.UI2.WinForms.Guna2Button();
             this.refresh_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pendingReservation_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.completedDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.exportExcel_btn);
-            this.panelContainer.Controls.Add(this.label2);
-            this.panelContainer.Controls.Add(this.filter_cmbx);
-            this.panelContainer.Controls.Add(this.completedDataGrid);
-            this.panelContainer.Controls.Add(this.approvedReservation_btn);
-            this.panelContainer.Controls.Add(this.refresh_btn);
-            this.panelContainer.Controls.Add(this.label1);
-            this.panelContainer.Controls.Add(this.pendingReservation_btn);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1717, 909);
-            this.panelContainer.TabIndex = 0;
             // 
             // exportExcel_btn
             // 
@@ -79,10 +59,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.exportExcel_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportExcel_btn.ForeColor = System.Drawing.Color.White;
             this.exportExcel_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.exportExcel_btn.Location = new System.Drawing.Point(1072, 699);
+            this.exportExcel_btn.Location = new System.Drawing.Point(1083, 693);
             this.exportExcel_btn.Name = "exportExcel_btn";
             this.exportExcel_btn.Size = new System.Drawing.Size(176, 35);
-            this.exportExcel_btn.TabIndex = 51;
+            this.exportExcel_btn.TabIndex = 57;
             this.exportExcel_btn.Text = "EXPORT TO EXCEL";
             this.exportExcel_btn.Click += new System.EventHandler(this.exportExcel_btn_Click);
             // 
@@ -90,20 +70,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(617, 12);
+            this.label2.Location = new System.Drawing.Point(628, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 21);
-            this.label2.TabIndex = 50;
+            this.label2.TabIndex = 56;
             this.label2.Text = "Filter By Service Type:";
             // 
             // filter_cmbx
             // 
             this.filter_cmbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filter_cmbx.FormattingEnabled = true;
-            this.filter_cmbx.Location = new System.Drawing.Point(782, 11);
+            this.filter_cmbx.Location = new System.Drawing.Point(793, 5);
             this.filter_cmbx.Name = "filter_cmbx";
             this.filter_cmbx.Size = new System.Drawing.Size(353, 28);
-            this.filter_cmbx.TabIndex = 49;
+            this.filter_cmbx.TabIndex = 55;
             this.filter_cmbx.SelectedIndexChanged += new System.EventHandler(this.servicesComboBox_SelectedIndex);
             // 
             // completedDataGrid
@@ -117,23 +97,23 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.completedDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.completedDataGrid.Location = new System.Drawing.Point(3, 42);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.completedDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.completedDataGrid.Location = new System.Drawing.Point(14, 36);
             this.completedDataGrid.Name = "completedDataGrid";
             this.completedDataGrid.ReadOnly = true;
             this.completedDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.completedDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.completedDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.completedDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.completedDataGrid.Size = new System.Drawing.Size(1245, 651);
-            this.completedDataGrid.TabIndex = 48;
+            this.completedDataGrid.TabIndex = 54;
             // 
             // Column1
             // 
@@ -191,25 +171,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // approvedReservation_btn
-            // 
-            this.approvedReservation_btn.BorderRadius = 12;
-            this.approvedReservation_btn.BorderThickness = 1;
-            this.approvedReservation_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.approvedReservation_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.approvedReservation_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.approvedReservation_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.approvedReservation_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.approvedReservation_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.approvedReservation_btn.ForeColor = System.Drawing.Color.White;
-            this.approvedReservation_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.approvedReservation_btn.Location = new System.Drawing.Point(3, 699);
-            this.approvedReservation_btn.Name = "approvedReservation_btn";
-            this.approvedReservation_btn.Size = new System.Drawing.Size(237, 35);
-            this.approvedReservation_btn.TabIndex = 45;
-            this.approvedReservation_btn.Text = "APPROVED RESERVATIONS";
-            this.approvedReservation_btn.Click += new System.EventHandler(this.approvedReservation_btn_Click);
-            // 
             // refresh_btn
             // 
             this.refresh_btn.BorderRadius = 6;
@@ -222,10 +183,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.refresh_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh_btn.ForeColor = System.Drawing.Color.White;
             this.refresh_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.refresh_btn.Location = new System.Drawing.Point(1141, 12);
+            this.refresh_btn.Location = new System.Drawing.Point(1152, 6);
             this.refresh_btn.Name = "refresh_btn";
             this.refresh_btn.Size = new System.Drawing.Size(107, 24);
-            this.refresh_btn.TabIndex = 44;
+            this.refresh_btn.TabIndex = 53;
             this.refresh_btn.Text = "SHOW ALL";
             this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
             // 
@@ -233,57 +194,37 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 18);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 21);
-            this.label1.TabIndex = 41;
+            this.label1.TabIndex = 52;
             this.label1.Text = "COMPLETED RESERVATIONS";
-            // 
-            // pendingReservation_btn
-            // 
-            this.pendingReservation_btn.BorderRadius = 12;
-            this.pendingReservation_btn.BorderThickness = 1;
-            this.pendingReservation_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.pendingReservation_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.pendingReservation_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.pendingReservation_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.pendingReservation_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pendingReservation_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pendingReservation_btn.ForeColor = System.Drawing.Color.White;
-            this.pendingReservation_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pendingReservation_btn.Location = new System.Drawing.Point(246, 699);
-            this.pendingReservation_btn.Name = "pendingReservation_btn";
-            this.pendingReservation_btn.Size = new System.Drawing.Size(237, 35);
-            this.pendingReservation_btn.TabIndex = 47;
-            this.pendingReservation_btn.Text = "PENDING RESERVATIONS";
-            this.pendingReservation_btn.Click += new System.EventHandler(this.pendingReservation_btn_Click);
             // 
             // CompletedReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.exportExcel_btn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.filter_cmbx);
+            this.Controls.Add(this.completedDataGrid);
+            this.Controls.Add(this.refresh_btn);
+            this.Controls.Add(this.label1);
             this.Name = "CompletedReservationsForm";
-            this.Size = new System.Drawing.Size(1717, 909);
+            this.Size = new System.Drawing.Size(1525, 909);
             this.Load += new System.EventHandler(this.CompletedReservationsForm_Load);
-            this.panelContainer.ResumeLayout(false);
-            this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.completedDataGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelContainer;
-        private Guna.UI2.WinForms.Guna2Button approvedReservation_btn;
-        private Guna.UI2.WinForms.Guna2Button refresh_btn;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button pendingReservation_btn;
-        private System.Windows.Forms.DataGridView completedDataGrid;
+        private Guna.UI2.WinForms.Guna2Button exportExcel_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox filter_cmbx;
-        private Guna.UI2.WinForms.Guna2Button exportExcel_btn;
+        private System.Windows.Forms.DataGridView completedDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -291,5 +232,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private Guna.UI2.WinForms.Guna2Button refresh_btn;
+        private System.Windows.Forms.Label label1;
     }
 }

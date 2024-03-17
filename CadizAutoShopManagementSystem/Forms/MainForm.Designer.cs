@@ -49,6 +49,7 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.report_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,6 +60,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.report_btn);
             this.panel2.Controls.Add(this.localReservation_btn);
             this.panel2.Controls.Add(this.localService_btn);
             this.panel2.Controls.Add(this.panel3);
@@ -119,7 +121,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Location = new System.Drawing.Point(0, 844);
+            this.panel3.Location = new System.Drawing.Point(0, 843);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(163, 10);
             this.panel3.TabIndex = 0;
@@ -136,7 +138,7 @@
             this.settings_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settings_btn.ForeColor = System.Drawing.Color.White;
             this.settings_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.settings_btn.Location = new System.Drawing.Point(6, 860);
+            this.settings_btn.Location = new System.Drawing.Point(6, 862);
             this.settings_btn.Name = "settings_btn";
             this.settings_btn.Size = new System.Drawing.Size(151, 37);
             this.settings_btn.TabIndex = 10;
@@ -216,7 +218,7 @@
             this.billing_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billing_btn.ForeColor = System.Drawing.Color.White;
             this.billing_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.billing_btn.Location = new System.Drawing.Point(6, 736);
+            this.billing_btn.Location = new System.Drawing.Point(6, 640);
             this.billing_btn.Name = "billing_btn";
             this.billing_btn.Size = new System.Drawing.Size(151, 54);
             this.billing_btn.TabIndex = 4;
@@ -369,6 +371,25 @@
             this.panelContainer.Size = new System.Drawing.Size(1717, 909);
             this.panelContainer.TabIndex = 2;
             // 
+            // report_btn
+            // 
+            this.report_btn.BorderRadius = 12;
+            this.report_btn.BorderThickness = 1;
+            this.report_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.report_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.report_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.report_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.report_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.report_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_btn.ForeColor = System.Drawing.Color.White;
+            this.report_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.report_btn.Location = new System.Drawing.Point(6, 580);
+            this.report_btn.Name = "report_btn";
+            this.report_btn.Size = new System.Drawing.Size(151, 54);
+            this.report_btn.TabIndex = 13;
+            this.report_btn.Text = "Reports";
+            this.report_btn.Click += new System.EventHandler(this.report_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,5 +436,6 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button localService_btn;
         private Guna.UI2.WinForms.Guna2Button localReservation_btn;
+        private Guna.UI2.WinForms.Guna2Button report_btn;
     }
 }

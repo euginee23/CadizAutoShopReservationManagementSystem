@@ -181,6 +181,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             public int MechanicId { get; }
             public string DisplayText { get; }
+            public int Id { get; internal set; }
 
             public MechanicItem(int mechanicId, string displayText)
             {

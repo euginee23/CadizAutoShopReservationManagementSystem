@@ -29,7 +29,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.showAll_btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label12 = new System.Windows.Forms.Label();
             this.filterByMechanic_cmbx = new System.Windows.Forms.ComboBox();
             this.filterByServiceType_cmbx = new System.Windows.Forms.ComboBox();
-            this.completedReservations_btn = new Guna.UI2.WinForms.Guna2Button();
             this.approvedReservationsDataGrid = new System.Windows.Forms.DataGridView();
             this.reservationId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +64,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label1 = new System.Windows.Forms.Label();
             this.serviceType_txt = new System.Windows.Forms.TextBox();
             this.reservationId_txt = new System.Windows.Forms.TextBox();
-            this.pendingReservation_btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.vehiclePlateNumber_txt = new System.Windows.Forms.TextBox();
@@ -80,33 +77,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.vehicleModel_txt = new System.Windows.Forms.TextBox();
             this.vehicleMake_txt = new System.Windows.Forms.TextBox();
             this.vehicleId_txt = new System.Windows.Forms.TextBox();
-            this.panelContainer.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvedReservationsDataGrid)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Controls.Add(this.showAll_btn);
-            this.panelContainer.Controls.Add(this.guna2GroupBox3);
-            this.panelContainer.Controls.Add(this.label14);
-            this.panelContainer.Controls.Add(this.searchByCustomerName_txt);
-            this.panelContainer.Controls.Add(this.label13);
-            this.panelContainer.Controls.Add(this.label12);
-            this.panelContainer.Controls.Add(this.filterByMechanic_cmbx);
-            this.panelContainer.Controls.Add(this.filterByServiceType_cmbx);
-            this.panelContainer.Controls.Add(this.completedReservations_btn);
-            this.panelContainer.Controls.Add(this.approvedReservationsDataGrid);
-            this.panelContainer.Controls.Add(this.guna2GroupBox1);
-            this.panelContainer.Controls.Add(this.pendingReservation_btn);
-            this.panelContainer.Controls.Add(this.guna2GroupBox2);
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1717, 909);
-            this.panelContainer.TabIndex = 0;
             // 
             // showAll_btn
             // 
@@ -116,10 +91,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.showAll_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.showAll_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.showAll_btn.ForeColor = System.Drawing.Color.White;
-            this.showAll_btn.Location = new System.Drawing.Point(1141, 345);
+            this.showAll_btn.Location = new System.Drawing.Point(1156, 364);
             this.showAll_btn.Name = "showAll_btn";
             this.showAll_btn.Size = new System.Drawing.Size(107, 21);
-            this.showAll_btn.TabIndex = 41;
+            this.showAll_btn.TabIndex = 52;
             this.showAll_btn.Text = "SHOW ALL";
             this.showAll_btn.Click += new System.EventHandler(this.showAll_btn_Click);
             // 
@@ -138,10 +113,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox3.Controls.Add(this.customerName_txt);
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(851, 3);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(866, 22);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(397, 283);
-            this.guna2GroupBox3.TabIndex = 42;
+            this.guna2GroupBox3.TabIndex = 53;
             this.guna2GroupBox3.Text = "Customer Information";
             // 
             // label15
@@ -233,76 +208,57 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(4, 347);
+            this.label14.Location = new System.Drawing.Point(19, 366);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(136, 13);
-            this.label14.TabIndex = 40;
+            this.label14.TabIndex = 51;
             this.label14.Text = "Search by Customer Name:";
             // 
             // searchByCustomerName_txt
             // 
-            this.searchByCustomerName_txt.Location = new System.Drawing.Point(146, 344);
+            this.searchByCustomerName_txt.Location = new System.Drawing.Point(161, 363);
             this.searchByCustomerName_txt.Name = "searchByCustomerName_txt";
             this.searchByCustomerName_txt.Size = new System.Drawing.Size(253, 20);
-            this.searchByCustomerName_txt.TabIndex = 39;
+            this.searchByCustomerName_txt.TabIndex = 50;
             this.searchByCustomerName_txt.TextChanged += new System.EventHandler(this.searchCustomer);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(795, 295);
+            this.label13.Location = new System.Drawing.Point(810, 314);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(142, 13);
-            this.label13.TabIndex = 38;
+            this.label13.TabIndex = 49;
             this.label13.Text = "Filter by Mechanic Assigned:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(824, 322);
+            this.label12.Location = new System.Drawing.Point(839, 341);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 13);
-            this.label12.TabIndex = 37;
+            this.label12.TabIndex = 48;
             this.label12.Text = "Filter By Service Type:";
             // 
             // filterByMechanic_cmbx
             // 
             this.filterByMechanic_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filterByMechanic_cmbx.FormattingEnabled = true;
-            this.filterByMechanic_cmbx.Location = new System.Drawing.Point(943, 292);
+            this.filterByMechanic_cmbx.Location = new System.Drawing.Point(958, 311);
             this.filterByMechanic_cmbx.Name = "filterByMechanic_cmbx";
             this.filterByMechanic_cmbx.Size = new System.Drawing.Size(305, 21);
-            this.filterByMechanic_cmbx.TabIndex = 36;
+            this.filterByMechanic_cmbx.TabIndex = 47;
             this.filterByMechanic_cmbx.SelectedIndexChanged += new System.EventHandler(this.filterByMechanicAssignedIndexChanged);
             // 
             // filterByServiceType_cmbx
             // 
             this.filterByServiceType_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filterByServiceType_cmbx.FormattingEnabled = true;
-            this.filterByServiceType_cmbx.Location = new System.Drawing.Point(943, 319);
+            this.filterByServiceType_cmbx.Location = new System.Drawing.Point(958, 338);
             this.filterByServiceType_cmbx.Name = "filterByServiceType_cmbx";
             this.filterByServiceType_cmbx.Size = new System.Drawing.Size(305, 21);
-            this.filterByServiceType_cmbx.TabIndex = 35;
+            this.filterByServiceType_cmbx.TabIndex = 46;
             this.filterByServiceType_cmbx.SelectedIndexChanged += new System.EventHandler(this.filterByServiceTypeIndexChanged);
-            // 
-            // completedReservations_btn
-            // 
-            this.completedReservations_btn.BorderRadius = 12;
-            this.completedReservations_btn.BorderThickness = 1;
-            this.completedReservations_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.completedReservations_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.completedReservations_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.completedReservations_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.completedReservations_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.completedReservations_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completedReservations_btn.ForeColor = System.Drawing.Color.White;
-            this.completedReservations_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.completedReservations_btn.Location = new System.Drawing.Point(246, 697);
-            this.completedReservations_btn.Name = "completedReservations_btn";
-            this.completedReservations_btn.Size = new System.Drawing.Size(237, 35);
-            this.completedReservations_btn.TabIndex = 44;
-            this.completedReservations_btn.Text = "COMPLETED RESERVATIONS";
-            this.completedReservations_btn.Click += new System.EventHandler(this.completedReservations_btn_Click);
             // 
             // approvedReservationsDataGrid
             // 
@@ -315,7 +271,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column5,
             this.DoneColumn,
             this.CancelColumn});
-            this.approvedReservationsDataGrid.Location = new System.Drawing.Point(3, 370);
+            this.approvedReservationsDataGrid.Location = new System.Drawing.Point(18, 389);
             this.approvedReservationsDataGrid.Name = "approvedReservationsDataGrid";
             this.approvedReservationsDataGrid.RowHeadersVisible = false;
             this.approvedReservationsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -324,7 +280,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.approvedReservationsDataGrid.ShowEditingIcon = false;
             this.approvedReservationsDataGrid.ShowRowErrors = false;
             this.approvedReservationsDataGrid.Size = new System.Drawing.Size(1245, 321);
-            this.approvedReservationsDataGrid.TabIndex = 32;
+            this.approvedReservationsDataGrid.TabIndex = 43;
             this.approvedReservationsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.approvedReservationsDataGrid_CellClick);
             this.approvedReservationsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.buttonClick);
             // 
@@ -391,10 +347,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox1.Controls.Add(this.reservationId_txt);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(18, 22);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(448, 283);
-            this.guna2GroupBox1.TabIndex = 33;
+            this.guna2GroupBox1.TabIndex = 44;
             this.guna2GroupBox1.Text = "Reservation Information";
             // 
             // label11
@@ -467,25 +423,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.reservationId_txt.TabIndex = 0;
             this.reservationId_txt.TextChanged += new System.EventHandler(this.getReservationVehicleCustomer_Textchanged);
             // 
-            // pendingReservation_btn
-            // 
-            this.pendingReservation_btn.BorderRadius = 12;
-            this.pendingReservation_btn.BorderThickness = 1;
-            this.pendingReservation_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.pendingReservation_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.pendingReservation_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.pendingReservation_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.pendingReservation_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pendingReservation_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pendingReservation_btn.ForeColor = System.Drawing.Color.White;
-            this.pendingReservation_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pendingReservation_btn.Location = new System.Drawing.Point(3, 697);
-            this.pendingReservation_btn.Name = "pendingReservation_btn";
-            this.pendingReservation_btn.Size = new System.Drawing.Size(237, 35);
-            this.pendingReservation_btn.TabIndex = 43;
-            this.pendingReservation_btn.Text = "PENDING RESERVATIONS";
-            this.pendingReservation_btn.Click += new System.EventHandler(this.pendingReservation_btn_Click);
-            // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BackColor = System.Drawing.Color.Transparent;
@@ -503,10 +440,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox2.Controls.Add(this.vehicleId_txt);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(457, 3);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(472, 22);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(388, 283);
-            this.guna2GroupBox2.TabIndex = 34;
+            this.guna2GroupBox2.TabIndex = 45;
             this.guna2GroupBox2.Text = "Vehicle Information";
             // 
             // label10
@@ -615,12 +552,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.showAll_btn);
+            this.Controls.Add(this.guna2GroupBox3);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.searchByCustomerName_txt);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.filterByMechanic_cmbx);
+            this.Controls.Add(this.filterByServiceType_cmbx);
+            this.Controls.Add(this.approvedReservationsDataGrid);
+            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.guna2GroupBox2);
             this.Name = "ApprovedReservationsForm";
             this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.ApprovedReservationsForm_Load);
-            this.panelContainer.ResumeLayout(false);
-            this.panelContainer.PerformLayout();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvedReservationsDataGrid)).EndInit();
@@ -629,12 +574,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button showAll_btn;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private System.Windows.Forms.Label label15;
@@ -653,7 +598,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox filterByMechanic_cmbx;
         private System.Windows.Forms.ComboBox filterByServiceType_cmbx;
-        private Guna.UI2.WinForms.Guna2Button completedReservations_btn;
         private System.Windows.Forms.DataGridView approvedReservationsDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationId_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerId_column;
@@ -671,7 +615,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox serviceType_txt;
         private System.Windows.Forms.TextBox reservationId_txt;
-        private Guna.UI2.WinForms.Guna2Button pendingReservation_btn;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox vehiclePlateNumber_txt;

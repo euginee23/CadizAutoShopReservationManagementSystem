@@ -152,14 +152,15 @@ namespace CadizAutoShopManagementSystem.Forms
                     }
 
                     // Insert mechanic payout information into mechanic_work_history table
-                    string insertPayoutQuery = "INSERT INTO mechanic_work_history (mechanic_id, payAmount) " +
-                                               "VALUES (@mechanicId, @payoutAmount)";
+                    string insertPayoutQuery = "INSERT INTO mechanic_work_history (mechanic_id, totalCost, payAmount) " +
+                                               "VALUES (@mechanicId, @totalCost, @payoutAmount)";
 
                     using (MySqlCommand cmdInsertPayout = new MySqlCommand(insertPayoutQuery, connection))
                     {
                         cmdInsertPayout.Parameters.AddWithValue("@mechanicId", mechanicId);
+                        cmdInsertPayout.Parameters.AddWithValue("@totalCost", totalCost);
                         cmdInsertPayout.Parameters.AddWithValue("@payoutAmount", mechanicPayout);
-
+                        
                         cmdInsertPayout.ExecuteNonQuery();
                     }
 

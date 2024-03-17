@@ -41,15 +41,16 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.specialization_lbl = new System.Windows.Forms.Label();
             this.workHistoryDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.totalPayout_lbl = new System.Windows.Forms.Label();
             this.billing_button = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.mechanicId_lbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workHistoryDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -140,6 +141,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.workHistoryDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column4,
             this.Column3});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
@@ -177,24 +179,6 @@ namespace CadizAutoShopManagementSystem.Forms
             this.workHistoryDataGrid.ThemeStyle.RowsStyle.Height = 22;
             this.workHistoryDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.workHistoryDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "created_at";
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "workType";
-            this.Column2.HeaderText = "Work Type";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "payAmount";
-            this.Column3.HeaderText = "Pay Amout";
-            this.Column3.Name = "Column3";
             // 
             // label6
             // 
@@ -263,6 +247,30 @@ namespace CadizAutoShopManagementSystem.Forms
             this.panel2.Size = new System.Drawing.Size(724, 24);
             this.panel2.TabIndex = 46;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "created_at";
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "workType";
+            this.Column2.HeaderText = "Work Type";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "totalCost";
+            this.Column4.HeaderText = "Total Cost";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "payAmount";
+            this.Column3.HeaderText = "Pay Amout";
+            this.Column3.Name = "Column3";
+            // 
             // MechanicProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,9 +322,10 @@ namespace CadizAutoShopManagementSystem.Forms
         private Guna.UI2.WinForms.Guna2Button billing_button;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label mechanicId_lbl;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Panel panel2;
     }
 }

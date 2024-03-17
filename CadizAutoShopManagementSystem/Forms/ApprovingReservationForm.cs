@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CadizAutoShopManagementSystem.UserControlForms;
+using static CadizAutoShopManagementSystem.UserControlForms.LocalService;
 
 namespace CadizAutoShopManagementSystem.Forms
 {
     public partial class ApprovingReservationForm : Form
     {
         private int reservationId;
-        public int SelectedMechanicId { get; private set; }
+
         public ApprovingReservationForm(int reservationId)
         {
             InitializeComponent();
@@ -72,41 +73,60 @@ namespace CadizAutoShopManagementSystem.Forms
 
         }
 
+        public class MechanicItem
+        {
+            public int MechanicId { get; }
+            public string DisplayText { get; }
+            public int Id { get; internal set; }
+
+            public MechanicItem(int mechanicId, string displayText)
+            {
+                MechanicId = mechanicId;
+                DisplayText = displayText;
+            }
+
+            public override string ToString()
+            {
+                return DisplayText;
+            }
+        }
+
         private void PopulateMechanicComboBox()
         {
-            try
+            selectMechanic_cmbx.Items.Clear();
+
+            using (MySqlConnection connection = DatabaseManager.GetConnection())
             {
-                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                try
                 {
                     connection.Open();
 
-                    string selectQuery = "SELECT mechanic_id, CONCAT(firstName, ' ', lastName) AS mechanicName, CONCAT ('(', specialization, ')') AS mechanicSpecialization FROM mechanic_info";
+                    string query = "SELECT mechanic_id, firstName, lastName, specialization FROM mechanic_info";
 
-                    using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            List<string> mechanicOptions = new List<string>();
-
                             while (reader.Read())
                             {
-                                int mechanicId = Convert.ToInt32(reader["mechanic_id"]);
-                                string mechanicName = reader["mechanicName"].ToString();
-                                string mechanicSpecizalization = reader["mechanicSpecialization"].ToString();
+                                int mechanicId = reader.GetInt32("mechanic_id");
+                                string firstName = reader.GetString("firstName");
+                                string lastName = reader.GetString("lastName");
+                                string specialization = reader.GetString("specialization");
 
-                                mechanicOptions.Add(mechanicName + ' ' + mechanicSpecizalization);
+                                string displayText = $"{firstName} {lastName} ({specialization})";
 
-                                selectMechanic_cmbx.Tag = mechanicId;
+                                MechanicItem mechanicItem = new MechanicItem(mechanicId, displayText);
+
+                                selectMechanic_cmbx.Items.Add(mechanicItem);
                             }
-
-                            selectMechanic_cmbx.DataSource = mechanicOptions;
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while loading mechanics: " + ex.Message);
+                }
             }
         }
 
@@ -114,28 +134,27 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             try
             {
+                MechanicItem selectedMechanic = selectMechanic_cmbx.SelectedItem as MechanicItem;
+
+                if (selectedMechanic == null)
+                {
+                    MessageBox.Show("Please select a mechanic.");
+                    return;
+                }
+
+                int mechanicId = selectedMechanic.MechanicId;
+
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
 
-                    string updateStatusQuery = "UPDATE reservations SET status = 'Approved' WHERE reservation_id = @reservationId";
+                    string updateStatusQuery = "UPDATE reservations SET status = 'Approved', assigned_mechanic = @mechanicId WHERE reservation_id = @reservationId";
 
                     using (MySqlCommand statusCmd = new MySqlCommand(updateStatusQuery, connection))
                     {
                         statusCmd.Parameters.AddWithValue("@reservationId", reservationId);
+                        statusCmd.Parameters.AddWithValue("@mechanicId", mechanicId);
                         statusCmd.ExecuteNonQuery();
-                    }
-
-                    if (selectMechanic_cmbx.Tag is int selectedMechanicId)
-                    {
-                        string updateMechanicQuery = "UPDATE reservations SET assigned_mechanic = @mechanicId WHERE reservation_id = @reservationId";
-
-                        using (MySqlCommand mechanicCmd = new MySqlCommand(updateMechanicQuery, connection))
-                        {
-                            mechanicCmd.Parameters.AddWithValue("@reservationId", reservationId);
-                            mechanicCmd.Parameters.AddWithValue("@mechanicId", selectedMechanicId);
-                            mechanicCmd.ExecuteNonQuery();
-                        }
                     }
                 }
 

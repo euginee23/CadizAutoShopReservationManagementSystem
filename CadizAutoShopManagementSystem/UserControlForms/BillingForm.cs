@@ -39,5 +39,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             ReservationBillingForm rsvtnbllng = new ReservationBillingForm();
             addUserControl(rsvtnbllng);
         }
+
+        private void serviceBilling_btn_Click(object sender, EventArgs e)
+        {
+            ServiceBillingForm srvcbllng = new ServiceBillingForm();
+            addUserControl(srvcbllng);
+        }
     }
 }

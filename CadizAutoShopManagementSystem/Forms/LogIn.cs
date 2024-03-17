@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Configs;
 using MySql.Data.MySqlClient;
 
 namespace CadizAutoShopManagementSystem
@@ -55,22 +56,89 @@ namespace CadizAutoShopManagementSystem
             }
         }
 
+        // RETRIEVING THE USER ID UPON LOGIN
+        private int GetUserId(string username, string password)
+        {
+            using (MySqlConnection connection = DatabaseManager.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT user_id FROM users WHERE username = @username AND password = @password";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+
+                        object result = cmd.ExecuteScalar();
+
+                        return result != null ? Convert.ToInt32(result) : -1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+
+        //ADDING A LOG-IN HISTORY
+        private void LogUserLogin(int userId)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string insertQuery = "INSERT INTO user_login_history (user_id, date, time) VALUES (@userId, @date, @time)";
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Today.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@time", DateTime.Now.ToString("HH:mm:ss"));
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error logging user login: " + ex.Message);
+            }
+        }
+
         //LOG IN AND PASSING THE USER ROLE TO THE MAIN FORM
         private void Login_btn_Click(object sender, EventArgs e)
         {
             string username = username_txt.Text;
             string password = password_txt.Text;
 
-            string userRole = GetUserRole(username, password);
+            int userId = GetUserId(username, password);
 
-            if (userRole != null)
+            if (userId != -1)
             {
-                MessageBox.Show("Login successful!");
+                LoggedInUser.UserId = userId;
 
-                MainForm mainForm = new MainForm(userRole);
-                mainForm.Show();
+                LogUserLogin(userId); // Log user login
 
-                this.Hide();
+                string userRole = GetUserRole(username, password);
+
+                if (userRole != null)
+                {
+                    MessageBox.Show("Login successful!");
+
+                    MainForm mainForm = new MainForm(userRole);
+                    mainForm.Show();
+
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password. Please try again.");
+                }
             }
             else
             {
@@ -78,7 +146,7 @@ namespace CadizAutoShopManagementSystem
             }
         }
 
-        //CLOSE THE APPLICATION PROPERLY WHEN CLOSING THE LOGIN FORM
+        // CLOSE THE APPLICATION PROPERLY WHEN CLOSING THE LOGIN FORM
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             base.OnFormClosed(e);
