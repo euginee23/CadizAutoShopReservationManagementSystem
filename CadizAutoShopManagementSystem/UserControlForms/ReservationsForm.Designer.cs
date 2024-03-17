@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reservationPanel = new System.Windows.Forms.Panel();
             this.completedReservations_btn = new Guna.UI2.WinForms.Guna2Button();
             this.approvedReservation_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -72,7 +72,7 @@
             this.reservationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reservationPanel.Location = new System.Drawing.Point(0, 0);
             this.reservationPanel.Name = "reservationPanel";
-            this.reservationPanel.Size = new System.Drawing.Size(1251, 744);
+            this.reservationPanel.Size = new System.Drawing.Size(1717, 909);
             this.reservationPanel.TabIndex = 33;
             // 
             // completedReservations_btn
@@ -175,20 +175,20 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pendingDataGrid.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendingDataGrid.DefaultCellStyle = dataGridViewCellStyle10;
             this.pendingDataGrid.Location = new System.Drawing.Point(3, 42);
             this.pendingDataGrid.Name = "pendingDataGrid";
             this.pendingDataGrid.ReadOnly = true;
             this.pendingDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pendingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendingDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.pendingDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pendingDataGrid.Size = new System.Drawing.Size(1245, 651);
             this.pendingDataGrid.TabIndex = 33;
@@ -196,14 +196,14 @@
             // 
             // Approve
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Green;
-            this.Approve.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Green;
+            this.Approve.DefaultCellStyle = dataGridViewCellStyle1;
             this.Approve.HeaderText = "Approve";
             this.Approve.Name = "Approve";
             this.Approve.ReadOnly = true;
@@ -213,15 +213,15 @@
             // 
             // Decline
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Decline.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Decline.DefaultCellStyle = dataGridViewCellStyle2;
             this.Decline.HeaderText = "Decline";
             this.Decline.Name = "Decline";
             this.Decline.ReadOnly = true;
@@ -232,9 +232,9 @@
             // reservation_id
             // 
             this.reservation_id.DataPropertyName = "reservation_id";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.reservation_id.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.reservation_id.DefaultCellStyle = dataGridViewCellStyle3;
             this.reservation_id.HeaderText = "ID";
             this.reservation_id.Name = "reservation_id";
             this.reservation_id.ReadOnly = true;
@@ -242,9 +242,9 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "customerName";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Customer Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -253,8 +253,8 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "serviceType";
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column3.HeaderText = "Service Type";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -263,8 +263,8 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "vehicleName";
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column4.HeaderText = "Vehicle Details";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -273,8 +273,8 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "problem_description";
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column5.HeaderText = "Problem Description";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -283,8 +283,8 @@
             // Column6
             // 
             this.Column6.DataPropertyName = "date";
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column6.HeaderText = "Date";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -292,8 +292,8 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "time";
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column7.HeaderText = "Time";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -304,7 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.reservationPanel);
             this.Name = "ReservationsForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.ReservationsForm_Load);
             this.reservationPanel.ResumeLayout(false);
             this.reservationPanel.PerformLayout();

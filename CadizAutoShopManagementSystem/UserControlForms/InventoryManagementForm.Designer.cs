@@ -38,6 +38,7 @@
             this.partName_txt = new System.Windows.Forms.TextBox();
             this.partNumber_txt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_btn = new Guna.UI2.WinForms.Guna2Button();
             this.partId_txt = new System.Windows.Forms.TextBox();
             this.update_btn = new Guna.UI2.WinForms.Guna2Button();
             this.addButton_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -50,10 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.generate_btn = new Guna.UI2.WinForms.Guna2Button();
             this.partsDataGrid = new System.Windows.Forms.DataGridView();
-            this.showId_txt = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.searchPart_txt = new System.Windows.Forms.TextBox();
-            this.clear_btn = new Guna.UI2.WinForms.Guna2Button();
             this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +58,9 @@
             this.Column_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colum_Availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.showId_txt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.searchPart_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -166,6 +166,25 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Part Information";
+            // 
+            // clear_btn
+            // 
+            this.clear_btn.BorderRadius = 12;
+            this.clear_btn.BorderThickness = 1;
+            this.clear_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.clear_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.clear_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.clear_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.clear_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.clear_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.ForeColor = System.Drawing.Color.White;
+            this.clear_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clear_btn.Location = new System.Drawing.Point(782, 226);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(115, 35);
+            this.clear_btn.TabIndex = 32;
+            this.clear_btn.Text = "CLEAR";
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
             // partId_txt
             // 
@@ -314,54 +333,6 @@
             this.partsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.getPart_CellClick);
             this.partsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.removePart_CellContentClick);
             // 
-            // showId_txt
-            // 
-            this.showId_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showId_txt.Location = new System.Drawing.Point(14, 290);
-            this.showId_txt.Name = "showId_txt";
-            this.showId_txt.ReadOnly = true;
-            this.showId_txt.Size = new System.Drawing.Size(103, 27);
-            this.showId_txt.TabIndex = 33;
-            this.showId_txt.TextChanged += new System.EventHandler(this.getPartInfo_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(772, 293);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 20);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Search:";
-            // 
-            // searchPart_txt
-            // 
-            this.searchPart_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPart_txt.Location = new System.Drawing.Point(834, 290);
-            this.searchPart_txt.Name = "searchPart_txt";
-            this.searchPart_txt.Size = new System.Drawing.Size(402, 27);
-            this.searchPart_txt.TabIndex = 35;
-            this.searchPart_txt.TextChanged += new System.EventHandler(this.searchPart_TextChanged);
-            // 
-            // clear_btn
-            // 
-            this.clear_btn.BorderRadius = 12;
-            this.clear_btn.BorderThickness = 1;
-            this.clear_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.clear_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.clear_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.clear_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.clear_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.clear_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_btn.ForeColor = System.Drawing.Color.White;
-            this.clear_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clear_btn.Location = new System.Drawing.Point(782, 226);
-            this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(115, 35);
-            this.clear_btn.TabIndex = 32;
-            this.clear_btn.Text = "CLEAR";
-            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
-            // 
             // Column_ID
             // 
             this.Column_ID.DataPropertyName = "part_id";
@@ -415,6 +386,35 @@
             this.Remove.Text = "Remove";
             this.Remove.UseColumnTextForButtonValue = true;
             // 
+            // showId_txt
+            // 
+            this.showId_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showId_txt.Location = new System.Drawing.Point(14, 290);
+            this.showId_txt.Name = "showId_txt";
+            this.showId_txt.ReadOnly = true;
+            this.showId_txt.Size = new System.Drawing.Size(103, 27);
+            this.showId_txt.TabIndex = 33;
+            this.showId_txt.TextChanged += new System.EventHandler(this.getPartInfo_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(772, 293);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Search:";
+            // 
+            // searchPart_txt
+            // 
+            this.searchPart_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPart_txt.Location = new System.Drawing.Point(834, 290);
+            this.searchPart_txt.Name = "searchPart_txt";
+            this.searchPart_txt.Size = new System.Drawing.Size(402, 27);
+            this.searchPart_txt.TabIndex = 35;
+            this.searchPart_txt.TextChanged += new System.EventHandler(this.searchPart_TextChanged);
+            // 
             // InventoryManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,7 +425,7 @@
             this.Controls.Add(this.partsDataGrid);
             this.Controls.Add(this.groupBox1);
             this.Name = "InventoryManagementForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.InventoryManagementForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

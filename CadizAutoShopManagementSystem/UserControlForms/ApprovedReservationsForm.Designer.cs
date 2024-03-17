@@ -105,7 +105,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1251, 744);
+            this.panelContainer.Size = new System.Drawing.Size(1717, 909);
             this.panelContainer.TabIndex = 0;
             // 
             // showAll_btn
@@ -617,7 +617,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
             this.Name = "ApprovedReservationsForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.ApprovedReservationsForm_Load);
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();

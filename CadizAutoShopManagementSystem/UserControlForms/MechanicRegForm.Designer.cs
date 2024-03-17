@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mechanicDataGrid = new System.Windows.Forms.DataGridView();
+            this.mechanicId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ViewColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.mechanicId_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.filter_cmbx = new System.Windows.Forms.ComboBox();
@@ -53,13 +60,6 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.mechanicId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ViewColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicDataGrid)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,61 @@
             this.mechanicDataGrid.TabIndex = 27;
             this.mechanicDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.action_cellContentClick);
             this.mechanicDataGrid.SelectionChanged += new System.EventHandler(this.selectMechanicChanged);
+            // 
+            // mechanicId_column
+            // 
+            this.mechanicId_column.DataPropertyName = "mechanic_id";
+            this.mechanicId_column.HeaderText = "ID";
+            this.mechanicId_column.Name = "mechanicId_column";
+            this.mechanicId_column.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "mechanicName";
+            this.Column2.HeaderText = "Name";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 204;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "address";
+            this.Column3.HeaderText = "Address";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 205;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "contactNumber";
+            this.Column4.HeaderText = "Contact #";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 204;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "specialization";
+            this.Column5.HeaderText = "Specialization";
+            this.Column5.Name = "Column5";
+            // 
+            // DeleteColumn
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.DeleteColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DeleteColumn.HeaderText = "Action";
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.Text = "Delete";
+            this.DeleteColumn.UseColumnTextForButtonValue = true;
+            // 
+            // ViewColumn
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            this.ViewColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ViewColumn.HeaderText = "Action";
+            this.ViewColumn.Name = "ViewColumn";
+            this.ViewColumn.Text = "View";
+            this.ViewColumn.UseColumnTextForButtonValue = true;
             // 
             // mechanicId_txt
             // 
@@ -351,61 +406,6 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Search:";
             // 
-            // mechanicId_column
-            // 
-            this.mechanicId_column.DataPropertyName = "mechanic_id";
-            this.mechanicId_column.HeaderText = "ID";
-            this.mechanicId_column.Name = "mechanicId_column";
-            this.mechanicId_column.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "mechanicName";
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 204;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "address";
-            this.Column3.HeaderText = "Address";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 205;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "contactNumber";
-            this.Column4.HeaderText = "Contact #";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 204;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "specialization";
-            this.Column5.HeaderText = "Specialization";
-            this.Column5.Name = "Column5";
-            // 
-            // DeleteColumn
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            this.DeleteColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DeleteColumn.HeaderText = "Action";
-            this.DeleteColumn.Name = "DeleteColumn";
-            this.DeleteColumn.Text = "Delete";
-            this.DeleteColumn.UseColumnTextForButtonValue = true;
-            // 
-            // ViewColumn
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
-            this.ViewColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ViewColumn.HeaderText = "Action";
-            this.ViewColumn.Name = "ViewColumn";
-            this.ViewColumn.Text = "View";
-            this.ViewColumn.UseColumnTextForButtonValue = true;
-            // 
             // MechanicRegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,7 +418,8 @@
             this.Controls.Add(this.filter_cmbx);
             this.Controls.Add(this.mechanicDataGrid);
             this.Name = "MechanicRegForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.MechanicRegForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mechanicDataGrid)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);

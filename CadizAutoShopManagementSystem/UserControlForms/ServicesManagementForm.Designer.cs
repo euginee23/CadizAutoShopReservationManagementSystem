@@ -31,7 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.servicesDataGrid = new System.Windows.Forms.DataGridView();
+            this.serviceId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_btn = new Guna.UI2.WinForms.Guna2Button();
             this.update_btn = new Guna.UI2.WinForms.Guna2Button();
             this.serviceType_txt = new System.Windows.Forms.TextBox();
             this.add_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -44,12 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.search_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.clear_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.serviceId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,44 @@
             this.servicesDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deleteService_CellContentClick);
             this.servicesDataGrid.SelectionChanged += new System.EventHandler(this.selectService);
             // 
+            // serviceId_column
+            // 
+            this.serviceId_column.DataPropertyName = "service_id";
+            this.serviceId_column.HeaderText = "ID";
+            this.serviceId_column.Name = "serviceId_column";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "serviceType";
+            this.Column2.HeaderText = "SERVICE TYPE";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "serviceDescription";
+            this.Column3.HeaderText = "DESCRIPTION";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 500;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "laborCost";
+            this.Column4.HeaderText = "LABORT COST";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
+            // deleteColumn
+            // 
+            this.deleteColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            this.deleteColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.deleteColumn.HeaderText = "Action";
+            this.deleteColumn.Name = "deleteColumn";
+            this.deleteColumn.Text = "REMOVE";
+            this.deleteColumn.UseColumnTextForButtonValue = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.clear_btn);
@@ -98,6 +136,25 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Service Information";
+            // 
+            // clear_btn
+            // 
+            this.clear_btn.BorderRadius = 12;
+            this.clear_btn.BorderThickness = 1;
+            this.clear_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.clear_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.clear_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.clear_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.clear_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.clear_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_btn.ForeColor = System.Drawing.Color.White;
+            this.clear_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clear_btn.Location = new System.Drawing.Point(197, 246);
+            this.clear_btn.Name = "clear_btn";
+            this.clear_btn.Size = new System.Drawing.Size(110, 35);
+            this.clear_btn.TabIndex = 29;
+            this.clear_btn.Text = "CLEAR";
+            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
             // update_btn
             // 
@@ -231,63 +288,6 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "Search:";
             // 
-            // clear_btn
-            // 
-            this.clear_btn.BorderRadius = 12;
-            this.clear_btn.BorderThickness = 1;
-            this.clear_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.clear_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.clear_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.clear_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.clear_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.clear_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_btn.ForeColor = System.Drawing.Color.White;
-            this.clear_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clear_btn.Location = new System.Drawing.Point(197, 246);
-            this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(110, 35);
-            this.clear_btn.TabIndex = 29;
-            this.clear_btn.Text = "CLEAR";
-            this.clear_btn.Click += new System.EventHandler(this.clear_btn_Click);
-            // 
-            // serviceId_column
-            // 
-            this.serviceId_column.DataPropertyName = "service_id";
-            this.serviceId_column.HeaderText = "ID";
-            this.serviceId_column.Name = "serviceId_column";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "serviceType";
-            this.Column2.HeaderText = "SERVICE TYPE";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "serviceDescription";
-            this.Column3.HeaderText = "DESCRIPTION";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 500;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "laborCost";
-            this.Column4.HeaderText = "LABORT COST";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
-            // 
-            // deleteColumn
-            // 
-            this.deleteColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            this.deleteColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.deleteColumn.HeaderText = "Action";
-            this.deleteColumn.Name = "deleteColumn";
-            this.deleteColumn.Text = "REMOVE";
-            this.deleteColumn.UseColumnTextForButtonValue = true;
-            // 
             // ServicesManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +299,7 @@
             this.Controls.Add(this.servicesDataGrid);
             this.Controls.Add(this.groupBox1);
             this.Name = "ServicesManagementForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.ServicesManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);

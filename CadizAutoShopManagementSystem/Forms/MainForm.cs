@@ -117,5 +117,17 @@ namespace CadizAutoShopManagementSystem
             SettingsForm settings = new SettingsForm();
             addUserControl(settings);
         }
+
+        private void localService_btn_Click(object sender, EventArgs e)
+        {
+            LocalService lcl = new LocalService();
+            addUserControl(lcl);
+        }
+
+        private void localReservation_btn_Click(object sender, EventArgs e)
+        {
+            LocalReservationForm lclRes = new LocalReservationForm();
+            addUserControl(lclRes);
+        }
     }
 }

@@ -36,12 +36,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             userControl.BringToFront();
         }
 
-        private void back_btn_Click(object sender, EventArgs e)
-        {
-            BillingForm billingForm = new BillingForm();
-            addUserControl(billingForm);
-        }
-
         private void billingPanelContainer_Paint(object sender, PaintEventArgs e)
         {
             DataGridFillTransaction();

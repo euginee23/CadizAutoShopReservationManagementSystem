@@ -48,7 +48,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Name = "SettingsForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.ResumeLayout(false);
             this.PerformLayout();
 

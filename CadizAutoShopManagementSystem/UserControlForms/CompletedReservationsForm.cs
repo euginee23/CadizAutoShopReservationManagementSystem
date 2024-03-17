@@ -104,7 +104,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                                              "INNER JOIN customer_info c ON r.customer_id = c.customer_id " +
                                              "INNER JOIN services s ON r.service_id = s.service_id " +
                                              "INNER JOIN customer_vehicles v ON r.vehicle_id = v.vehicle_id " +
-                                             "WHERE r.status = 'Pending'";
+                                             "WHERE r.status = 'Completed'";
 
                         if (!string.IsNullOrEmpty(selectedService))
                         {

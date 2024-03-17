@@ -121,7 +121,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.Controls.Add(this.reservationChart);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(15, 14);
+            this.guna2Panel1.Location = new System.Drawing.Point(179, 14);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(596, 348);
             this.guna2Panel1.TabIndex = 7;
@@ -160,7 +160,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2Panel2.BorderRadius = 10;
             this.guna2Panel2.Controls.Add(this.partsChart);
             this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Location = new System.Drawing.Point(15, 381);
+            this.guna2Panel2.Location = new System.Drawing.Point(179, 476);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(596, 348);
             this.guna2Panel2.TabIndex = 8;
@@ -171,7 +171,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2Panel3.BorderRadius = 10;
             this.guna2Panel3.Controls.Add(this.label3);
             this.guna2Panel3.Controls.Add(this.mechanicChart);
-            this.guna2Panel3.Location = new System.Drawing.Point(635, 381);
+            this.guna2Panel3.Location = new System.Drawing.Point(915, 476);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(596, 348);
             this.guna2Panel3.TabIndex = 9;
@@ -183,7 +183,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.statusChart);
             this.guna2Panel4.Controls.Add(this.label4);
-            this.guna2Panel4.Location = new System.Drawing.Point(635, 14);
+            this.guna2Panel4.Location = new System.Drawing.Point(915, 14);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(596, 348);
             this.guna2Panel4.TabIndex = 10;
@@ -225,7 +225,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "DashboardForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1717, 909);
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.partsChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicChart)).EndInit();

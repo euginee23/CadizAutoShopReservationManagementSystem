@@ -29,12 +29,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.billingPanelContainer = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.invoice_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -47,7 +47,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.transactionSelectDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.transaction_idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partsBillingDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.back_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_costColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.firstName_txt = new System.Windows.Forms.TextBox();
@@ -55,10 +58,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label9 = new System.Windows.Forms.Label();
             this.lastName_txt = new System.Windows.Forms.TextBox();
             this.address_txt = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_costColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billingPanelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.transactionSelectDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partsBillingDataGrid)).BeginInit();
@@ -77,12 +76,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.billingPanelContainer.Controls.Add(this.label8);
             this.billingPanelContainer.Controls.Add(this.transactionSelectDataGrid);
             this.billingPanelContainer.Controls.Add(this.partsBillingDataGrid);
-            this.billingPanelContainer.Controls.Add(this.back_btn);
             this.billingPanelContainer.Controls.Add(this.guna2GroupBox1);
             this.billingPanelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.billingPanelContainer.Location = new System.Drawing.Point(0, 0);
             this.billingPanelContainer.Name = "billingPanelContainer";
-            this.billingPanelContainer.Size = new System.Drawing.Size(1251, 744);
+            this.billingPanelContainer.Size = new System.Drawing.Size(1526, 909);
             this.billingPanelContainer.TabIndex = 0;
             this.billingPanelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.billingPanelContainer_Paint);
             // 
@@ -90,7 +88,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(426, 262);
+            this.label4.Location = new System.Drawing.Point(551, 330);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 30);
             this.label4.TabIndex = 59;
@@ -108,7 +106,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.invoice_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invoice_btn.ForeColor = System.Drawing.Color.White;
             this.invoice_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.invoice_btn.Location = new System.Drawing.Point(892, 182);
+            this.invoice_btn.Location = new System.Drawing.Point(1017, 250);
             this.invoice_btn.Name = "invoice_btn";
             this.invoice_btn.Size = new System.Drawing.Size(227, 45);
             this.invoice_btn.TabIndex = 43;
@@ -126,7 +124,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.totalCost_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.totalCost_txt.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalCost_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.totalCost_txt.Location = new System.Drawing.Point(878, 75);
+            this.totalCost_txt.Location = new System.Drawing.Point(1003, 143);
             this.totalCost_txt.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.totalCost_txt.Name = "totalCost_txt";
             this.totalCost_txt.PasswordChar = '\0';
@@ -140,7 +138,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(783, 109);
+            this.label7.Location = new System.Drawing.Point(908, 177);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 17);
             this.label7.TabIndex = 41;
@@ -149,7 +147,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // transactionId_txt
             // 
             this.transactionId_txt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionId_txt.Location = new System.Drawing.Point(878, 43);
+            this.transactionId_txt.Location = new System.Drawing.Point(1003, 111);
             this.transactionId_txt.Name = "transactionId_txt";
             this.transactionId_txt.ReadOnly = true;
             this.transactionId_txt.Size = new System.Drawing.Size(257, 25);
@@ -159,7 +157,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(81, 264);
+            this.textBox7.Location = new System.Drawing.Point(206, 332);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(320, 25);
             this.textBox7.TabIndex = 38;
@@ -169,7 +167,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(759, 46);
+            this.label1.Location = new System.Drawing.Point(884, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 17);
             this.label1.TabIndex = 45;
@@ -179,7 +177,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 267);
+            this.label8.Location = new System.Drawing.Point(142, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 37;
@@ -187,30 +185,30 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // transactionSelectDataGrid
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.transactionSelectDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.transactionSelectDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.transactionSelectDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.transactionSelectDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.transactionSelectDataGrid.ColumnHeadersHeight = 15;
             this.transactionSelectDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.transactionSelectDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.transaction_idColumn});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.transactionSelectDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.transactionSelectDataGrid.DefaultCellStyle = dataGridViewCellStyle27;
             this.transactionSelectDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.transactionSelectDataGrid.Location = new System.Drawing.Point(20, 295);
+            this.transactionSelectDataGrid.Location = new System.Drawing.Point(145, 363);
             this.transactionSelectDataGrid.Name = "transactionSelectDataGrid";
             this.transactionSelectDataGrid.RowHeadersVisible = false;
             this.transactionSelectDataGrid.Size = new System.Drawing.Size(381, 436);
@@ -246,16 +244,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // partsBillingDataGrid
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.partsBillingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.partsBillingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            this.partsBillingDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.partsBillingDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.partsBillingDataGrid.ColumnHeadersHeight = 15;
             this.partsBillingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.partsBillingDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -263,16 +261,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.partNameColumn,
             this.quantityColumn,
             this.total_costColumn});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.partsBillingDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.partsBillingDataGrid.DefaultCellStyle = dataGridViewCellStyle30;
             this.partsBillingDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.partsBillingDataGrid.Location = new System.Drawing.Point(431, 295);
+            this.partsBillingDataGrid.Location = new System.Drawing.Point(556, 363);
             this.partsBillingDataGrid.Name = "partsBillingDataGrid";
             this.partsBillingDataGrid.RowHeadersVisible = false;
             this.partsBillingDataGrid.Size = new System.Drawing.Size(805, 436);
@@ -299,22 +297,29 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.partsBillingDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.partsBillingDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // back_btn
+            // Column1
             // 
-            this.back_btn.BorderRadius = 10;
-            this.back_btn.BorderThickness = 1;
-            this.back_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.back_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.back_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.back_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.back_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back_btn.ForeColor = System.Drawing.Color.White;
-            this.back_btn.Location = new System.Drawing.Point(3, 3);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(78, 32);
-            this.back_btn.TabIndex = 4;
-            this.back_btn.Text = "← Back";
-            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            this.Column1.DataPropertyName = "PartId";
+            this.Column1.HeaderText = "PART ID";
+            this.Column1.Name = "Column1";
+            // 
+            // partNameColumn
+            // 
+            this.partNameColumn.DataPropertyName = "PartName";
+            this.partNameColumn.HeaderText = "PART NAME";
+            this.partNameColumn.Name = "partNameColumn";
+            // 
+            // quantityColumn
+            // 
+            this.quantityColumn.DataPropertyName = "Quantity";
+            this.quantityColumn.HeaderText = "QUANTITY ";
+            this.quantityColumn.Name = "quantityColumn";
+            // 
+            // total_costColumn
+            // 
+            this.total_costColumn.DataPropertyName = "TotalCost";
+            this.total_costColumn.HeaderText = "TOTAL COST";
+            this.total_costColumn.Name = "total_costColumn";
             // 
             // guna2GroupBox1
             // 
@@ -327,7 +332,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox1.Controls.Add(this.address_txt);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(20, 43);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(145, 111);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(662, 184);
             this.guna2GroupBox1.TabIndex = 58;
@@ -390,37 +395,13 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.address_txt.Size = new System.Drawing.Size(493, 25);
             this.address_txt.TabIndex = 50;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "PartId";
-            this.Column1.HeaderText = "PART ID";
-            this.Column1.Name = "Column1";
-            // 
-            // partNameColumn
-            // 
-            this.partNameColumn.DataPropertyName = "PartName";
-            this.partNameColumn.HeaderText = "PART NAME";
-            this.partNameColumn.Name = "partNameColumn";
-            // 
-            // quantityColumn
-            // 
-            this.quantityColumn.DataPropertyName = "Quantity";
-            this.quantityColumn.HeaderText = "QUANTITY ";
-            this.quantityColumn.Name = "quantityColumn";
-            // 
-            // total_costColumn
-            // 
-            this.total_costColumn.DataPropertyName = "TotalCost";
-            this.total_costColumn.HeaderText = "TOTAL COST";
-            this.total_costColumn.Name = "total_costColumn";
-            // 
             // PartsBillingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.billingPanelContainer);
             this.Name = "PartsBillingForm";
-            this.Size = new System.Drawing.Size(1251, 744);
+            this.Size = new System.Drawing.Size(1526, 909);
             this.billingPanelContainer.ResumeLayout(false);
             this.billingPanelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.transactionSelectDataGrid)).EndInit();
@@ -434,7 +415,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         #endregion
 
         private System.Windows.Forms.Panel billingPanelContainer;
-        private Guna.UI2.WinForms.Guna2Button back_btn;
         private Guna.UI2.WinForms.Guna2DataGridView partsBillingDataGrid;
         private Guna.UI2.WinForms.Guna2DataGridView transactionSelectDataGrid;
         private System.Windows.Forms.Label label8;

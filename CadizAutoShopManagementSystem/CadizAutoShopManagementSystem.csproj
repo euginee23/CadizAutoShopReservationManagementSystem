@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -173,6 +174,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\LoadingStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\LoadingStateForm.Designer.cs">
+      <DependentUpon>LoadingStateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configs\Database.cs" />
     <Compile Include="Forms\ApprovingReservationForm.cs">
       <SubType>Form</SubType>
@@ -203,6 +210,18 @@
     </Compile>
     <Compile Include="Forms\InvoiceForm.Designer.cs">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalServicesDoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalServicesDoneForm.Designer.cs">
+      <DependentUpon>LocalServicesDoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocalServicesMarkingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocalServicesMarkingForm.Designer.cs">
+      <DependentUpon>LocalServicesMarkingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LogIn.cs">
       <SubType>Form</SubType>
@@ -260,6 +279,18 @@
     <Compile Include="UserControlForms\InventoryManagementForm.Designer.cs">
       <DependentUpon>InventoryManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlForms\LocalReservationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\LocalReservationForm.Designer.cs">
+      <DependentUpon>LocalReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForms\LocalService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\LocalService.Designer.cs">
+      <DependentUpon>LocalService.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlForms\MechanicRegForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,6 +302,12 @@
     </Compile>
     <Compile Include="UserControlForms\PartsBillingForm.Designer.cs">
       <DependentUpon>PartsBillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForms\ReservationBillingForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\ReservationBillingForm.Designer.cs">
+      <DependentUpon>ReservationBillingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlForms\ReservationsForm.cs">
       <SubType>UserControl</SubType>
@@ -296,6 +333,9 @@
     <Compile Include="UserControlForms\SoldPartsForm.Designer.cs">
       <DependentUpon>SoldPartsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\LoadingStateForm.resx">
+      <DependentUpon>LoadingStateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApprovingReservationForm.resx">
       <DependentUpon>ApprovingReservationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InvoiceForm.resx">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalServicesDoneForm.resx">
+      <DependentUpon>LocalServicesDoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocalServicesMarkingForm.resx">
+      <DependentUpon>LocalServicesMarkingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -347,11 +393,20 @@
     <EmbeddedResource Include="UserControlForms\InventoryManagementForm.resx">
       <DependentUpon>InventoryManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\LocalReservationForm.resx">
+      <DependentUpon>LocalReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\LocalService.resx">
+      <DependentUpon>LocalService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\MechanicRegForm.resx">
       <DependentUpon>MechanicRegForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\PartsBillingForm.resx">
       <DependentUpon>PartsBillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\ReservationBillingForm.resx">
+      <DependentUpon>ReservationBillingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\ReservationsForm.resx">
       <DependentUpon>ReservationsForm.cs</DependentUpon>
