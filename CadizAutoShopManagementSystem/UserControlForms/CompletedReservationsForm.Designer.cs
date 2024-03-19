@@ -29,8 +29,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.exportExcel_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.filter_cmbx = new System.Windows.Forms.ComboBox();
@@ -44,7 +44,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.refresh_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.completedDataGrid)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // exportExcel_btn
@@ -59,7 +63,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.exportExcel_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportExcel_btn.ForeColor = System.Drawing.Color.White;
             this.exportExcel_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.exportExcel_btn.Location = new System.Drawing.Point(1083, 693);
+            this.exportExcel_btn.Location = new System.Drawing.Point(310, 8);
             this.exportExcel_btn.Name = "exportExcel_btn";
             this.exportExcel_btn.Size = new System.Drawing.Size(176, 35);
             this.exportExcel_btn.TabIndex = 57;
@@ -69,20 +73,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(628, 6);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(755, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 21);
+            this.label2.Size = new System.Drawing.Size(176, 21);
             this.label2.TabIndex = 56;
             this.label2.Text = "Filter By Service Type:";
             // 
             // filter_cmbx
             // 
-            this.filter_cmbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filter_cmbx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filter_cmbx.FormattingEnabled = true;
-            this.filter_cmbx.Location = new System.Drawing.Point(793, 5);
+            this.filter_cmbx.Location = new System.Drawing.Point(937, 10);
             this.filter_cmbx.Name = "filter_cmbx";
-            this.filter_cmbx.Size = new System.Drawing.Size(353, 28);
+            this.filter_cmbx.Size = new System.Drawing.Size(412, 29);
             this.filter_cmbx.TabIndex = 55;
             this.filter_cmbx.SelectedIndexChanged += new System.EventHandler(this.servicesComboBox_SelectedIndex);
             // 
@@ -97,22 +101,22 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.completedDataGrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.completedDataGrid.Location = new System.Drawing.Point(14, 36);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.completedDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.completedDataGrid.Location = new System.Drawing.Point(15, 17);
             this.completedDataGrid.Name = "completedDataGrid";
             this.completedDataGrid.ReadOnly = true;
             this.completedDataGrid.RowHeadersVisible = false;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.completedDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.completedDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.completedDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.completedDataGrid.Size = new System.Drawing.Size(1245, 651);
+            this.completedDataGrid.Size = new System.Drawing.Size(1457, 772);
             this.completedDataGrid.TabIndex = 54;
             // 
             // Column1
@@ -173,7 +177,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // refresh_btn
             // 
-            this.refresh_btn.BorderRadius = 6;
+            this.refresh_btn.BorderRadius = 3;
             this.refresh_btn.BorderThickness = 1;
             this.refresh_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.refresh_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -183,9 +187,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.refresh_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh_btn.ForeColor = System.Drawing.Color.White;
             this.refresh_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.refresh_btn.Location = new System.Drawing.Point(1152, 6);
+            this.refresh_btn.Location = new System.Drawing.Point(1361, 11);
             this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(107, 24);
+            this.refresh_btn.Size = new System.Drawing.Size(111, 28);
             this.refresh_btn.TabIndex = 53;
             this.refresh_btn.Text = "SHOW ALL";
             this.refresh_btn.Click += new System.EventHandler(this.refresh_btn_Click);
@@ -193,29 +197,49 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 12);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 21);
+            this.label1.Size = new System.Drawing.Size(294, 30);
             this.label1.TabIndex = 52;
             this.label1.Text = "COMPLETED RESERVATIONS";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.completedDataGrid);
+            this.panel1.Location = new System.Drawing.Point(17, 84);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1490, 808);
+            this.panel1.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.exportExcel_btn);
+            this.panel2.Controls.Add(this.filter_cmbx);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.refresh_btn);
+            this.panel2.Location = new System.Drawing.Point(17, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1490, 52);
+            this.panel2.TabIndex = 59;
             // 
             // CompletedReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.exportExcel_btn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.filter_cmbx);
-            this.Controls.Add(this.completedDataGrid);
-            this.Controls.Add(this.refresh_btn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "CompletedReservationsForm";
             this.Size = new System.Drawing.Size(1525, 909);
             this.Load += new System.EventHandler(this.CompletedReservationsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.completedDataGrid)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -234,5 +258,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private Guna.UI2.WinForms.Guna2Button refresh_btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

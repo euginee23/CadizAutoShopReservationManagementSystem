@@ -48,7 +48,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd))
                 {
                     DataTable dataTable = new DataTable();
-                    pendingDataGrid.RowTemplate.Height = 50;
                     dataAdapter.Fill(dataTable);
                     pendingDataGrid.DataSource = dataTable;
                 }

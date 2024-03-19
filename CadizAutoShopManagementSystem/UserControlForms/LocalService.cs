@@ -295,8 +295,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             filterStatus_cmbx.Items.Clear();
 
             filterStatus_cmbx.Items.Add("Pending");
+            filterStatus_cmbx.Items.Add("On-Progress");
+            filterStatus_cmbx.Items.Add("Done");
             filterStatus_cmbx.Items.Add("Completed");
-            filterStatus_cmbx.Items.Add("Approved");
             filterStatus_cmbx.SelectedIndex = 0;
         }
 

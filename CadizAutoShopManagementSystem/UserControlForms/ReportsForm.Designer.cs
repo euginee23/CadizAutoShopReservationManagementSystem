@@ -32,14 +32,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel1 = new System.Windows.Forms.Panel();
             this.reservationsReport = new Guna.UI2.WinForms.Guna2Button();
             this.reportsPanelContainer = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.log_in_reports_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.guna2Button1);
+            this.panel1.Controls.Add(this.log_in_reports_btn);
             this.panel1.Controls.Add(this.reservationsReport);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,22 +73,23 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.reportsPanelContainer.Size = new System.Drawing.Size(1526, 909);
             this.reportsPanelContainer.TabIndex = 8;
             // 
-            // guna2Button1
+            // log_in_reports_btn
             // 
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(3, 60);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(183, 51);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "LOG-IN REPORTS";
+            this.log_in_reports_btn.BorderRadius = 3;
+            this.log_in_reports_btn.BorderThickness = 1;
+            this.log_in_reports_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.log_in_reports_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.log_in_reports_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.log_in_reports_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.log_in_reports_btn.FillColor = System.Drawing.Color.DarkGray;
+            this.log_in_reports_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_in_reports_btn.ForeColor = System.Drawing.Color.Black;
+            this.log_in_reports_btn.Location = new System.Drawing.Point(3, 60);
+            this.log_in_reports_btn.Name = "log_in_reports_btn";
+            this.log_in_reports_btn.Size = new System.Drawing.Size(183, 51);
+            this.log_in_reports_btn.TabIndex = 6;
+            this.log_in_reports_btn.Text = "LOG-IN REPORTS";
+            this.log_in_reports_btn.Click += new System.EventHandler(this.log_in_reports_btn_Click);
             // 
             // ReportsForm
             // 
@@ -108,6 +109,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button reservationsReport;
         private System.Windows.Forms.Panel reportsPanelContainer;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button log_in_reports_btn;
     }
 }

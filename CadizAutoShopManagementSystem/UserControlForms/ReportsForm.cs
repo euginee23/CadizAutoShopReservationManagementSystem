@@ -26,11 +26,18 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             userControl.BringToFront();
         }
 
-        //NAVIGATE TO COMPLETED RESERVATIONS
+        //NAVIGATE TO RESERVATION REPORTS
         private void reservationsReport_Click(object sender, EventArgs e)
         {
-            CompletedReservationsForm completedRes = new CompletedReservationsForm();
-            addUserControl(completedRes);
+            ReservationReportsForm rsvtnsrprtsfrm = new ReservationReportsForm();
+            addUserControl(rsvtnsrprtsfrm);
+        }
+
+        //NAVIGATE TO LOG-IN REPORTS
+        private void log_in_reports_btn_Click(object sender, EventArgs e)
+        {
+            LogInReportsForm lgnrprts = new LogInReportsForm();
+            addUserControl(lgnrprts);
         }
     }
 }

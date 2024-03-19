@@ -166,13 +166,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         using (XLWorkbook workbook = new XLWorkbook())
                         {
-                            // Add the DataTable to the worksheet
                             IXLWorksheet worksheet = workbook.Worksheets.Add(dataTable, "CompletedReservations");
 
-                            // Adjust column widths (you may need to customize these values)
                             worksheet.Columns().AdjustToContents();
 
-                            // Save the workbook to the selected file
                             workbook.SaveAs(saveFileDialog.FileName);
 
                             MessageBox.Show("Data exported to Excel successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

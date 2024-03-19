@@ -175,6 +175,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.addToBilling_btn.Size = new System.Drawing.Size(187, 41);
             this.addToBilling_btn.TabIndex = 46;
             this.addToBilling_btn.Text = "Add to Billing Queue";
+            this.addToBilling_btn.Click += new System.EventHandler(this.addToBilling_btn_Click);
             // 
             // extraExpensesNumericUpDown
             // 

@@ -40,6 +40,9 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.1.5.3.2.0.0\lib\net452\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
     </Reference>
@@ -306,6 +309,12 @@
     <Compile Include="UserControlForms\LocalService.Designer.cs">
       <DependentUpon>LocalService.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlForms\LogInReportsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\LogInReportsForm.Designer.cs">
+      <DependentUpon>LogInReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlForms\ManagePersonnelForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,6 +362,12 @@
     </Compile>
     <Compile Include="UserControlForms\ReservationBillingForm.Designer.cs">
       <DependentUpon>ReservationBillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForms\ReservationReportsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\ReservationReportsForm.Designer.cs">
+      <DependentUpon>ReservationReportsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlForms\ReservationsForm.cs">
       <SubType>UserControl</SubType>
@@ -456,6 +471,9 @@
     <EmbeddedResource Include="UserControlForms\LocalService.resx">
       <DependentUpon>LocalService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\LogInReportsForm.resx">
+      <DependentUpon>LogInReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\ManagePersonnelForm.resx">
       <DependentUpon>ManagePersonnelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -479,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\ReservationBillingForm.resx">
       <DependentUpon>ReservationBillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\ReservationReportsForm.resx">
+      <DependentUpon>ReservationReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\ReservationsForm.resx">
       <DependentUpon>ReservationsForm.cs</DependentUpon>

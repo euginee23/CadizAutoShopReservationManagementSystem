@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
@@ -53,6 +54,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void add_btn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(serviceType_txt.Text) || string.IsNullOrWhiteSpace(description_txt.Text) || string.IsNullOrWhiteSpace(laborCost_txt.Text))
+            {
+                MessageBox.Show("Please enter values for all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string query = "INSERT INTO services (serviceType, serviceDescription, laborCost) " +
                            "VALUES (@serviceType, @description, @laborCost)";
 
@@ -66,7 +73,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         cmd.Parameters.AddWithValue("@serviceType", serviceType_txt.Text);
                         cmd.Parameters.AddWithValue("@description", description_txt.Text);
-                        cmd.Parameters.AddWithValue("@laborCost", Convert.ToDecimal(laborCost_txt.Text));
+                        decimal laborCost = Convert.ToDecimal(laborCost_txt.Text);
+                        string formattedLaborCost = laborCost.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
+                        cmd.Parameters.AddWithValue("@laborCost", formattedLaborCost);
 
                         cmd.ExecuteNonQuery();
 
@@ -84,6 +93,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void update_btn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(serviceId_txt.Text))
+            {
+                MessageBox.Show("Please select a service to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (int.TryParse(serviceId_txt.Text, out int serviceId))
             {
                 try
@@ -92,7 +107,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         connection.Open();
 
-                        string query = "UPDATE services SET serviceType = @serviceType, " + 
+                        string query = "UPDATE services SET serviceType = @serviceType, " +
                                        "serviceDescription = @description, laborCost = @laborCost " +
                                        "WHERE service_id = @serviceId";
 
@@ -149,7 +164,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                                 {
                                     serviceType_txt.Text = reader["serviceType"].ToString();
                                     description_txt.Text = reader["serviceDescription"].ToString();
-                                    laborCost_txt.Text = reader["laborCost"].ToString();
+                                    decimal laborCost = Convert.ToDecimal(reader["laborCost"]);
+                                    string formattedLaborCost = laborCost.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
+                                    laborCost_txt.Text = formattedLaborCost;
                                 }
                             }
                         }
@@ -242,6 +259,18 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             MessageBox.Show($"Error: {ex.Message}");
                         }
                     }
+                }
+            }
+        }
+
+        private void servicesDataGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (servicesDataGrid.Columns[e.ColumnIndex].Name == "laborCost_column" && e.Value != null)
+            {
+                if (decimal.TryParse(e.Value.ToString(), out decimal laborCost))
+                {
+                    e.Value = laborCost.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
+                    e.FormattingApplied = true;
                 }
             }
         }

@@ -57,7 +57,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             specialization_cmbx.Items.Add("Exhaust System Repair");
             specialization_cmbx.Items.Add("Auto Body Repair");
 
-            // Filter Combo Box
             filter_cmbx.Items.Add("Engine Repair");
             filter_cmbx.Items.Add("Transmission Repair");
             filter_cmbx.Items.Add("Brake System Repair");
@@ -73,6 +72,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void register_btn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(mechanicFnametxt.Text) || string.IsNullOrWhiteSpace(mechanicLnametxt.Text) ||
+                string.IsNullOrWhiteSpace(mechanicAddresstxt.Text) || string.IsNullOrWhiteSpace(mechanicContacttxt.Text) ||
+                specialization_cmbx.SelectedItem == null)
+            {
+                MessageBox.Show("Please input all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
@@ -100,7 +107,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
-
             }
         }
 
@@ -157,6 +163,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void update_btn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(mechanicId_txt.Text))
+            {
+                MessageBox.Show("Please select a mechanic to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (int.TryParse(mechanicId_txt.Text, out int mechanicId))
             {
                 try
@@ -192,6 +204,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 }
             }
         }
+
         private void ClearMechanicFields()
         {
             mechanicFnametxt.Clear();
@@ -291,6 +304,28 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         mechanicProfileForm.ShowDialog();
                     }
                 }
+            }
+        }
+
+        private void search_txt_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = search_txt.Text.Trim();
+
+            try
+            {
+                string query = "SELECT mechanic_id, CONCAT(firstName, ' ', lastName) AS mechanicName, address, contactNumber, specialization FROM mechanic_info WHERE CONCAT(firstName, ' ', lastName) LIKE @searchTerm OR specialization LIKE @searchTerm";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+
+                dataAdapter.Fill(dataTable);
+
+                mechanicDataGrid.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }

@@ -53,7 +53,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
-                        approvedReservationsDataGrid.RowTemplate.Height = 30;
                         approvedReservationsDataGrid.DataSource = dataTable;
                     }
                 }
