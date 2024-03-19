@@ -13,10 +13,31 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class SettingsForm : UserControl
     {
+        private string userRole;
 
-        public SettingsForm()
+        public SettingsForm(string userRole)
         {
             InitializeComponent();
+            this.userRole = userRole;
+            UpdateButtonVisibility();
+        }
+
+        private void UpdateButtonVisibility()
+        {
+            if (userRole == "Employee")
+            {
+                adminAccount_btn.Enabled = false;
+                personnelAccount_btn.Enabled = true;
+                managePersonnel_btn.Enabled = false;
+                personnelAccess_btn.Enabled = false;
+            }
+            else if (userRole == "Admin")
+            {
+                adminAccount_btn.Enabled = true;
+                personnelAccount_btn.Enabled = false;
+                managePersonnel_btn.Enabled = true;
+                personnelAccess_btn.Enabled = true;
+            }
         }
 
         private void addUserControl(UserControl userControl)
@@ -40,6 +61,24 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 MessageBox.Show("Access denied. Please enter the correct security key.");
             }
+        }
+
+        private void managePersonnel_btn_Click(object sender, EventArgs e)
+        {
+            ManagePersonnelForm prsnlfrm = new ManagePersonnelForm();
+            addUserControl(prsnlfrm);
+        }
+
+        private void personnelAccount_btn_Click(object sender, EventArgs e)
+        {
+            PersonnelAccountSettingsForm pasf = new PersonnelAccountSettingsForm();
+            addUserControl(pasf);
+        }
+
+        private void personnelAccess_btn_Click(object sender, EventArgs e)
+        {
+            PersonnelAccessSettingsForm paccsetfrm = new PersonnelAccessSettingsForm();
+            addUserControl(paccsetfrm);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CadizAutoShopManagementSystem.Configs;
+using CadizAutoShopManagementSystem.UserControlForms;
 using MySql.Data.MySqlClient;
 
 namespace CadizAutoShopManagementSystem
@@ -130,6 +131,7 @@ namespace CadizAutoShopManagementSystem
                 {
                     MessageBox.Show("Login successful!");
 
+                    SettingsForm setFrm = new SettingsForm(userRole);
                     MainForm mainForm = new MainForm(userRole);
                     mainForm.Show();
 

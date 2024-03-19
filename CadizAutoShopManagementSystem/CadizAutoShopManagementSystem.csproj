@@ -255,6 +255,7 @@
       <DependentUpon>PartsInvoiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\PersonnelModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControlForms\AdminAccountSettingForm.cs">
@@ -305,6 +306,12 @@
     <Compile Include="UserControlForms\LocalService.Designer.cs">
       <DependentUpon>LocalService.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlForms\ManagePersonnelForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\ManagePersonnelForm.Designer.cs">
+      <DependentUpon>ManagePersonnelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlForms\MechanicRegForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -322,6 +329,18 @@
     </Compile>
     <Compile Include="UserControlForms\PendingReservationsForms.Designer.cs">
       <DependentUpon>PendingReservationsForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForms\PersonnelAccessSettingsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\PersonnelAccessSettingsForm.Designer.cs">
+      <DependentUpon>PersonnelAccessSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForms\PersonnelAccountSettingsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForms\PersonnelAccountSettingsForm.Designer.cs">
+      <DependentUpon>PersonnelAccountSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlForms\ReportsForm.cs">
       <SubType>UserControl</SubType>
@@ -437,6 +456,9 @@
     <EmbeddedResource Include="UserControlForms\LocalService.resx">
       <DependentUpon>LocalService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\ManagePersonnelForm.resx">
+      <DependentUpon>ManagePersonnelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\MechanicRegForm.resx">
       <DependentUpon>MechanicRegForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -445,6 +467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\PendingReservationsForms.resx">
       <DependentUpon>PendingReservationsForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\PersonnelAccessSettingsForm.resx">
+      <DependentUpon>PersonnelAccessSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForms\PersonnelAccountSettingsForm.resx">
+      <DependentUpon>PersonnelAccountSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlForms\ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>

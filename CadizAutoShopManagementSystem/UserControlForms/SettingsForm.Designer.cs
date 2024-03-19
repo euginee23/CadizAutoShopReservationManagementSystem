@@ -30,9 +30,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.serviceBilling_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.personnelAccount_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.personnelAccess_btn = new Guna.UI2.WinForms.Guna2Button();
             this.adminAccount_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.partsBilling_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.managePersonnel_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panelSettingsContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -40,31 +41,51 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.serviceBilling_btn);
+            this.panel1.Controls.Add(this.personnelAccount_btn);
+            this.panel1.Controls.Add(this.personnelAccess_btn);
             this.panel1.Controls.Add(this.adminAccount_btn);
-            this.panel1.Controls.Add(this.partsBilling_btn);
+            this.panel1.Controls.Add(this.managePersonnel_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(191, 909);
             this.panel1.TabIndex = 7;
             // 
-            // serviceBilling_btn
+            // personnelAccount_btn
             // 
-            this.serviceBilling_btn.BorderRadius = 3;
-            this.serviceBilling_btn.BorderThickness = 1;
-            this.serviceBilling_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.serviceBilling_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.serviceBilling_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.serviceBilling_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.serviceBilling_btn.FillColor = System.Drawing.Color.DarkGray;
-            this.serviceBilling_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceBilling_btn.ForeColor = System.Drawing.Color.Black;
-            this.serviceBilling_btn.Location = new System.Drawing.Point(3, 116);
-            this.serviceBilling_btn.Name = "serviceBilling_btn";
-            this.serviceBilling_btn.Size = new System.Drawing.Size(183, 50);
-            this.serviceBilling_btn.TabIndex = 6;
-            this.serviceBilling_btn.Text = "PERSONNEL ACCESS";
+            this.personnelAccount_btn.BorderRadius = 3;
+            this.personnelAccount_btn.BorderThickness = 1;
+            this.personnelAccount_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.personnelAccount_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.personnelAccount_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.personnelAccount_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.personnelAccount_btn.FillColor = System.Drawing.Color.DarkGray;
+            this.personnelAccount_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personnelAccount_btn.ForeColor = System.Drawing.Color.Black;
+            this.personnelAccount_btn.Location = new System.Drawing.Point(3, 60);
+            this.personnelAccount_btn.Name = "personnelAccount_btn";
+            this.personnelAccount_btn.Size = new System.Drawing.Size(183, 50);
+            this.personnelAccount_btn.TabIndex = 7;
+            this.personnelAccount_btn.Text = "PERSONNEL ACCOUNT";
+            this.personnelAccount_btn.Click += new System.EventHandler(this.personnelAccount_btn_Click);
+            // 
+            // personnelAccess_btn
+            // 
+            this.personnelAccess_btn.BorderRadius = 3;
+            this.personnelAccess_btn.BorderThickness = 1;
+            this.personnelAccess_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.personnelAccess_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.personnelAccess_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.personnelAccess_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.personnelAccess_btn.FillColor = System.Drawing.Color.DarkGray;
+            this.personnelAccess_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personnelAccess_btn.ForeColor = System.Drawing.Color.Black;
+            this.personnelAccess_btn.Location = new System.Drawing.Point(3, 172);
+            this.personnelAccess_btn.Name = "personnelAccess_btn";
+            this.personnelAccess_btn.Size = new System.Drawing.Size(183, 50);
+            this.personnelAccess_btn.TabIndex = 6;
+            this.personnelAccess_btn.Text = "PERSONNEL ACCESS";
+            this.personnelAccess_btn.Click += new System.EventHandler(this.personnelAccess_btn_Click);
             // 
             // adminAccount_btn
             // 
@@ -84,22 +105,23 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.adminAccount_btn.Text = "ADMIN ACCOUNT";
             this.adminAccount_btn.Click += new System.EventHandler(this.adminAccount_btn_Click);
             // 
-            // partsBilling_btn
+            // managePersonnel_btn
             // 
-            this.partsBilling_btn.BorderRadius = 3;
-            this.partsBilling_btn.BorderThickness = 1;
-            this.partsBilling_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.partsBilling_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.partsBilling_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.partsBilling_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.partsBilling_btn.FillColor = System.Drawing.Color.DarkGray;
-            this.partsBilling_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partsBilling_btn.ForeColor = System.Drawing.Color.Black;
-            this.partsBilling_btn.Location = new System.Drawing.Point(3, 60);
-            this.partsBilling_btn.Name = "partsBilling_btn";
-            this.partsBilling_btn.Size = new System.Drawing.Size(183, 50);
-            this.partsBilling_btn.TabIndex = 4;
-            this.partsBilling_btn.Text = "MANAGE STAFF";
+            this.managePersonnel_btn.BorderRadius = 3;
+            this.managePersonnel_btn.BorderThickness = 1;
+            this.managePersonnel_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.managePersonnel_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.managePersonnel_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.managePersonnel_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.managePersonnel_btn.FillColor = System.Drawing.Color.DarkGray;
+            this.managePersonnel_btn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.managePersonnel_btn.ForeColor = System.Drawing.Color.Black;
+            this.managePersonnel_btn.Location = new System.Drawing.Point(3, 116);
+            this.managePersonnel_btn.Name = "managePersonnel_btn";
+            this.managePersonnel_btn.Size = new System.Drawing.Size(183, 50);
+            this.managePersonnel_btn.TabIndex = 4;
+            this.managePersonnel_btn.Text = "MANAGE PERSONNEL";
+            this.managePersonnel_btn.Click += new System.EventHandler(this.managePersonnel_btn_Click);
             // 
             // panelSettingsContainer
             // 
@@ -125,9 +147,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button serviceBilling_btn;
+        private Guna.UI2.WinForms.Guna2Button personnelAccess_btn;
         private Guna.UI2.WinForms.Guna2Button adminAccount_btn;
-        private Guna.UI2.WinForms.Guna2Button partsBilling_btn;
+        private Guna.UI2.WinForms.Guna2Button managePersonnel_btn;
         private System.Windows.Forms.Panel panelSettingsContainer;
+        private Guna.UI2.WinForms.Guna2Button personnelAccount_btn;
     }
 }

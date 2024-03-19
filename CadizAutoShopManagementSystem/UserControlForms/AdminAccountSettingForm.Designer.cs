@@ -29,16 +29,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAccountSettingForm));
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.generate_btn = new Guna.UI2.WinForms.Guna2Button();
             this.id_txt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.newSecurityKey_txt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.middleName_txt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,9 +47,13 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.firstName_txt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.newSecurityKey_txt = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.save_button = new Guna.UI2.WinForms.Guna2Button();
             this.loginHistoryDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,8 +70,13 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.clearHistory_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.showPasswordChar_btn = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.oldPassword_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.newPassword_txt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -82,23 +89,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.showSecurityChar_btn = new System.Windows.Forms.PictureBox();
             this.oldSecurityKey_txt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.showPasswordChar_btn = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.oldPassword_txt = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clearHistory_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginHistoryDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordChar_btn)).BeginInit();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showSecurityChar_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showPasswordChar_btn)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -163,27 +163,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label8.Size = new System.Drawing.Size(113, 20);
             this.label8.TabIndex = 34;
             this.label8.Text = "Identification #:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(21, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "New Security Key:";
-            // 
-            // newSecurityKey_txt
-            // 
-            this.newSecurityKey_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newSecurityKey_txt.Location = new System.Drawing.Point(152, 88);
-            this.newSecurityKey_txt.Name = "newSecurityKey_txt";
-            this.newSecurityKey_txt.PasswordChar = '•';
-            this.newSecurityKey_txt.Size = new System.Drawing.Size(528, 27);
-            this.newSecurityKey_txt.TabIndex = 32;
             // 
             // label7
             // 
@@ -286,6 +265,27 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.firstName_txt.Size = new System.Drawing.Size(561, 27);
             this.firstName_txt.TabIndex = 16;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(21, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 20);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "New Security Key:";
+            // 
+            // newSecurityKey_txt
+            // 
+            this.newSecurityKey_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSecurityKey_txt.Location = new System.Drawing.Point(152, 88);
+            this.newSecurityKey_txt.Name = "newSecurityKey_txt";
+            this.newSecurityKey_txt.PasswordChar = '•';
+            this.newSecurityKey_txt.Size = new System.Drawing.Size(528, 27);
+            this.newSecurityKey_txt.TabIndex = 32;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -315,30 +315,30 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // loginHistoryDataGrid
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
-            this.loginHistoryDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(223)))), ((int)(((byte)(251)))));
+            this.loginHistoryDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.loginHistoryDataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.loginHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.loginHistoryDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.loginHistoryDataGrid.ColumnHeadersHeight = 15;
             this.loginHistoryDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.loginHistoryDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.loginHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(233)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.loginHistoryDataGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.loginHistoryDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.loginHistoryDataGrid.Location = new System.Drawing.Point(13, 9);
             this.loginHistoryDataGrid.Name = "loginHistoryDataGrid";
@@ -367,6 +367,18 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.loginHistoryDataGrid.ThemeStyle.RowsStyle.Height = 22;
             this.loginHistoryDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.loginHistoryDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "date";
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "time";
+            this.Column2.HeaderText = "Time";
+            this.Column2.Name = "Column2";
             // 
             // label9
             // 
@@ -541,6 +553,35 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label5.TabIndex = 53;
             this.label5.Text = "Username:";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel4.Controls.Add(this.clearHistory_btn);
+            this.panel4.Controls.Add(this.loginHistoryDataGrid);
+            this.panel4.Location = new System.Drawing.Point(204, 423);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(535, 384);
+            this.panel4.TabIndex = 64;
+            // 
+            // clearHistory_btn
+            // 
+            this.clearHistory_btn.BorderRadius = 3;
+            this.clearHistory_btn.BorderThickness = 1;
+            this.clearHistory_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.clearHistory_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.clearHistory_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.clearHistory_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.clearHistory_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.clearHistory_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearHistory_btn.ForeColor = System.Drawing.Color.White;
+            this.clearHistory_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clearHistory_btn.Location = new System.Drawing.Point(387, 349);
+            this.clearHistory_btn.Name = "clearHistory_btn";
+            this.clearHistory_btn.Size = new System.Drawing.Size(135, 27);
+            this.clearHistory_btn.TabIndex = 63;
+            this.clearHistory_btn.Text = "CLEAR HISTORY";
+            this.clearHistory_btn.Click += new System.EventHandler(this.clearHistory_btn_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -569,6 +610,38 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox2.Size = new System.Drawing.Size(693, 207);
             this.guna2GroupBox2.TabIndex = 63;
             this.guna2GroupBox2.Text = "Log-in Credentials";
+            // 
+            // showPasswordChar_btn
+            // 
+            this.showPasswordChar_btn.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordChar_btn.Image")));
+            this.showPasswordChar_btn.Location = new System.Drawing.Point(649, 2);
+            this.showPasswordChar_btn.Name = "showPasswordChar_btn";
+            this.showPasswordChar_btn.Size = new System.Drawing.Size(41, 34);
+            this.showPasswordChar_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.showPasswordChar_btn.TabIndex = 69;
+            this.showPasswordChar_btn.TabStop = false;
+            this.showPasswordChar_btn.Click += new System.EventHandler(this.showPasswordChar_btn_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(41, 95);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 20);
+            this.label19.TabIndex = 68;
+            this.label19.Text = "Old Password:";
+            // 
+            // oldPassword_txt
+            // 
+            this.oldPassword_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oldPassword_txt.Location = new System.Drawing.Point(152, 92);
+            this.oldPassword_txt.Name = "oldPassword_txt";
+            this.oldPassword_txt.PasswordChar = '•';
+            this.oldPassword_txt.Size = new System.Drawing.Size(528, 27);
+            this.oldPassword_txt.TabIndex = 67;
             // 
             // label10
             // 
@@ -703,79 +776,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label18.TabIndex = 66;
             this.label18.Text = "Old Security Key:";
             // 
-            // showPasswordChar_btn
-            // 
-            this.showPasswordChar_btn.Image = ((System.Drawing.Image)(resources.GetObject("showPasswordChar_btn.Image")));
-            this.showPasswordChar_btn.Location = new System.Drawing.Point(649, 2);
-            this.showPasswordChar_btn.Name = "showPasswordChar_btn";
-            this.showPasswordChar_btn.Size = new System.Drawing.Size(41, 34);
-            this.showPasswordChar_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.showPasswordChar_btn.TabIndex = 69;
-            this.showPasswordChar_btn.TabStop = false;
-            this.showPasswordChar_btn.Click += new System.EventHandler(this.showPasswordChar_btn_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(41, 95);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 20);
-            this.label19.TabIndex = 68;
-            this.label19.Text = "Old Password:";
-            // 
-            // oldPassword_txt
-            // 
-            this.oldPassword_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldPassword_txt.Location = new System.Drawing.Point(152, 92);
-            this.oldPassword_txt.Name = "oldPassword_txt";
-            this.oldPassword_txt.PasswordChar = '•';
-            this.oldPassword_txt.Size = new System.Drawing.Size(528, 27);
-            this.oldPassword_txt.TabIndex = 67;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "date";
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "time";
-            this.Column2.HeaderText = "Time";
-            this.Column2.Name = "Column2";
-            // 
-            // clearHistory_btn
-            // 
-            this.clearHistory_btn.BorderRadius = 3;
-            this.clearHistory_btn.BorderThickness = 1;
-            this.clearHistory_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.clearHistory_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.clearHistory_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.clearHistory_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.clearHistory_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.clearHistory_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearHistory_btn.ForeColor = System.Drawing.Color.White;
-            this.clearHistory_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clearHistory_btn.Location = new System.Drawing.Point(387, 349);
-            this.clearHistory_btn.Name = "clearHistory_btn";
-            this.clearHistory_btn.Size = new System.Drawing.Size(135, 27);
-            this.clearHistory_btn.TabIndex = 63;
-            this.clearHistory_btn.Text = "CLEAR HISTORY";
-            this.clearHistory_btn.Click += new System.EventHandler(this.clearHistory_btn_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel4.Controls.Add(this.clearHistory_btn);
-            this.panel4.Controls.Add(this.loginHistoryDataGrid);
-            this.panel4.Location = new System.Drawing.Point(204, 423);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(535, 384);
-            this.panel4.TabIndex = 64;
-            // 
             // AdminAccountSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,14 +794,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPasswordChar_btn)).EndInit();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showSecurityChar_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showPasswordChar_btn)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

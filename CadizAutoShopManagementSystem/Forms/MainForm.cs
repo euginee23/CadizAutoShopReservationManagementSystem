@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Configs;
 using CadizAutoShopManagementSystem.UserControlForms;
+using MySql.Data.MySqlClient;
 
 namespace CadizAutoShopManagementSystem
 {
@@ -29,16 +31,52 @@ namespace CadizAutoShopManagementSystem
 
         private void UpdateButtonVisibility()
         {
-            if (userRole == "Employee")
+            if (userRole == "Admin")
             {
-                dashboard_btn.Enabled = false;
+                dashboard_btn.Enabled = true;
                 reservations_btn.Enabled = true;
-                mechanicReg_btn.Enabled = false;
-                servicesMng_btn.Enabled = false;
+                mechanicReg_btn.Enabled = true;
+                servicesMng_btn.Enabled = true;
                 inventoryMng_btn.Enabled = true;
                 soldParts_btn.Enabled = true;
+                localService_btn.Enabled = true;
+                localReservation_btn.Enabled = true;
+                report_btn.Enabled = true;
                 billing_btn.Enabled = true;
-                settings_btn.Enabled = false;
+                settings_btn.Enabled = true;
+            }
+            else
+            {
+                try
+                {
+                    using (MySqlConnection connection = DatabaseManager.GetConnection())
+                    {
+                        connection.Open();
+
+                        string query = "SELECT * FROM user_access WHERE user_id = @userId";
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@userId", LoggedInUser.UserId);
+                        MySqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            dashboard_btn.Enabled = Convert.ToBoolean(reader["dashboard"]);
+                            reservations_btn.Enabled = Convert.ToBoolean(reader["reservations"]);
+                            mechanicReg_btn.Enabled = Convert.ToBoolean(reader["manage_mechanics"]);
+                            servicesMng_btn.Enabled = Convert.ToBoolean(reader["manage_services"]);
+                            inventoryMng_btn.Enabled = Convert.ToBoolean(reader["manage_inventory"]);
+                            soldParts_btn.Enabled = Convert.ToBoolean(reader["sell_parts"]);
+                            localService_btn.Enabled = Convert.ToBoolean(reader["local_service"]);
+                            localReservation_btn.Enabled = Convert.ToBoolean(reader["local_reservation"]);
+                            report_btn.Enabled = Convert.ToBoolean(reader["reports"]);
+                            billing_btn.Enabled = Convert.ToBoolean(reader["billing"]);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while retrieving user access permissions: " + ex.Message);
+                }
             }
         }
 
@@ -114,7 +152,7 @@ namespace CadizAutoShopManagementSystem
 
         private void settings_btn_Click(object sender, EventArgs e)
         {
-            SettingsForm settings = new SettingsForm();
+            SettingsForm settings = new SettingsForm(userRole);
             addUserControl(settings);
         }
 
