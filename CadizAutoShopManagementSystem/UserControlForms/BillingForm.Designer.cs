@@ -72,7 +72,7 @@
             this.partsBilling_btn.Name = "partsBilling_btn";
             this.partsBilling_btn.Size = new System.Drawing.Size(183, 50);
             this.partsBilling_btn.TabIndex = 4;
-            this.partsBilling_btn.Text = "PARTS BILLING";
+            this.partsBilling_btn.Text = "PARTS";
             this.partsBilling_btn.Click += new System.EventHandler(this.partsBilling_btn_Click);
             // 
             // reservationBilling_btn
@@ -90,7 +90,7 @@
             this.reservationBilling_btn.Name = "reservationBilling_btn";
             this.reservationBilling_btn.Size = new System.Drawing.Size(183, 51);
             this.reservationBilling_btn.TabIndex = 5;
-            this.reservationBilling_btn.Text = "RERVATION BILLING";
+            this.reservationBilling_btn.Text = "RESERVATIONS";
             this.reservationBilling_btn.Click += new System.EventHandler(this.reservationBilling_btn_Click);
             // 
             // panel1
@@ -120,7 +120,7 @@
             this.serviceBilling_btn.Name = "serviceBilling_btn";
             this.serviceBilling_btn.Size = new System.Drawing.Size(183, 50);
             this.serviceBilling_btn.TabIndex = 6;
-            this.serviceBilling_btn.Text = "SERVICE BILLING";
+            this.serviceBilling_btn.Text = "SERVICES";
             this.serviceBilling_btn.Click += new System.EventHandler(this.serviceBilling_btn_Click);
             // 
             // BillingForm

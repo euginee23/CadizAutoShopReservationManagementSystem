@@ -165,6 +165,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(totalPrice_txt.Text))
+                {
+                    MessageBox.Show("Please add parts to the cart before proceeding to billing queue.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -213,7 +219,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving parts to billing queue: {ex.Message}");
+                MessageBox.Show($"Error saving parts to billing queue: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

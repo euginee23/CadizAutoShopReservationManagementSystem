@@ -257,6 +257,12 @@
     <Compile Include="Forms\PartsInvoiceForm.Designer.cs">
       <DependentUpon>PartsInvoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceInvoiceForm.Designer.cs">
+      <DependentUpon>ServiceInvoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\PersonnelModel.cs" />
     <Compile Include="Program.cs" />
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PartsInvoiceForm.resx">
       <DependentUpon>PartsInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServiceInvoiceForm.resx">
+      <DependentUpon>ServiceInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

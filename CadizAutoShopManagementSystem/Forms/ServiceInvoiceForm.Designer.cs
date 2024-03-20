@@ -1,7 +1,7 @@
 ﻿
 namespace CadizAutoShopManagementSystem.Forms
 {
-    partial class InvoiceForm
+    partial class ServiceInvoiceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceForm));
-            this.panelPrint = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceInvoiceForm));
+            this.billing_button = new Guna.UI2.WinForms.Guna2Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -39,12 +39,12 @@ namespace CadizAutoShopManagementSystem.Forms
             this.extraExpenseReason_lbl = new System.Windows.Forms.Label();
             this.serviceType_lbl = new System.Windows.Forms.Label();
             this.customerName_lbl = new System.Windows.Forms.Label();
-            this.reservationId_lbl = new System.Windows.Forms.Label();
+            this.localServiceId_lbl = new System.Windows.Forms.Label();
             this.billingId_lbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,42 +54,31 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.billing_button = new Guna.UI2.WinForms.Guna2Button();
-            this.panelPrint.SuspendLayout();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panelPrint = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPrint.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelPrint
+            // billing_button
             // 
-            this.panelPrint.Controls.Add(this.label23);
-            this.panelPrint.Controls.Add(this.label22);
-            this.panelPrint.Controls.Add(this.label20);
-            this.panelPrint.Controls.Add(this.totalCost_lbl);
-            this.panelPrint.Controls.Add(this.extraExpenseCost_lbl);
-            this.panelPrint.Controls.Add(this.extraExpenseReason_lbl);
-            this.panelPrint.Controls.Add(this.serviceType_lbl);
-            this.panelPrint.Controls.Add(this.customerName_lbl);
-            this.panelPrint.Controls.Add(this.reservationId_lbl);
-            this.panelPrint.Controls.Add(this.billingId_lbl);
-            this.panelPrint.Controls.Add(this.label8);
-            this.panelPrint.Controls.Add(this.label9);
-            this.panelPrint.Controls.Add(this.label10);
-            this.panelPrint.Controls.Add(this.label11);
-            this.panelPrint.Controls.Add(this.label12);
-            this.panelPrint.Controls.Add(this.label13);
-            this.panelPrint.Controls.Add(this.label4);
-            this.panelPrint.Controls.Add(this.label3);
-            this.panelPrint.Controls.Add(this.label7);
-            this.panelPrint.Controls.Add(this.label6);
-            this.panelPrint.Controls.Add(this.label5);
-            this.panelPrint.Controls.Add(this.label2);
-            this.panelPrint.Controls.Add(this.label1);
-            this.panelPrint.Location = new System.Drawing.Point(29, 58);
-            this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(817, 885);
-            this.panelPrint.TabIndex = 0;
+            this.billing_button.BorderRadius = 12;
+            this.billing_button.BorderThickness = 1;
+            this.billing_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.billing_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.billing_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.billing_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.billing_button.FillColor = System.Drawing.Color.Green;
+            this.billing_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billing_button.ForeColor = System.Drawing.Color.White;
+            this.billing_button.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.billing_button.Location = new System.Drawing.Point(618, 949);
+            this.billing_button.Name = "billing_button";
+            this.billing_button.Size = new System.Drawing.Size(227, 45);
+            this.billing_button.TabIndex = 45;
+            this.billing_button.Text = "BILL";
+            this.billing_button.Click += new System.EventHandler(this.billing_button_Click);
             // 
             // label23
             // 
@@ -171,15 +160,15 @@ namespace CadizAutoShopManagementSystem.Forms
             this.customerName_lbl.TabIndex = 14;
             this.customerName_lbl.Text = "?";
             // 
-            // reservationId_lbl
+            // localServiceId_lbl
             // 
-            this.reservationId_lbl.AutoSize = true;
-            this.reservationId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationId_lbl.Location = new System.Drawing.Point(342, 270);
-            this.reservationId_lbl.Name = "reservationId_lbl";
-            this.reservationId_lbl.Size = new System.Drawing.Size(16, 20);
-            this.reservationId_lbl.TabIndex = 14;
-            this.reservationId_lbl.Text = "?";
+            this.localServiceId_lbl.AutoSize = true;
+            this.localServiceId_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.localServiceId_lbl.Location = new System.Drawing.Point(342, 270);
+            this.localServiceId_lbl.Name = "localServiceId_lbl";
+            this.localServiceId_lbl.Size = new System.Drawing.Size(16, 20);
+            this.localServiceId_lbl.TabIndex = 14;
+            this.localServiceId_lbl.Text = "?";
             // 
             // billingId_lbl
             // 
@@ -211,6 +200,17 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label9.TabIndex = 9;
             this.label9.Text = "EXTRA COST REASON:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(794, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.print_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -221,25 +221,15 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label10.TabIndex = 10;
             this.label10.Text = "SERVICE DONE:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(188, 304);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 20);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "CUSTOMER NAME:";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(199, 270);
+            this.label12.Location = new System.Drawing.Point(235, 270);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 20);
+            this.label12.Size = new System.Drawing.Size(86, 20);
             this.label12.TabIndex = 12;
-            this.label12.Text = "RESERVATION ID:";
+            this.label12.Text = "SERVICE ID:";
             // 
             // label13
             // 
@@ -325,66 +315,73 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "CADIZ AUTO REPAIR SHOP";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(795, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.print_Click);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(740, 21);
+            this.label24.Location = new System.Drawing.Point(739, 21);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(49, 20);
-            this.label24.TabIndex = 17;
+            this.label24.TabIndex = 44;
             this.label24.Text = "PRINT";
             // 
-            // billing_button
+            // label11
             // 
-            this.billing_button.BorderRadius = 12;
-            this.billing_button.BorderThickness = 1;
-            this.billing_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.billing_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.billing_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.billing_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.billing_button.FillColor = System.Drawing.Color.Green;
-            this.billing_button.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billing_button.ForeColor = System.Drawing.Color.White;
-            this.billing_button.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.billing_button.Location = new System.Drawing.Point(619, 949);
-            this.billing_button.Name = "billing_button";
-            this.billing_button.Size = new System.Drawing.Size(227, 45);
-            this.billing_button.TabIndex = 41;
-            this.billing_button.Text = "BILL";
-            this.billing_button.Click += new System.EventHandler(this.billing_button_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(188, 304);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "CUSTOMER NAME:";
             // 
-            // InvoiceForm
+            // panelPrint
+            // 
+            this.panelPrint.Controls.Add(this.label23);
+            this.panelPrint.Controls.Add(this.label22);
+            this.panelPrint.Controls.Add(this.label20);
+            this.panelPrint.Controls.Add(this.totalCost_lbl);
+            this.panelPrint.Controls.Add(this.extraExpenseCost_lbl);
+            this.panelPrint.Controls.Add(this.extraExpenseReason_lbl);
+            this.panelPrint.Controls.Add(this.serviceType_lbl);
+            this.panelPrint.Controls.Add(this.customerName_lbl);
+            this.panelPrint.Controls.Add(this.localServiceId_lbl);
+            this.panelPrint.Controls.Add(this.billingId_lbl);
+            this.panelPrint.Controls.Add(this.label8);
+            this.panelPrint.Controls.Add(this.label9);
+            this.panelPrint.Controls.Add(this.label10);
+            this.panelPrint.Controls.Add(this.label11);
+            this.panelPrint.Controls.Add(this.label12);
+            this.panelPrint.Controls.Add(this.label13);
+            this.panelPrint.Controls.Add(this.label4);
+            this.panelPrint.Controls.Add(this.label3);
+            this.panelPrint.Controls.Add(this.label7);
+            this.panelPrint.Controls.Add(this.label6);
+            this.panelPrint.Controls.Add(this.label5);
+            this.panelPrint.Controls.Add(this.label2);
+            this.panelPrint.Controls.Add(this.label1);
+            this.panelPrint.Location = new System.Drawing.Point(28, 58);
+            this.panelPrint.Name = "panelPrint";
+            this.panelPrint.Size = new System.Drawing.Size(817, 885);
+            this.panelPrint.TabIndex = 42;
+            // 
+            // ServiceInvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 1006);
             this.Controls.Add(this.billing_button);
-            this.Controls.Add(this.label24);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.panelPrint);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "InvoiceForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Name = "ServiceInvoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reservation Invoice";
+            this.Text = "Service Invoice";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,7 +389,23 @@ namespace CadizAutoShopManagementSystem.Forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panelPrint;
+        private Guna.UI2.WinForms.Guna2Button billing_button;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label totalCost_lbl;
+        private System.Windows.Forms.Label extraExpenseCost_lbl;
+        private System.Windows.Forms.Label extraExpenseReason_lbl;
+        private System.Windows.Forms.Label serviceType_lbl;
+        private System.Windows.Forms.Label customerName_lbl;
+        private System.Windows.Forms.Label localServiceId_lbl;
+        private System.Windows.Forms.Label billingId_lbl;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
@@ -400,24 +413,8 @@ namespace CadizAutoShopManagementSystem.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label extraExpenseCost_lbl;
-        private System.Windows.Forms.Label extraExpenseReason_lbl;
-        private System.Windows.Forms.Label serviceType_lbl;
-        private System.Windows.Forms.Label customerName_lbl;
-        private System.Windows.Forms.Label reservationId_lbl;
-        private System.Windows.Forms.Label billingId_lbl;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label totalCost_lbl;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2Button billing_button;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panelPrint;
     }
 }
