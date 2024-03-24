@@ -19,8 +19,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         public ServicesManagementForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             LoadServicesData();
+            CloseLoadingForm();
         }
 
         private void ServicesManagementForm_Load(object sender, EventArgs e)
@@ -49,7 +51,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
             try
             {
-                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -63,7 +64,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         servicesDataGrid.DataSource = dataTable;
                     }
                 }
-                CloseLoadingForm();
             }
             catch (Exception ex)
             {
