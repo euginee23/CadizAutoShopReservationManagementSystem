@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace CadizAutoShopManagementSystem.Forms
     public partial class PartsInvoiceForm : Form
     {
         private Panel panelToPrint;
+        private LoadingStateForm loadingForm;
 
         public PartsInvoiceForm(string customerName, string customerAddress, string transactionId, string totalCost, List<PartsBillingInfo> partsData)
         {
@@ -36,6 +38,20 @@ namespace CadizAutoShopManagementSystem.Forms
             }
 
             panelToPrint = panelPrint;
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // BITMAP PANEL TO IMAGE
@@ -83,6 +99,7 @@ namespace CadizAutoShopManagementSystem.Forms
                 bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] receiptImage = ms.ToArray();
 
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -120,8 +137,9 @@ namespace CadizAutoShopManagementSystem.Forms
                 {
                     print_btn_Click(sender, e);
                 }
-
+                CloseLoadingForm();
                 MessageBox.Show("TRANSACTION COMPLETE.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {

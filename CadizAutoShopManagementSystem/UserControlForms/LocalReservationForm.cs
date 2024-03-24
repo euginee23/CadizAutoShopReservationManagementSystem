@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class LocalReservationForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public LocalReservationForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
 
             dateTime_picker.Format = DateTimePickerFormat.Custom;
@@ -25,6 +29,21 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             PopulateVehicleTypeComboBox();
 
             LoadServices();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateMakeComboBox()
@@ -146,6 +165,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 try
                 {
+                    ShowLoadingForm();
                     connection.Open();
 
                     string customerInfoQuery = "INSERT INTO customer_info (firstName, middleName, lastName, email, address, contactNumber) VALUES (@FirstName, @MiddleName, @LastName, @Email, @Address, @ContactNumber); SELECT LAST_INSERT_ID();";
@@ -201,6 +221,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             }
                         }
                     }
+                    CloseLoadingForm();
                 }
                 catch (Exception ex)
                 {

@@ -1,4 +1,5 @@
-﻿using CadizAutoShopManagementSystem.Forms;
+﻿using CadizAutoShopManagementSystem.Components;
+using CadizAutoShopManagementSystem.Forms;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class ReservationBillingForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public ReservationBillingForm()
         {
             InitializeComponent();
@@ -22,7 +25,23 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void ReservationBillingForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             LoadReservationsBillingQueueData();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void LoadReservationsBillingQueueData()

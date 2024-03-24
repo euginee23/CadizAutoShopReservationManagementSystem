@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,13 +19,29 @@ namespace CadizAutoShopManagementSystem.Forms
         private decimal laborCost;
         private int localServiceId;
         private decimal extraExpenses = 0;
-
+        private LoadingStateForm loadingForm;
         public LocalServicesDoneForm(int localServiceId)
         {
+            ShowLoadingForm();
             InitializeComponent();
             this.localServiceId = localServiceId;
             RetrieveServiceDetails();
             CalculateTotalPrice();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void RetrieveServiceDetails()
@@ -106,6 +123,7 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -171,6 +189,7 @@ namespace CadizAutoShopManagementSystem.Forms
                     MessageBox.Show("Billing information added to queue successfully!");
                     this.Close();
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

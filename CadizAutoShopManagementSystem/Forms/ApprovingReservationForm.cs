@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CadizAutoShopManagementSystem.UserControlForms;
 using static CadizAutoShopManagementSystem.UserControlForms.LocalService;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.Forms
 {
     public partial class ApprovingReservationForm : Form
     {
+        private LoadingStateForm loadingForm;
+
         private int reservationId;
 
         public ApprovingReservationForm(int reservationId)
@@ -24,6 +27,20 @@ namespace CadizAutoShopManagementSystem.Forms
             reservationId_txt.Text = reservationId.ToString();
             PopulateReservationDetails(reservationId);
             PopulateMechanicComboBox();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateReservationDetails(int reservationId)
@@ -134,6 +151,7 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             try
             {
+                ShowLoadingForm();
                 MechanicItem selectedMechanic = selectMechanic_cmbx.SelectedItem as MechanicItem;
 
                 if (selectedMechanic == null)
@@ -160,6 +178,7 @@ namespace CadizAutoShopManagementSystem.Forms
 
                 MessageBox.Show("Reservation approved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

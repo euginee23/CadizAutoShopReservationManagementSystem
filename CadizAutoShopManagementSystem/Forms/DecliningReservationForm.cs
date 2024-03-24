@@ -1,4 +1,5 @@
-﻿ using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,31 @@ namespace CadizAutoShopManagementSystem.Forms
     public partial class DecliningReservationForm : Form
     {
         private int reservationId;
+        private LoadingStateForm loadingForm;
 
         public DecliningReservationForm(int reservationId)
         {
+            ShowLoadingForm();
             InitializeComponent();
 
             this.reservationId = reservationId;
             reservationId_txt.Text = reservationId.ToString();
             PopulateReservationDetails(reservationId);
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateReservationDetails(int reservationId)
@@ -70,6 +88,7 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -85,6 +104,7 @@ namespace CadizAutoShopManagementSystem.Forms
 
                 MessageBox.Show("Reservation declined successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

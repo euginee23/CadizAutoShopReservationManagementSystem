@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace CadizAutoShopManagementSystem.Forms
     {
         private int mechanic_Id;
         private decimal totalPayoutAmount = 0;
+        private LoadingStateForm loadingForm;
 
         public MechanicProfileForm(int mechanicId)
         {
@@ -27,8 +29,23 @@ namespace CadizAutoShopManagementSystem.Forms
 
         private void MechanicProfileForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             RetrieveMechanicInfo();
             RetrieveWorkHistory();
+            CloseLoadingForm();
+        }
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void RetrieveMechanicInfo()

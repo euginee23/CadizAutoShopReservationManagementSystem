@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using CadizAutoShopManagementSystem.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,6 +15,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class LocalService : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public LocalService()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void LocalService_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             LoadStatusFilter();
             LoadMechanics();
             LoadServices();
@@ -31,7 +35,23 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             PopulateMakeComboBox();
             PopulateFuelComboBox();
             PopulateVehicleTypeComboBox();
+            CloseLoadingForm();
         }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
+        }
+
 
         private void GetDataForLocalService(int localServiceId)
         {

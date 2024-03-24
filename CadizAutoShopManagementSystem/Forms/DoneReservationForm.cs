@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using MySql.Data.MySqlClient;
 
 namespace CadizAutoShopManagementSystem.Forms
@@ -17,6 +18,7 @@ namespace CadizAutoShopManagementSystem.Forms
         private int reservationId;
         private decimal laborCost;
         private decimal extraExpenses = 0;
+        private LoadingStateForm loadingForm;
 
         public DoneReservationForm(int reservationId)
         {
@@ -26,8 +28,24 @@ namespace CadizAutoShopManagementSystem.Forms
 
         private void DoneReservationForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             RetrieveReservationDetails();
             CalculateTotalPrice();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // RETRIEVAL OF RESERVATION DETAILS

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class DashboardForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public DashboardForm()
         {
             InitializeComponent();
@@ -21,10 +24,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             LoadReservationData();
             LoadPartsData();
             LoadMechanicData();
             LoadReservationStatusData();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         //SERVICES ON RESERVATION CHART

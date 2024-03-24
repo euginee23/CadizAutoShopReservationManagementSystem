@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using CadizAutoShopManagementSystem.Components;
+using ClosedXML.Excel;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,27 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class LogInReportsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
         public LogInReportsForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             PopulateLoginHistory();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateLoginHistory()
@@ -54,6 +72,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -74,6 +93,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         }
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

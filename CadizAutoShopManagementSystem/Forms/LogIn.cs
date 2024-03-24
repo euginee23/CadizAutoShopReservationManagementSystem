@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using CadizAutoShopManagementSystem.Configs;
 using CadizAutoShopManagementSystem.UserControlForms;
 using MySql.Data.MySqlClient;
@@ -27,6 +28,27 @@ namespace CadizAutoShopManagementSystem
                     Login_btn_Click(sender, e);
                 }
             };
+        }
+
+        private void ShowLoadingForm()
+        {
+            LoadingStateForm loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is LoadingStateForm)
+                {
+                    form.Close();
+                    break;
+                }
+            }
         }
 
         //RETRIEVING THE USER ROLE UPON LOGIN
@@ -116,7 +138,7 @@ namespace CadizAutoShopManagementSystem
         {
             string username = username_txt.Text;
             string password = password_txt.Text;
-
+            ShowLoadingForm();
             int userId = GetUserId(username, password);
 
             if (userId != -1)
@@ -146,6 +168,7 @@ namespace CadizAutoShopManagementSystem
             {
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
+            CloseLoadingForm();
         }
 
         // CLOSE THE APPLICATION PROPERLY WHEN CLOSING THE LOGIN FORM

@@ -14,6 +14,8 @@ namespace CadizAutoShopManagementSystem.Components
 {
     public partial class EnterSecurityKeyForm : Form
     {
+        private LoadingStateForm loadingForm;
+
         public EnterSecurityKeyForm()
         {
             InitializeComponent();
@@ -25,6 +27,20 @@ namespace CadizAutoShopManagementSystem.Components
                     continue_btn_Click(sender, e);
                 }
             };
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void continue_btn_Click(object sender, EventArgs e)
@@ -48,6 +64,7 @@ namespace CadizAutoShopManagementSystem.Components
             string securityKey = null;
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -58,6 +75,7 @@ namespace CadizAutoShopManagementSystem.Components
                         securityKey = cmd.ExecuteScalar()?.ToString();
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

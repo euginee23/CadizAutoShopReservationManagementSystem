@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using MySql.Data.MySqlClient;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class SoldPartsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public SoldPartsForm()
         {
             InitializeComponent();
@@ -21,10 +24,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void SoldPartsForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             LoadPartsData();
             transactionId_txt.Text = GenerateTransactionId();
             quantity_txt.Text = "1";
             PopulateCarModelsComboBox();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // FILL THE DATA GRID WITH PARTS FROM THE INVENTORY

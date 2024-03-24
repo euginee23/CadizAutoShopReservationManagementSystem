@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using CadizAutoShopManagementSystem.Configs;
 using MySql.Data.MySqlClient;
 
@@ -14,12 +15,30 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class PersonnelAccountSettingsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public PersonnelAccountSettingsForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             DisplayLoggedInUserId();
             PopulateUserInfo();
             PopulateLoginHistory();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // DISPLAYING LOGGED-IN ID

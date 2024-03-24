@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class InventoryManagementForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public InventoryManagementForm()
         {
             InitializeComponent();
@@ -24,6 +27,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private void InventoryManagementForm_Load(object sender, EventArgs e)
         {
             LoadPartsData();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateMakeComboBox()
@@ -77,6 +94,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                ShowLoadingForm();
+
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -91,6 +110,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         partsDataGrid.DataSource = dataTable;
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -102,6 +122,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -118,6 +139,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         partsDataGrid.DataSource = dataTable;
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -154,6 +176,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                ShowLoadingForm();
+
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -177,6 +201,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     MessageBox.Show("Part added successfully!");
                     LoadPartsData();
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -189,6 +214,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -226,6 +252,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         MessageBox.Show("No part found with the specified Part ID.");
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

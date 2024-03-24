@@ -11,18 +11,22 @@ using MySql.Data.MySqlClient;
 using CadizAutoShopManagementSystem.Models;
 using System.Security.Cryptography;
 using CadizAutoShopManagementSystem.Configs;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class AdminAccountSettingForm : UserControl
     {
+        private LoadingStateForm loadingForm;
 
         public AdminAccountSettingForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             DisplayLoggedInUserId();
             PopulateUserInfo();
             PopulateLoginHistory();
+            CloseLoadingForm();
         }
 
         private void DisplayLoggedInUserId()
@@ -36,6 +40,21 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 login_lbl.Text = "No user logged in";
             }
         }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
+        }
+
 
 
         private void generate_btn_Click(object sender, EventArgs e)

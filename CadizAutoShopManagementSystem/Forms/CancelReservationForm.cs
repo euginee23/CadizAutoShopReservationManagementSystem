@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace CadizAutoShopManagementSystem.Forms
 {
     public partial class CancelReservationForm : Form
     {
+        private LoadingStateForm loadingForm;
+
         private int reservationId;
 
         public CancelReservationForm(int reservationId)
@@ -20,6 +23,20 @@ namespace CadizAutoShopManagementSystem.Forms
             InitializeComponent();
             this.reservationId = reservationId;
             reservationId_txt.Text = reservationId.ToString();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -34,6 +51,8 @@ namespace CadizAutoShopManagementSystem.Forms
 
             try
             {
+                ShowLoadingForm();
+
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -52,6 +71,7 @@ namespace CadizAutoShopManagementSystem.Forms
 
                 MessageBox.Show("Reservation has been cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

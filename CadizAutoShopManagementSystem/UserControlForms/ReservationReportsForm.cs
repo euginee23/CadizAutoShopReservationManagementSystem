@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using CadizAutoShopManagementSystem.Components;
+using ClosedXML.Excel;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,13 +15,31 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class ReservationReportsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public ReservationReportsForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             PopulateReservations();
             PopulateMechanicComboBox();
             PopulateStatusComboBox();
             PopulateServiceTypeComboBox();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void PopulateMechanicComboBox()

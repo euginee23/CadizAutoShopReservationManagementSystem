@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,10 @@ namespace CadizAutoShopManagementSystem.Forms
     public partial class InvoiceForm : Form
     {
         private Panel panelToPrint;
-
+        private LoadingStateForm loadingForm;
         public InvoiceForm(string reservationId, string billingId, string customerName, string serviceType, string extraExpenseReason, string extraExpenseCost, string totalCost)
         {
+            ShowLoadingForm();
             InitializeComponent();
             panelToPrint = panelPrint;
 
@@ -30,6 +32,21 @@ namespace CadizAutoShopManagementSystem.Forms
             extraExpenseReason_lbl.Text = extraExpenseReason;
             extraExpenseCost_lbl.Text = extraExpenseCost;
             totalCost_lbl.Text = totalCost;
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // BITMAP PANEL TO IMAGE
@@ -57,6 +74,7 @@ namespace CadizAutoShopManagementSystem.Forms
         {
             try
             {
+                ShowLoadingForm();
                 MemoryStream ms = new MemoryStream();
 
                 Bitmap bitmap = new Bitmap(panelToPrint.Width, panelToPrint.Height);
@@ -112,6 +130,7 @@ namespace CadizAutoShopManagementSystem.Forms
                         MessageBox.Show("TRANSACTION COMPLETE.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {

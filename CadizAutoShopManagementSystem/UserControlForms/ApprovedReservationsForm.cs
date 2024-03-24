@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CadizAutoShopManagementSystem.Components;
 using CadizAutoShopManagementSystem.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,6 +15,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class ApprovedReservationsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public ApprovedReservationsForm()
         {
             InitializeComponent();
@@ -22,10 +25,27 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         //FORM LOAD
         private void ApprovedReservationsForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             LoadApprovedReservationsData();
             PopulateMechanicComboBox();
             PopulateServicesComboBox();
+            CloseLoadingForm();
         }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
+        }
+
 
         //LOAD DATA FROM DATABASE
         private void LoadApprovedReservationsData()

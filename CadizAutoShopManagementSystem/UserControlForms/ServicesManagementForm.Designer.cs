@@ -365,7 +365,7 @@
             dataGridViewCellStyle3.Format = "C0";
             dataGridViewCellStyle3.NullValue = null;
             this.laborCost_column.DefaultCellStyle = dataGridViewCellStyle3;
-            this.laborCost_column.HeaderText = "LABORT COST";
+            this.laborCost_column.HeaderText = "LABOR COST";
             this.laborCost_column.Name = "laborCost_column";
             this.laborCost_column.ReadOnly = true;
             this.laborCost_column.Width = 200;

@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CadizAutoShopManagementSystem.Forms;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class PendingReservationsForms : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         private MySqlConnection connection;
 
         public PendingReservationsForms()
@@ -23,10 +26,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void PendingReservationsFormcs_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             connection = DatabaseManager.GetConnection();
             connection.Open();
             LoadData();
             PopulateServiceComboBox();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         //DATA LOAD
@@ -34,22 +53,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
-                string query = "SELECT r.reservation_id, r.problem_description, r.date, r.time, " +
-                               "CONCAT(c.firstName, ' ', c.lastName) AS customerName, " +
-                               "s.serviceType AS serviceType, " +
-                               "CONCAT(v.make, ' ', v.model, ' ', v.year) AS vehicleName " +
-                               "FROM reservations r " +
-                               "INNER JOIN customer_info c ON r.customer_id = c.customer_id " +
-                               "INNER JOIN services s ON r.service_id = s.service_id " +
-                               "INNER JOIN customer_vehicles v ON r.vehicle_id = v.vehicle_id " +
-                               "WHERE r.status = 'Pending'";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd))
+                using (connection = DatabaseManager.GetConnection())
                 {
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-                    pendingDataGrid.DataSource = dataTable;
+                    connection.Open();
+                    string query = "SELECT r.reservation_id, r.problem_description, r.date, r.time, " +
+                                   "CONCAT(c.firstName, ' ', c.lastName) AS customerName, " +
+                                   "s.serviceType AS serviceType, " +
+                                   "CONCAT(v.make, ' ', v.model, ' ', v.year) AS vehicleName " +
+                                   "FROM reservations r " +
+                                   "INNER JOIN customer_info c ON r.customer_id = c.customer_id " +
+                                   "INNER JOIN services s ON r.service_id = s.service_id " +
+                                   "INNER JOIN customer_vehicles v ON r.vehicle_id = v.vehicle_id " +
+                                   "WHERE r.status = 'Pending'";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        pendingDataGrid.DataSource = dataTable;
+                    }
                 }
             }
             catch (Exception ex)

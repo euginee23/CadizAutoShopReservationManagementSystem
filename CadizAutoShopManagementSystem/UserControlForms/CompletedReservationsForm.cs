@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class CompletedReservationsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         private MySqlConnection connection;
 
         public CompletedReservationsForm()
@@ -24,10 +27,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         //FORM LOAD
         private void CompletedReservationsForm_Load(object sender, EventArgs e)
         {
+            ShowLoadingForm();
             connection = DatabaseManager.GetConnection();
             connection.Open();
             LoadData();
             PopulateServiceComboBox();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         //RETRIEVING OF RESERVATION WITH STATUS OF COMPLETE

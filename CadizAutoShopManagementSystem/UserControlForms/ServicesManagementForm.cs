@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class ServicesManagementForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public ServicesManagementForm()
         {
             InitializeComponent();
@@ -26,12 +29,27 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             ClearFields();
         }
 
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
+        }
+
         private void LoadServicesData()
         {
             string query = "SELECT * FROM Services";
 
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -45,6 +63,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         servicesDataGrid.DataSource = dataTable;
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -65,6 +84,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
             try
             {
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -84,6 +104,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         ClearFields();
                     }
                 }
+                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -103,6 +124,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 try
                 {
+                    ShowLoadingForm();
                     using (MySqlConnection connection = DatabaseManager.GetConnection())
                     {
                         connection.Open();
@@ -125,6 +147,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             ClearFields();
                         }
                     }
+                    CloseLoadingForm();
                 }
                 catch (Exception ex)
                 {
@@ -148,6 +171,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 try
                 {
+                    ShowLoadingForm();
                     using (MySqlConnection connection = DatabaseManager.GetConnection())
                     {
                         connection.Open();
@@ -171,6 +195,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             }
                         }
                     }
+                    CloseLoadingForm();
                 }
                 catch (Exception ex)
                 {
@@ -236,6 +261,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         try
                         {
+                            ShowLoadingForm();
                             using (MySqlConnection connection = DatabaseManager.GetConnection())
                             {
                                 connection.Open();
@@ -253,6 +279,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                                 LoadServicesData();
                                 ClearFields();
                             }
+                            CloseLoadingForm();
                         }
                         catch (Exception ex)
                         {

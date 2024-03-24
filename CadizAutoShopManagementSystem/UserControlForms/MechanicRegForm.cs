@@ -9,20 +9,40 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using CadizAutoShopManagementSystem.Forms;
+using CadizAutoShopManagementSystem.Components;
 
 namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class MechanicRegForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         private MySqlConnection connection;
 
         public MechanicRegForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             connection = DatabaseManager.GetConnection();
             LoadMechanicData();
             PopulateSpecializationComboBox();
+            CloseLoadingForm();
         }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
+        }
+
 
         private void LoadMechanicData()
         {

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace CadizAutoShopManagementSystem.Forms
     public partial class ServiceInvoiceForm : Form
     {
         private Panel panelToPrint;
+        private LoadingStateForm loadingForm;
 
         public ServiceInvoiceForm(string serviceId, string billingId, string customerName, string serviceType, string extraExpenseReason, string extraExpenseCost, string totalCost)
         {
@@ -30,6 +32,20 @@ namespace CadizAutoShopManagementSystem.Forms
             extraExpenseReason_lbl.Text = extraExpenseReason;
             extraExpenseCost_lbl.Text = extraExpenseCost;
             totalCost_lbl.Text = totalCost;
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         // BITMAP PANEL TO IMAGE
@@ -65,6 +81,7 @@ namespace CadizAutoShopManagementSystem.Forms
                 bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] receiptImage = ms.ToArray();
 
+                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -108,7 +125,7 @@ namespace CadizAutoShopManagementSystem.Forms
                         {
                             print_Click(sender, e);
                         }
-
+                        CloseLoadingForm();
                         MessageBox.Show("TRANSACTION COMPLETE.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

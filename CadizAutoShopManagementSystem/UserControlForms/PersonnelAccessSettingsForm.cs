@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CadizAutoShopManagementSystem.Components;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,28 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 {
     public partial class PersonnelAccessSettingsForm : UserControl
     {
+        private LoadingStateForm loadingForm;
+
         public PersonnelAccessSettingsForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             DisplayPersonnelInformation();
+            CloseLoadingForm();
+        }
+
+        private void ShowLoadingForm()
+        {
+            loadingForm = new LoadingStateForm();
+            loadingForm.StartPosition = FormStartPosition.CenterScreen;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
+            Application.DoEvents();
+        }
+
+        private void CloseLoadingForm()
+        {
+            loadingForm.Close();
         }
 
         private void DisplayPersonnelInformation()
