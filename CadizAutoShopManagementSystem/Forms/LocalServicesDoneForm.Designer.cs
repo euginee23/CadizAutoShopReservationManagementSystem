@@ -29,6 +29,7 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LocalServicesDoneForm));
             this.extraExpenseReason_txt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -260,9 +261,10 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Controls.Add(this.serviceTypeTextBox);
             this.Controls.Add(this.customerTextBox);
             this.Controls.Add(this.laborCostTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LocalServicesDoneForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LocalServicesDoneForm";
+            this.Text = "Service Billing";
             ((System.ComponentModel.ISupportInitialize)(this.extraExpensesNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

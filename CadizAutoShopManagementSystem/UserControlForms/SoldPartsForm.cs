@@ -23,6 +23,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             LoadPartsData();
             transactionId_txt.Text = GenerateTransactionId();
+            quantity_txt.Text = "1";
             PopulateCarModelsComboBox();
         }
 
@@ -335,6 +336,26 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             if (e.ColumnIndex == cartDeleteColumn.Index && e.RowIndex >= 0)
             {
                 cartDataGridView.Rows.RemoveAt(e.RowIndex);
+                UpdateTotalCost();
+            }
+        }
+
+        private void plus_btn_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(quantity_txt.Text, out int quantity))
+            {
+                quantity++;
+                quantity_txt.Text = quantity.ToString();
+                UpdateTotalCost();
+            }
+        }
+
+        private void minus_btn_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(quantity_txt.Text, out int quantity) && quantity > 1)
+            {
+                quantity--;
+                quantity_txt.Text = quantity.ToString();
                 UpdateTotalCost();
             }
         }

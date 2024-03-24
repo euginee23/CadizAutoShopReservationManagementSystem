@@ -41,16 +41,16 @@ namespace CadizAutoShopManagementSystem.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.specialization_lbl = new System.Windows.Forms.Label();
             this.workHistoryDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.totalPayout_lbl = new System.Windows.Forms.Label();
             this.billing_button = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.mechanicId_lbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workHistoryDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -180,6 +180,30 @@ namespace CadizAutoShopManagementSystem.Forms
             this.workHistoryDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(185)))), ((int)(((byte)(246)))));
             this.workHistoryDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "created_at";
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "workType";
+            this.Column2.HeaderText = "Work Type";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "totalCost";
+            this.Column4.HeaderText = "Total Cost";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "payAmount";
+            this.Column3.HeaderText = "Pay Amout";
+            this.Column3.Name = "Column3";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -218,6 +242,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.billing_button.Size = new System.Drawing.Size(227, 45);
             this.billing_button.TabIndex = 43;
             this.billing_button.Text = "RELEASE PAYOUT";
+            this.billing_button.Click += new System.EventHandler(this.billing_button_Click);
             // 
             // label8
             // 
@@ -246,30 +271,6 @@ namespace CadizAutoShopManagementSystem.Forms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(724, 24);
             this.panel2.TabIndex = 46;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "created_at";
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "workType";
-            this.Column2.HeaderText = "Work Type";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "totalCost";
-            this.Column4.HeaderText = "Total Cost";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "payAmount";
-            this.Column3.HeaderText = "Pay Amout";
-            this.Column3.Name = "Column3";
             // 
             // MechanicProfileForm
             // 

@@ -345,7 +345,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PartsInvoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PartsInvoiceForm";
+            this.Text = "Sell Parts Invoice";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).EndInit();

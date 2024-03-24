@@ -264,7 +264,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DoneReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DoneReservationForm";
+            this.Text = "Mark Reservation as Done";
             this.Load += new System.EventHandler(this.DoneReservationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.extraExpensesNumericUpDown)).EndInit();
             this.ResumeLayout(false);

@@ -16,11 +16,61 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         public InventoryManagementForm()
         {
             InitializeComponent();
+            PopulateCarPartsCategoriesComboBox();
+            PopulateMakeComboBox();
+            PopulateCategoryFilterCombobox();
         }
 
         private void InventoryManagementForm_Load(object sender, EventArgs e)
         {
             LoadPartsData();
+        }
+
+        private void PopulateMakeComboBox()
+        {
+            partModel_txt.Items.AddRange(new object[] { "Isuzu", "Mitsubishi", "Toyota", "Ford", "Hyundai", "Kia", "Mazda", "Nissan", "Honda", "Chevrolet", "Jeep" });
+        }
+
+        private void PopulateCarPartsCategoriesComboBox()
+        {
+            partCat_cmbx.Items.AddRange(new object[] { "Engine",
+            "Transmission",
+            "Suspension",
+            "Brakes",
+            "Electrical",
+            "Interior",
+            "Exterior",
+            "Wheels and Tires",
+            "Body",
+            "Fuel System",
+            "Exhaust System",
+            "Cooling System",
+            "Air Conditioning",
+            "Ignition System",
+            "Steering",
+            "Drive Train",
+            "Performance Upgrades", });
+        }
+
+        private void PopulateCategoryFilterCombobox()
+        {
+            filterCat_cmbx.Items.AddRange(new object[] { "Engine",
+            "Transmission",
+            "Suspension",
+            "Brakes",
+            "Electrical",
+            "Interior",
+            "Exterior",
+            "Wheels and Tires",
+            "Body",
+            "Fuel System",
+            "Exhaust System",
+            "Cooling System",
+            "Air Conditioning",
+            "Ignition System",
+            "Steering",
+            "Drive Train",
+            "Performance Upgrades", });
         }
 
         private void LoadPartsData()
@@ -46,6 +96,39 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void LoadFilteredPartsData(string categoryFilter)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT part_id, part_number, part_name, part_model, price, availability FROM parts_inventory WHERE category = @Category";
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@Category", categoryFilter);
+
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        partsDataGrid.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void filterCat_cmbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = filterCat_cmbx.SelectedItem.ToString();
+            LoadFilteredPartsData(selectedCategory);
         }
 
         private void generate_btn_Click(object sender, EventArgs e)
@@ -100,6 +183,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         private void update_btn_Click(object sender, EventArgs e)
         {
@@ -279,6 +363,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void showAll_btn_Click(object sender, EventArgs e)
+        {
+            LoadPartsData();
         }
     }
 }

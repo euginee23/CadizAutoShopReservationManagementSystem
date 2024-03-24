@@ -29,6 +29,7 @@ namespace CadizAutoShopManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LocalServicesMarkingForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.progress_btn = new Guna.UI2.WinForms.Guna2Button();
             this.cancel_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -110,6 +111,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 67);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LocalServicesMarkingForm";

@@ -146,7 +146,7 @@ namespace CadizAutoShopManagementSystem.Forms
             this.MinimizeBox = false;
             this.Name = "DecliningReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DecliningReservationForm";
+            this.Text = "Decline a Reservation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

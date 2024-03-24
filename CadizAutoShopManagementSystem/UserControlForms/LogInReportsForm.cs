@@ -81,6 +81,40 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        private void PopulateLoginHistory(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = @"SELECT u.user_id, u.firstName, u.lastName, ur.userRole, h.date, TIME_FORMAT(h.time, '%h:%i:%s %p') AS time
+                             FROM user_login_history AS h
+                             INNER JOIN users_information AS u ON h.user_id = u.user_id
+                             INNER JOIN users AS ur ON h.user_id = ur.user_id
+                             WHERE h.date BETWEEN @startDate AND @endDate";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@startDate", startDate.Date);
+                        cmd.Parameters.AddWithValue("@endDate", endDate.Date.AddDays(1).AddSeconds(-1));
+
+                        DataTable loginHistoryTable = new DataTable();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(loginHistoryTable);
+                        }
+
+                        loginHistoryDataGrid.DataSource = loginHistoryTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving login history: " + ex.Message);
+            }
+        }
+
         private void clearData_btn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to clear all login history?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -120,6 +154,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void filterDate_btn_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = start_DatePicker.Value.Date;
+            DateTime endDate = end_DatePicker.Value.Date;
+
+            PopulateLoginHistory(startDate, endDate);
         }
     }
 }

@@ -375,7 +375,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         using (XLWorkbook workbook = new XLWorkbook())
                         {
-                            IXLWorksheet worksheet = workbook.Worksheets.Add(dataTable, "CompletedReservations");
+                            IXLWorksheet worksheet = workbook.Worksheets.Add(dataTable, "ReservationReports");
 
                             worksheet.Columns().AdjustToContents();
 

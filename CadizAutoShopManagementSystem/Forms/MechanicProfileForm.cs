@@ -15,6 +15,7 @@ namespace CadizAutoShopManagementSystem.Forms
     public partial class MechanicProfileForm : Form
     {
         private int mechanic_Id;
+        private decimal totalPayoutAmount = 0;
 
         public MechanicProfileForm(int mechanicId)
         {
@@ -98,11 +99,10 @@ namespace CadizAutoShopManagementSystem.Forms
 
                             workHistoryDataGrid.DataSource = dataTable;
 
-                            decimal totalPayout = dataTable.AsEnumerable()
+                            totalPayoutAmount = dataTable.AsEnumerable()
                                 .Sum(row => Convert.ToDecimal(row["payAmount"].ToString().Substring(1)));
 
-                            totalPayout_lbl.Text = $"{totalPayout.ToString("C", CultureInfo.GetCultureInfo("en-PH"))}";
-
+                            totalPayout_lbl.Text = totalPayoutAmount.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
                         }
                     }
                 }
@@ -111,6 +111,52 @@ namespace CadizAutoShopManagementSystem.Forms
             {
                 MessageBox.Show($"Error retrieving work history: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void PayOut(decimal payAmount)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string insertQuery = "INSERT INTO mechanic_payout (mechanic_id, pay_date, pay_amount) " +
+                                         "VALUES (@mechanicId, @payDate, @payAmount)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(insertQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@mechanicId", mechanic_Id);
+                        cmd.Parameters.AddWithValue("@payDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@payAmount", payAmount);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Payout successfully recorded.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    string deleteQuery = "DELETE FROM mechanic_work_history WHERE mechanic_id = @mechanicId";
+
+                    using (MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, connection))
+                    {
+                        deleteCmd.Parameters.AddWithValue("@mechanicId", mechanic_Id);
+                        deleteCmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error recording payout: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void billing_button_Click(object sender, EventArgs e)
+        {
+            PayOut(totalPayoutAmount);
+
+            RetrieveMechanicInfo();
+            RetrieveWorkHistory();
         }
     }
 }
