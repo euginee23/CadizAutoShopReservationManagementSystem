@@ -19,10 +19,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         public ServicesManagementForm()
         {
-            ShowLoadingForm();
             InitializeComponent();
             LoadServicesData();
-            CloseLoadingForm();
         }
 
         private void ServicesManagementForm_Load(object sender, EventArgs e)
