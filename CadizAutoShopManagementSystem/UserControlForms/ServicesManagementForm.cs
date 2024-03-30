@@ -19,8 +19,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         public ServicesManagementForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             LoadServicesData();
+            loadingForm.Close(); ;
         }
 
         private void ServicesManagementForm_Load(object sender, EventArgs e)
@@ -82,7 +84,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
             try
             {
-                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -102,7 +103,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         ClearFields();
                     }
                 }
-                CloseLoadingForm();
             }
             catch (Exception ex)
             {
@@ -122,7 +122,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 try
                 {
-                    ShowLoadingForm();
                     using (MySqlConnection connection = DatabaseManager.GetConnection())
                     {
                         connection.Open();
@@ -145,7 +144,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             ClearFields();
                         }
                     }
-                    CloseLoadingForm();
                 }
                 catch (Exception ex)
                 {
@@ -169,7 +167,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             {
                 try
                 {
-                    ShowLoadingForm();
                     using (MySqlConnection connection = DatabaseManager.GetConnection())
                     {
                         connection.Open();
@@ -193,7 +190,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             }
                         }
                     }
-                    CloseLoadingForm();
                 }
                 catch (Exception ex)
                 {
@@ -259,7 +255,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         try
                         {
-                            ShowLoadingForm();
                             using (MySqlConnection connection = DatabaseManager.GetConnection())
                             {
                                 connection.Open();
@@ -277,7 +272,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                                 LoadServicesData();
                                 ClearFields();
                             }
-                            CloseLoadingForm();
                         }
                         catch (Exception ex)
                         {

@@ -29,12 +29,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoice_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.serviceType_cmbx = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.totalCost_txt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,17 +62,17 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBillingDataGridView)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // invoice_btn
@@ -104,20 +104,20 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label9.TabIndex = 59;
             this.label9.Text = "FILTER BY SERVICE DONE:";
             // 
-            // guna2ComboBox1
+            // serviceType_cmbx
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(730, 7);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(213, 36);
-            this.guna2ComboBox1.TabIndex = 58;
+            this.serviceType_cmbx.BackColor = System.Drawing.Color.Transparent;
+            this.serviceType_cmbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.serviceType_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceType_cmbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.serviceType_cmbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.serviceType_cmbx.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.serviceType_cmbx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.serviceType_cmbx.ItemHeight = 30;
+            this.serviceType_cmbx.Location = new System.Drawing.Point(730, 7);
+            this.serviceType_cmbx.Name = "serviceType_cmbx";
+            this.serviceType_cmbx.Size = new System.Drawing.Size(213, 36);
+            this.serviceType_cmbx.TabIndex = 58;
             // 
             // label8
             // 
@@ -285,16 +285,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // reservationBillingDataGridView
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.reservationBillingDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reservationBillingDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.reservationBillingDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reservationBillingDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.reservationBillingDataGridView.ColumnHeadersHeight = 15;
             this.reservationBillingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.reservationBillingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -305,14 +305,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.extraExpense_reason,
             this.extraExpense_cost,
             this.total_cost});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reservationBillingDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reservationBillingDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.reservationBillingDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.reservationBillingDataGridView.Location = new System.Drawing.Point(13, 62);
             this.reservationBillingDataGridView.Name = "reservationBillingDataGridView";
@@ -418,7 +418,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.textBox7);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.guna2ComboBox1);
+            this.panel3.Controls.Add(this.serviceType_cmbx);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(554, 18);
             this.panel3.Name = "panel3";
@@ -434,6 +434,25 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(951, 806);
             this.panel2.TabIndex = 63;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.Controls.Add(this.label10);
+            this.panel5.Location = new System.Drawing.Point(13, 14);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(926, 35);
+            this.panel5.TabIndex = 67;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(376, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(175, 21);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "DONE RESERVATIONS";
             // 
             // panel1
             // 
@@ -455,25 +474,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel4.Size = new System.Drawing.Size(275, 166);
             this.panel4.TabIndex = 65;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(13, 14);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(926, 35);
-            this.panel5.TabIndex = 67;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(376, 7);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(175, 21);
-            this.label10.TabIndex = 62;
-            this.label10.Text = "DONE RESERVATIONS";
-            // 
             // ReservationBillingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,11 +491,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -504,7 +504,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private Guna.UI2.WinForms.Guna2Button invoice_btn;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox serviceType_cmbx;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
         private Guna.UI2.WinForms.Guna2TextBox totalCost_txt;

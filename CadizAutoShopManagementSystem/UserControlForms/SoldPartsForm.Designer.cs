@@ -29,12 +29,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.partsDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PartIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PartNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +61,8 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.minus_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.plus_btn = new Guna.UI2.WinForms.Guna2Button();
             this.totalPrice_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.quantity_txt = new System.Windows.Forms.TextBox();
@@ -79,8 +81,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.plus_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.minus_btn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGridView)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -93,16 +93,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // partsDataGridView
             // 
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            this.partsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.partsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.partsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.partsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.partsDataGridView.ColumnHeadersHeight = 15;
             this.partsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.partsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -112,14 +112,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.PartModelColumn,
             this.PriceColumn,
             this.AvailabilityColumn});
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.partsDataGridView.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.partsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.partsDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.partsDataGridView.Location = new System.Drawing.Point(16, 59);
             this.partsDataGridView.Name = "partsDataGridView";
@@ -421,6 +421,44 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.guna2GroupBox1.TabIndex = 16;
             this.guna2GroupBox1.Text = "SELL";
             // 
+            // minus_btn
+            // 
+            this.minus_btn.BorderRadius = 3;
+            this.minus_btn.BorderThickness = 1;
+            this.minus_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.minus_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.minus_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.minus_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.minus_btn.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.minus_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minus_btn.ForeColor = System.Drawing.Color.White;
+            this.minus_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.minus_btn.Location = new System.Drawing.Point(101, 82);
+            this.minus_btn.Name = "minus_btn";
+            this.minus_btn.Size = new System.Drawing.Size(36, 35);
+            this.minus_btn.TabIndex = 35;
+            this.minus_btn.Text = "-";
+            this.minus_btn.Click += new System.EventHandler(this.minus_btn_Click);
+            // 
+            // plus_btn
+            // 
+            this.plus_btn.BorderRadius = 3;
+            this.plus_btn.BorderThickness = 1;
+            this.plus_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.plus_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.plus_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.plus_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.plus_btn.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.plus_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plus_btn.ForeColor = System.Drawing.Color.White;
+            this.plus_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.plus_btn.Location = new System.Drawing.Point(249, 82);
+            this.plus_btn.Name = "plus_btn";
+            this.plus_btn.Size = new System.Drawing.Size(36, 35);
+            this.plus_btn.TabIndex = 34;
+            this.plus_btn.Text = "+";
+            this.plus_btn.Click += new System.EventHandler(this.plus_btn_Click);
+            // 
             // totalPrice_txt
             // 
             this.totalPrice_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -465,11 +503,11 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(130, 47);
+            this.label12.Location = new System.Drawing.Point(151, 51);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 20);
+            this.label12.Size = new System.Drawing.Size(82, 20);
             this.label12.TabIndex = 14;
-            this.label12.Text = "ENTER QUANTITY:";
+            this.label12.Text = "QUANTITY:";
             // 
             // addToCart_btn
             // 
@@ -492,16 +530,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             // 
             // cartDataGridView
             // 
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
-            this.cartDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cartDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.cartDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cartDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.cartDataGridView.ColumnHeadersHeight = 15;
             this.cartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.cartDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -509,14 +547,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.Quantity,
             this.TotalCost,
             this.cartDeleteColumn});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cartDataGridView.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cartDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.cartDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.cartDataGridView.Location = new System.Drawing.Point(16, 46);
             this.cartDataGridView.Name = "cartDataGridView";
@@ -666,44 +704,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(381, 78);
             this.panel3.TabIndex = 62;
-            // 
-            // plus_btn
-            // 
-            this.plus_btn.BorderRadius = 3;
-            this.plus_btn.BorderThickness = 1;
-            this.plus_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.plus_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.plus_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.plus_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.plus_btn.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.plus_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plus_btn.ForeColor = System.Drawing.Color.White;
-            this.plus_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.plus_btn.Location = new System.Drawing.Point(249, 82);
-            this.plus_btn.Name = "plus_btn";
-            this.plus_btn.Size = new System.Drawing.Size(36, 35);
-            this.plus_btn.TabIndex = 34;
-            this.plus_btn.Text = "+";
-            this.plus_btn.Click += new System.EventHandler(this.plus_btn_Click);
-            // 
-            // minus_btn
-            // 
-            this.minus_btn.BorderRadius = 3;
-            this.minus_btn.BorderThickness = 1;
-            this.minus_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.minus_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.minus_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.minus_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.minus_btn.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.minus_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minus_btn.ForeColor = System.Drawing.Color.White;
-            this.minus_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.minus_btn.Location = new System.Drawing.Point(101, 82);
-            this.minus_btn.Name = "minus_btn";
-            this.minus_btn.Size = new System.Drawing.Size(36, 35);
-            this.minus_btn.TabIndex = 35;
-            this.minus_btn.Text = "-";
-            this.minus_btn.Click += new System.EventHandler(this.minus_btn_Click);
             // 
             // SoldPartsForm
             // 

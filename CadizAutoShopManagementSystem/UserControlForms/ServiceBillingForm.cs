@@ -23,7 +23,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             ShowLoadingForm();
             InitializeComponent();
             LoadServiceBillingQueueData();
+            PopulateServiceTypeComboBox();
             CloseLoadingForm();
+            
         }
 
         private void ShowLoadingForm()
@@ -38,6 +40,35 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private void CloseLoadingForm()
         {
             loadingForm.Close();
+        }
+
+        private void PopulateServiceTypeComboBox()
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT serviceType FROM services";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string serviceType = reader["serviceType"].ToString();
+                                serviceType_cmbx.Items.Add(serviceType);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error populating service type combo box: " + ex.Message);
+            }
         }
 
         private void LoadServiceBillingQueueData()
