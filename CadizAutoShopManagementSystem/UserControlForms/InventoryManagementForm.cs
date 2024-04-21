@@ -18,10 +18,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         public InventoryManagementForm()
         {
+            ShowLoadingForm();
             InitializeComponent();
             PopulateCarPartsCategoriesComboBox();
             PopulateMakeComboBox();
             PopulateCategoryFilterCombobox();
+            CloseLoadingForm();
         }
 
         private void InventoryManagementForm_Load(object sender, EventArgs e)
@@ -108,9 +110,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         adapter.Fill(dataTable);
 
                         partsDataGrid.DataSource = dataTable;
+                        CloseLoadingForm();
                     }
                 }
-                CloseLoadingForm();
+                
             }
             catch (Exception ex)
             {
@@ -137,9 +140,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         adapter.Fill(dataTable);
 
                         partsDataGrid.DataSource = dataTable;
+                        CloseLoadingForm();
                     }
                 }
-                CloseLoadingForm();
+                
             }
             catch (Exception ex)
             {
@@ -170,29 +174,40 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             partPrice_txt.Text = "";
             partAvailability_txt.Text = "";
             description_txt.Text = "";
+            addQuantity_txt.Text = "";
         }
 
         private void addButton_btn_Click(object sender, EventArgs e)
         {
             try
             {
-                ShowLoadingForm();
-
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO parts_inventory (part_id, category, part_number, part_name, part_model, price, availability, description) " +
-                                   "VALUES (@PartID, @Category, @PartNumber, @PartName, @MakeModel, @Price, @Availability, @Description)";
+                    string checkQuery = "SELECT COUNT(*) FROM parts_inventory WHERE part_id = @PartID OR part_number = @PartNumber OR part_name = @PartName";
+                    MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection);
+                    checkCmd.Parameters.AddWithValue("@PartID", partId_txt.Text);
+                    checkCmd.Parameters.AddWithValue("@PartNumber", partNumber_txt.Text);
+                    checkCmd.Parameters.AddWithValue("@PartName", partName_txt.Text);
+                    int existingPartsCount = Convert.ToInt32(checkCmd.ExecuteScalar());
 
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    if (existingPartsCount > 0)
+                    {
+                        MessageBox.Show("A part with the same part ID, part number, or name already exists in the inventory.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; 
+                    }
+                    string insertQuery = "INSERT INTO parts_inventory (part_id, category, part_number, part_name, part_model, price, availability, description) " +
+                                        "VALUES (@PartID, @Category, @PartNumber, @PartName, @MakeModel, @Price, @Availability, @Description)";
+
+                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
 
                     cmd.Parameters.AddWithValue("@PartID", partId_txt.Text);
                     cmd.Parameters.AddWithValue("@Category", partCat_cmbx.Text);
                     cmd.Parameters.AddWithValue("@PartNumber", partNumber_txt.Text);
                     cmd.Parameters.AddWithValue("@PartName", partName_txt.Text);
                     cmd.Parameters.AddWithValue("@MakeModel", partModel_txt.Text);
-                    cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(partPrice_txt.Text)); 
+                    cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(partPrice_txt.Text));
                     cmd.Parameters.AddWithValue("@Availability", Convert.ToInt32(partAvailability_txt.Text));
                     cmd.Parameters.AddWithValue("@Description", description_txt.Text);
 
@@ -201,12 +216,12 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     MessageBox.Show("Part added successfully!");
                     LoadPartsData();
                 }
-                CloseLoadingForm();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
         }
 
 
@@ -214,7 +229,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             try
             {
-                ShowLoadingForm();
                 using (MySqlConnection connection = DatabaseManager.GetConnection())
                 {
                     connection.Open();
@@ -225,7 +239,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                                    "part_name = @PartName, " +
                                    "part_model = @MakeModel, " +
                                    "price = @Price, " +
-                                   "availability = @Availability, " +
+                                   "availability = availability + @AddQuantity, " +
                                    "description = @Description " +
                                    "WHERE part_id = @PartID";
 
@@ -236,7 +250,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     cmd.Parameters.AddWithValue("@PartName", partName_txt.Text);
                     cmd.Parameters.AddWithValue("@MakeModel", partModel_txt.Text);
                     cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(partPrice_txt.Text));
-                    cmd.Parameters.AddWithValue("@Availability", Convert.ToInt32(partAvailability_txt.Text));
+                    cmd.Parameters.AddWithValue("@AddQuantity", Convert.ToInt32(addQuantity_txt.Text)); 
                     cmd.Parameters.AddWithValue("@Description", description_txt.Text);
                     cmd.Parameters.AddWithValue("@PartID", partId_txt.Text);
 
@@ -252,7 +266,6 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         MessageBox.Show("No part found with the specified Part ID.");
                     }
                 }
-                CloseLoadingForm();
             }
             catch (Exception ex)
             {

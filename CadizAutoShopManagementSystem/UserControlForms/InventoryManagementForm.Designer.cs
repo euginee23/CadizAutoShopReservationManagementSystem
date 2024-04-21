@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.partsDataGrid = new System.Windows.Forms.DataGridView();
             this.Column_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +67,13 @@
             this.generate_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.showAll_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.filterCat_cmbx = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.filterCat_cmbx = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.showAll_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.addQuantity_txt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,16 +84,16 @@
             // 
             // partsDataGrid
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.partsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.partsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.partsDataGrid.ColumnHeadersHeight = 40;
             this.partsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_ID,
@@ -164,10 +166,10 @@
             // Remove
             // 
             this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Remove.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Remove.DefaultCellStyle = dataGridViewCellStyle3;
             this.Remove.HeaderText = "ACTION";
             this.Remove.Name = "Remove";
             this.Remove.ReadOnly = true;
@@ -328,7 +330,8 @@
             this.partAvailability_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partAvailability_txt.Location = new System.Drawing.Point(14, 510);
             this.partAvailability_txt.Name = "partAvailability_txt";
-            this.partAvailability_txt.Size = new System.Drawing.Size(593, 27);
+            this.partAvailability_txt.ReadOnly = true;
+            this.partAvailability_txt.Size = new System.Drawing.Size(283, 27);
             this.partAvailability_txt.TabIndex = 47;
             // 
             // partCat_cmbx
@@ -421,6 +424,8 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.Controls.Add(this.label12);
+            this.guna2GroupBox1.Controls.Add(this.addQuantity_txt);
             this.guna2GroupBox1.Controls.Add(this.partModel_txt);
             this.guna2GroupBox1.Controls.Add(this.generate_btn);
             this.guna2GroupBox1.Controls.Add(this.label13);
@@ -499,6 +504,45 @@
             this.panel3.Size = new System.Drawing.Size(1053, 51);
             this.panel3.TabIndex = 59;
             // 
+            // showAll_btn
+            // 
+            this.showAll_btn.BorderRadius = 2;
+            this.showAll_btn.BorderThickness = 1;
+            this.showAll_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.showAll_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.showAll_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.showAll_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.showAll_btn.FillColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.showAll_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showAll_btn.ForeColor = System.Drawing.Color.White;
+            this.showAll_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.showAll_btn.Location = new System.Drawing.Point(467, 13);
+            this.showAll_btn.Name = "showAll_btn";
+            this.showAll_btn.Size = new System.Drawing.Size(108, 27);
+            this.showAll_btn.TabIndex = 61;
+            this.showAll_btn.Text = "SHOW ALL";
+            this.showAll_btn.Click += new System.EventHandler(this.showAll_btn_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(662, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(138, 20);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Filter by Category:";
+            // 
+            // filterCat_cmbx
+            // 
+            this.filterCat_cmbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterCat_cmbx.FormattingEnabled = true;
+            this.filterCat_cmbx.Location = new System.Drawing.Point(806, 13);
+            this.filterCat_cmbx.Name = "filterCat_cmbx";
+            this.filterCat_cmbx.Size = new System.Drawing.Size(233, 28);
+            this.filterCat_cmbx.TabIndex = 56;
+            this.filterCat_cmbx.SelectedIndexChanged += new System.EventHandler(this.filterCat_cmbx_SelectedIndexChanged);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -518,44 +562,23 @@
             this.panel2.Size = new System.Drawing.Size(1053, 815);
             this.panel2.TabIndex = 60;
             // 
-            // filterCat_cmbx
+            // addQuantity_txt
             // 
-            this.filterCat_cmbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterCat_cmbx.FormattingEnabled = true;
-            this.filterCat_cmbx.Location = new System.Drawing.Point(806, 13);
-            this.filterCat_cmbx.Name = "filterCat_cmbx";
-            this.filterCat_cmbx.Size = new System.Drawing.Size(233, 28);
-            this.filterCat_cmbx.TabIndex = 56;
-            this.filterCat_cmbx.SelectedIndexChanged += new System.EventHandler(this.filterCat_cmbx_SelectedIndexChanged);
+            this.addQuantity_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addQuantity_txt.Location = new System.Drawing.Point(338, 510);
+            this.addQuantity_txt.Name = "addQuantity_txt";
+            this.addQuantity_txt.Size = new System.Drawing.Size(269, 27);
+            this.addQuantity_txt.TabIndex = 62;
             // 
-            // label9
+            // label12
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(662, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 20);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Filter by Category:";
-            // 
-            // showAll_btn
-            // 
-            this.showAll_btn.BorderRadius = 2;
-            this.showAll_btn.BorderThickness = 1;
-            this.showAll_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.showAll_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.showAll_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.showAll_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.showAll_btn.FillColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.showAll_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAll_btn.ForeColor = System.Drawing.Color.White;
-            this.showAll_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.showAll_btn.Location = new System.Drawing.Point(467, 13);
-            this.showAll_btn.Name = "showAll_btn";
-            this.showAll_btn.Size = new System.Drawing.Size(108, 27);
-            this.showAll_btn.TabIndex = 61;
-            this.showAll_btn.Text = "SHOW ALL";
-            this.showAll_btn.Click += new System.EventHandler(this.showAll_btn_Click);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(334, 487);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "Add Quantity:";
             // 
             // InventoryManagementForm
             // 
@@ -624,5 +647,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox filterCat_cmbx;
         private Guna.UI2.WinForms.Guna2Button showAll_btn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox addQuantity_txt;
     }
 }

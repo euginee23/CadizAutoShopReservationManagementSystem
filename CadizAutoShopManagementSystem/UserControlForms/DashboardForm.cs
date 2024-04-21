@@ -24,12 +24,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            ShowLoadingForm();
             LoadReservationData();
             LoadPartsData();
             LoadMechanicData();
             LoadReservationStatusData();
-            CloseLoadingForm();
         }
 
         private void ShowLoadingForm()

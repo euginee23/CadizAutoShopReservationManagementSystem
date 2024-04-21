@@ -144,5 +144,96 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             invoiceFrm.ShowDialog();
             LoadServiceBillingQueueData();
         }
+
+        private void serviceFilterIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (serviceType_cmbx.Focused)
+                {
+                    string selectedService = serviceType_cmbx.SelectedItem?.ToString();
+
+                    using (MySqlConnection connection = DatabaseManager.GetConnection())
+                    {
+                        connection.Open();
+
+                        string selectQuery = "SELECT b.billing_id, b.localService_id, " +
+                                             "CONCAT(c.firstName, ' ', c.lastName) AS customer_name, " +
+                                             "s.serviceType, " +
+                                             "b.extraExpense_reason, b.extraExpense_cost, b.total_cost " +
+                                             "FROM local_service_billing_queue b " +
+                                             "INNER JOIN local_service r ON b.localService_id = r.localService_id " +
+                                             "INNER JOIN customer_info c ON r.customer_id = c.customer_id " +
+                                             "INNER JOIN services s ON r.service_id = s.service_id";
+
+                        if (!string.IsNullOrEmpty(selectedService))
+                        {
+                            selectQuery += " AND s.serviceType = @selectedService";
+                        }
+
+                        using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                        {
+                            if (!string.IsNullOrEmpty(selectedService))
+                            {
+                                cmd.Parameters.AddWithValue("@selectedService", selectedService);
+                            }
+
+                            using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd))
+                            {
+                                DataTable filteredDataTable = new DataTable();
+                                dataAdapter.Fill(filteredDataTable);
+
+                                serviceBillingDataGridView.DataSource = filteredDataTable;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void searchTextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = search_txt.Text.Trim();
+
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string selectQuery = "SELECT b.billing_id, b.localService_id, " +
+                                         "CONCAT(c.firstName, ' ', c.lastName) AS customer_name, " +
+                                         "s.serviceType, " +
+                                         "b.extraExpense_reason, b.extraExpense_cost, b.total_cost " +
+                                         "FROM local_service_billing_queue b " +
+                                         "INNER JOIN local_service r ON b.localService_id = r.localService_id " +
+                                         "INNER JOIN customer_info c ON r.customer_id = c.customer_id " +
+                                         "INNER JOIN services s ON r.service_id = s.service_id " +
+                                         "WHERE CONCAT(c.firstName, ' ', c.lastName) LIKE @searchText " +
+                                         "OR s.serviceType LIKE @searchText";
+
+                    using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+
+                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd))
+                        {
+                            DataTable filteredDataTable = new DataTable();
+                            dataAdapter.Fill(filteredDataTable);
+
+                            serviceBillingDataGridView.DataSource = filteredDataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }

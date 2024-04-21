@@ -34,7 +34,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoice_btn = new Guna.UI2.WinForms.Guna2Button();
             this.serviceType_cmbx = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.search_txt = new System.Windows.Forms.TextBox();
             this.totalCost_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.serviceType_txt = new System.Windows.Forms.TextBox();
@@ -108,14 +108,16 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.serviceType_cmbx.Name = "serviceType_cmbx";
             this.serviceType_cmbx.Size = new System.Drawing.Size(213, 36);
             this.serviceType_cmbx.TabIndex = 78;
+            this.serviceType_cmbx.SelectedIndexChanged += new System.EventHandler(this.serviceFilterIndexChanged);
             // 
-            // textBox7
+            // search_txt
             // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(89, 13);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(416, 25);
-            this.textBox7.TabIndex = 76;
+            this.search_txt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_txt.Location = new System.Drawing.Point(89, 13);
+            this.search_txt.Name = "search_txt";
+            this.search_txt.Size = new System.Drawing.Size(416, 25);
+            this.search_txt.TabIndex = 76;
+            this.search_txt.TextChanged += new System.EventHandler(this.searchTextChanged);
             // 
             // totalCost_txt
             // 
@@ -419,7 +421,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.serviceType_cmbx);
-            this.panel3.Controls.Add(this.textBox7);
+            this.panel3.Controls.Add(this.search_txt);
             this.panel3.Location = new System.Drawing.Point(553, 19);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(952, 51);
@@ -503,7 +505,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private Guna.UI2.WinForms.Guna2Button invoice_btn;
         private Guna.UI2.WinForms.Guna2ComboBox serviceType_cmbx;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox search_txt;
         private Guna.UI2.WinForms.Guna2TextBox totalCost_txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox serviceType_txt;

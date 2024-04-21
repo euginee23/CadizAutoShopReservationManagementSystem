@@ -47,7 +47,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void LoadServicesData()
         {
-            string query = "SELECT * FROM Services";
+            string query = "SELECT * FROM services";
 
             try
             {
