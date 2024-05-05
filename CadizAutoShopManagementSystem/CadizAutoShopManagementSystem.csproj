@@ -201,6 +201,12 @@
     <Compile Include="Forms\ApprovingReservationForm.Designer.cs">
       <DependentUpon>ApprovingReservationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AssignNewMechanicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssignNewMechanicForm.Designer.cs">
+      <DependentUpon>AssignNewMechanicForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CancelReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApprovingReservationForm.resx">
       <DependentUpon>ApprovingReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignNewMechanicForm.resx">
+      <DependentUpon>AssignNewMechanicForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CancelReservationForm.resx">
       <DependentUpon>CancelReservationForm.cs</DependentUpon>

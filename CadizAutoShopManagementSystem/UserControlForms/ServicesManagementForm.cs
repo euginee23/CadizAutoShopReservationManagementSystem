@@ -92,9 +92,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         cmd.Parameters.AddWithValue("@serviceType", serviceType_txt.Text);
                         cmd.Parameters.AddWithValue("@description", description_txt.Text);
-                        decimal laborCost = Convert.ToDecimal(laborCost_txt.Text);
-                        string formattedLaborCost = laborCost.ToString("C", CultureInfo.GetCultureInfo("en-PH"));
-                        cmd.Parameters.AddWithValue("@laborCost", formattedLaborCost);
+                        cmd.Parameters.AddWithValue("@laborCost", laborCost_txt.Text);
 
                         cmd.ExecuteNonQuery();
 
@@ -135,7 +133,17 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                             cmd.Parameters.AddWithValue("@serviceId", serviceId);
                             cmd.Parameters.AddWithValue("@serviceType", serviceType_txt.Text);
                             cmd.Parameters.AddWithValue("@description", description_txt.Text);
-                            cmd.Parameters.AddWithValue("@laborCost", Convert.ToDecimal(laborCost_txt.Text));
+
+                            string laborCostText = laborCost_txt.Text.Replace("₱", "").Trim();
+                            if (decimal.TryParse(laborCostText, out decimal laborCost))
+                            {
+                                cmd.Parameters.AddWithValue("@laborCost", laborCost);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid labor cost format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
                             cmd.ExecuteNonQuery();
 

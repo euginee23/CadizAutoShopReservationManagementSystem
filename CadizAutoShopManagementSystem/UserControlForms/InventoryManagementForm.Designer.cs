@@ -63,6 +63,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.addQuantity_txt = new System.Windows.Forms.TextBox();
             this.partModel_txt = new System.Windows.Forms.ComboBox();
             this.generate_btn = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.filterCat_cmbx = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addQuantity_txt = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.partsDataGrid)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -330,7 +330,6 @@
             this.partAvailability_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partAvailability_txt.Location = new System.Drawing.Point(14, 510);
             this.partAvailability_txt.Name = "partAvailability_txt";
-            this.partAvailability_txt.ReadOnly = true;
             this.partAvailability_txt.Size = new System.Drawing.Size(283, 27);
             this.partAvailability_txt.TabIndex = 47;
             // 
@@ -453,6 +452,25 @@
             this.guna2GroupBox1.TabIndex = 56;
             this.guna2GroupBox1.Text = "MECHANIC INFORMATION";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(334, 487);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "Add Quantity:";
+            // 
+            // addQuantity_txt
+            // 
+            this.addQuantity_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addQuantity_txt.Location = new System.Drawing.Point(338, 510);
+            this.addQuantity_txt.Name = "addQuantity_txt";
+            this.addQuantity_txt.Size = new System.Drawing.Size(269, 27);
+            this.addQuantity_txt.TabIndex = 62;
+            this.addQuantity_txt.Text = "0";
+            // 
             // partModel_txt
             // 
             this.partModel_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -561,24 +579,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1053, 815);
             this.panel2.TabIndex = 60;
-            // 
-            // addQuantity_txt
-            // 
-            this.addQuantity_txt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addQuantity_txt.Location = new System.Drawing.Point(338, 510);
-            this.addQuantity_txt.Name = "addQuantity_txt";
-            this.addQuantity_txt.Size = new System.Drawing.Size(269, 27);
-            this.addQuantity_txt.TabIndex = 62;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(334, 487);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 20);
-            this.label12.TabIndex = 63;
-            this.label12.Text = "Add Quantity:";
             // 
             // InventoryManagementForm
             // 

@@ -110,10 +110,10 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     connection.Open();
 
                     string query = @"SELECT u.user_id, u.firstName, u.lastName, ur.userRole, h.date, TIME_FORMAT(h.time, '%h:%i:%s %p') AS time
-                             FROM user_login_history AS h
-                             INNER JOIN users_information AS u ON h.user_id = u.user_id
-                             INNER JOIN users AS ur ON h.user_id = ur.user_id
-                             WHERE h.date BETWEEN @startDate AND @endDate";
+                                     FROM user_login_history AS h
+                                     INNER JOIN users_information AS u ON h.user_id = u.user_id
+                                     INNER JOIN users AS ur ON h.user_id = ur.user_id
+                                     WHERE h.date BETWEEN @startDate AND @endDate";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@startDate", startDate.Date);

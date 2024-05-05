@@ -24,10 +24,28 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            ShowLoadingForm();
             LoadReservationData();
             LoadPartsData();
             LoadMechanicData();
             LoadReservationStatusData();
+            CloseLoadingForm();
+        }
+
+        private void LoadFilteredData()
+        {
+            DateTime startDate = start_dateTimePicker.Value.Date;
+            DateTime endDate = end_dateTimePicker.Value.Date;
+
+            LoadReservationData(startDate, endDate);
+            LoadPartsData(startDate, endDate);
+            LoadMechanicData(startDate, endDate);
+            LoadReservationStatusData(startDate, endDate);
         }
 
         private void ShowLoadingForm()
@@ -42,6 +60,59 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private void CloseLoadingForm()
         {
             loadingForm.Close();
+        }
+
+        //FILTERED SERVICES ON RESERVATION CHART
+        private void LoadReservationData(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT s.serviceType, COUNT(r.reservation_id) AS reservation_count " +
+                                   "FROM services s " +
+                                   "LEFT JOIN reservations r ON s.service_id = r.service_id " +
+                                   "WHERE r.created_at BETWEEN @startDate AND @endDate " +
+                                   "GROUP BY s.service_id, s.serviceType";
+                                   
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@startDate", startDate.Date);
+                        adapter.SelectCommand.Parameters.AddWithValue("@endDate", endDate.Date.AddDays(1).AddSeconds(-1));
+
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        reservationChart.Series.Clear();
+                        reservationChart.ChartAreas.Clear();
+
+                        ChartArea chartArea = new ChartArea();
+                        reservationChart.ChartAreas.Add(chartArea);
+
+                        Series series = new Series("Reservations");
+                        series.ChartType = SeriesChartType.Column;
+
+                        series.Points.DataBind(dataTable.AsEnumerable(), "serviceType", "reservation_count", "");
+
+                        reservationChart.Series.Add(series);
+
+                        chartArea.AxisX.Title = "Services";
+                        chartArea.AxisY.Title = "Reservation Count";
+                        chartArea.AxisX.Interval = 1; 
+
+                        series.IsValueShownAsLabel = true;
+
+                        reservationChart.Invalidate();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         //SERVICES ON RESERVATION CHART
@@ -78,7 +149,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
                         chartArea.AxisX.Title = "Services";
                         chartArea.AxisY.Title = "Reservation Count";
-                        chartArea.AxisX.Interval = 1; 
+                        chartArea.AxisX.Interval = 1;
 
                         series.IsValueShownAsLabel = true;
 
@@ -107,6 +178,64 @@ namespace CadizAutoShopManagementSystem.UserControlForms
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
                     {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        partsChart.Series.Clear();
+                        partsChart.ChartAreas.Clear();
+
+                        ChartArea chartArea = new ChartArea();
+                        partsChart.ChartAreas.Add(chartArea);
+
+                        Series series = new Series("Parts Availability");
+                        series.ChartType = SeriesChartType.Line;
+
+                        series.Color = Color.Orange;
+
+                        series.Points.DataBind(dataTable.AsEnumerable(), "part_name", "total_availability", "");
+
+                        foreach (DataPoint point in series.Points)
+                        {
+                            point.Color = Color.Orange;
+                        }
+
+                        partsChart.Series.Add(series);
+
+                        chartArea.AxisX.Title = "Parts";
+                        chartArea.AxisY.Title = "Total Availability";
+                        chartArea.AxisX.Interval = 1;
+
+                        series.IsValueShownAsLabel = true;
+
+                        partsChart.Invalidate();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        //FILTERED PARTS CHART
+        private void LoadPartsData(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT part_name, SUM(availability) AS total_availability " +
+                                   "FROM parts_inventory " +
+                                   "WHERE created_at BETWEEN @startDate AND @endDate " +
+                                   "GROUP BY part_name";
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@startDate", startDate.Date);
+                        adapter.SelectCommand.Parameters.AddWithValue("@endDate", endDate.Date.AddDays(1).AddSeconds(-1));
+
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
@@ -201,6 +330,65 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //FILTER MECHANICS WORKING CHART
+        private void LoadMechanicData(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT CONCAT(firstName, ' ', lastName) AS mechanicName, COUNT(r.reservation_id) AS reservation_count " +
+                                   "FROM reservations r " +
+                                   "LEFT JOIN mechanic_info m ON r.assigned_mechanic = m.mechanic_id " +
+                                   "WHERE r.created_at BETWEEN @startDate AND @endDate " +
+                                   "GROUP BY m.mechanic_id, mechanicName";
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@startDate", startDate.Date);
+                        adapter.SelectCommand.Parameters.AddWithValue("@endDate", endDate.Date.AddDays(1).AddSeconds(-1));
+
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        mechanicChart.Series.Clear();
+                        mechanicChart.ChartAreas.Clear();
+
+                        ChartArea chartArea = new ChartArea();
+                        mechanicChart.ChartAreas.Add(chartArea);
+
+                        Series series = new Series("Reservation Count");
+                        series.ChartType = SeriesChartType.Column;
+
+                        series.Color = Color.Blue;
+
+                        series.Points.DataBind(dataTable.AsEnumerable(), "mechanicName", "reservation_count", "");
+
+                        foreach (DataPoint point in series.Points)
+                        {
+                            point.Color = Color.Blue;
+                        }
+
+                        mechanicChart.Series.Add(series);
+
+                        chartArea.AxisX.Title = "Mechanics";
+                        chartArea.AxisY.Title = "Reservation Count";
+                        chartArea.AxisX.Interval = 1;
+
+                        series.IsValueShownAsLabel = true;
+
+                        mechanicChart.Invalidate();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
         //RESERVATION STATUS CHART
         private void LoadReservationStatusData()
         {
@@ -249,5 +437,65 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             }
         }
 
+        //FILTER RESERVATION STATUS CHART
+        private void LoadReservationStatusData(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                using (MySqlConnection connection = DatabaseManager.GetConnection())
+                {
+                    connection.Open();
+
+                    string query = "SELECT status, COUNT(reservation_id) AS reservation_count " +
+                                   "FROM reservations WHERE created_at BETWEEN @startDate AND @endDate " +
+                                   "GROUP BY status";
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@startDate", startDate.Date);
+                        adapter.SelectCommand.Parameters.AddWithValue("@endDate", endDate.Date.AddDays(1).AddSeconds(-1));
+
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        statusChart.Series.Clear();
+                        statusChart.ChartAreas.Clear();
+
+                        ChartArea chartArea = new ChartArea();
+                        statusChart.ChartAreas.Add(chartArea);
+
+                        Series series = new Series("Reservation Status");
+                        series.ChartType = SeriesChartType.Pie;
+
+                        series.Palette = ChartColorPalette.Excel;
+
+                        series.Points.DataBind(dataTable.AsEnumerable(), "status", "reservation_count", "");
+
+                        statusChart.Series.Add(series);
+
+                        chartArea.AxisX.Title = "Reservation Status";
+                        chartArea.AxisY.Title = "Reservation Count";
+
+                        series.IsValueShownAsLabel = true;
+
+                        statusChart.Invalidate();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void fliter_btn_Click(object sender, EventArgs e)
+        {
+            LoadFilteredData();
+        }
+
+        private void clear_filter_btn_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

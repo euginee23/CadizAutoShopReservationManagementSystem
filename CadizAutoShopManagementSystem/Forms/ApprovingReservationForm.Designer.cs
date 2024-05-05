@@ -116,6 +116,7 @@ namespace CadizAutoShopManagementSystem.Forms
             // 
             // selectMechanic_cmbx
             // 
+            this.selectMechanic_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectMechanic_cmbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectMechanic_cmbx.FormattingEnabled = true;
             this.selectMechanic_cmbx.Location = new System.Drawing.Point(171, 360);

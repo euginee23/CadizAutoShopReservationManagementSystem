@@ -9,10 +9,11 @@ namespace CadizAutoShopManagementSystem
 {
     public static class DatabaseManager
     {
-        private const string ConnectionString = "server=b9sxbycirx4uxfa6hy8i-mysql.services.clever-cloud.com;" +
-                                                "database=b9sxbycirx4uxfa6hy8i;" +
-                                                "userid=unskwri0pshtw6x6;" +
-                                                "password=0GczO34KcOpMvIiOI57Q;";
+        private const string ConnectionString = "server=bwnqthzv2o6xaim43ak5-mysql.services.clever-cloud.com;" +
+                                                "database=bwnqthzv2o6xaim43ak5;" +
+                                                "userid=uizbrucd6hqnoq24;" +
+                                                "password=IqG7YurypTxLS9Z3T2Z;" +
+                                                "port=20995";
 
         public static MySqlConnection GetConnection()
         {

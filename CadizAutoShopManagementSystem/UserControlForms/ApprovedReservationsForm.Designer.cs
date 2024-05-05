@@ -31,8 +31,9 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.customerId_txt = new System.Windows.Forms.TextBox();
@@ -77,13 +78,14 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.label2 = new System.Windows.Forms.Label();
             this.showAll_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservationId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CancelColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DoneColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CancelColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.UpdateColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.reservationId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvedReservationsDataGrid)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -288,6 +290,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.approvedReservationsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DoneColumn,
             this.CancelColumn,
+            this.UpdateColumn,
             this.reservationId_column,
             this.customerId_column,
             this.Column3,
@@ -596,45 +599,17 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.panel1.Size = new System.Drawing.Size(1492, 405);
             this.panel1.TabIndex = 55;
             // 
-            // Column5
+            // DoneColumn
             // 
-            this.Column5.DataPropertyName = "mechanicName";
-            this.Column5.HeaderText = "ASSIGNED MECHANIC";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 250;
-            // 
-            // vehicleId_column
-            // 
-            this.vehicleId_column.DataPropertyName = "vehicleName";
-            this.vehicleId_column.HeaderText = "UNIT";
-            this.vehicleId_column.Name = "vehicleId_column";
-            this.vehicleId_column.ReadOnly = true;
-            this.vehicleId_column.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "serviceType";
-            this.Column3.HeaderText = "SERVICE TYPE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 300;
-            // 
-            // customerId_column
-            // 
-            this.customerId_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.customerId_column.DataPropertyName = "customerName";
-            this.customerId_column.HeaderText = "CUSTOMER NAME";
-            this.customerId_column.Name = "customerId_column";
-            this.customerId_column.ReadOnly = true;
-            // 
-            // reservationId_column
-            // 
-            this.reservationId_column.DataPropertyName = "reservation_id";
-            this.reservationId_column.HeaderText = "RESERVATION ID";
-            this.reservationId_column.Name = "reservationId_column";
-            this.reservationId_column.ReadOnly = true;
-            this.reservationId_column.Width = 150;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            this.DoneColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DoneColumn.HeaderText = "ACTION";
+            this.DoneColumn.Name = "DoneColumn";
+            this.DoneColumn.ReadOnly = true;
+            this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneColumn.Text = "DONE";
+            this.DoneColumn.UseColumnTextForButtonValue = true;
             // 
             // CancelColumn
             // 
@@ -647,17 +622,55 @@ namespace CadizAutoShopManagementSystem.UserControlForms
             this.CancelColumn.Text = "CANCEL";
             this.CancelColumn.UseColumnTextForButtonValue = true;
             // 
-            // DoneColumn
+            // UpdateColumn
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            this.DoneColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DoneColumn.HeaderText = "ACTION";
-            this.DoneColumn.Name = "DoneColumn";
-            this.DoneColumn.ReadOnly = true;
-            this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoneColumn.Text = "DONE";
-            this.DoneColumn.UseColumnTextForButtonValue = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            this.UpdateColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.UpdateColumn.HeaderText = "ACTION";
+            this.UpdateColumn.Name = "UpdateColumn";
+            this.UpdateColumn.ReadOnly = true;
+            this.UpdateColumn.Text = "UPDATE";
+            this.UpdateColumn.UseColumnTextForButtonValue = true;
+            // 
+            // reservationId_column
+            // 
+            this.reservationId_column.DataPropertyName = "reservation_id";
+            this.reservationId_column.HeaderText = "ID";
+            this.reservationId_column.Name = "reservationId_column";
+            this.reservationId_column.ReadOnly = true;
+            // 
+            // customerId_column
+            // 
+            this.customerId_column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.customerId_column.DataPropertyName = "customerName";
+            this.customerId_column.HeaderText = "CUSTOMER NAME";
+            this.customerId_column.Name = "customerId_column";
+            this.customerId_column.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "serviceType";
+            this.Column3.HeaderText = "SERVICE TYPE";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 300;
+            // 
+            // vehicleId_column
+            // 
+            this.vehicleId_column.DataPropertyName = "vehicleName";
+            this.vehicleId_column.HeaderText = "UNIT";
+            this.vehicleId_column.Name = "vehicleId_column";
+            this.vehicleId_column.ReadOnly = true;
+            this.vehicleId_column.Width = 250;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "mechanicName";
+            this.Column5.HeaderText = "ASSIGNED MECHANIC";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 250;
             // 
             // ApprovedReservationsForm
             // 
@@ -732,6 +745,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewButtonColumn DoneColumn;
         private System.Windows.Forms.DataGridViewButtonColumn CancelColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn UpdateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationId_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerId_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

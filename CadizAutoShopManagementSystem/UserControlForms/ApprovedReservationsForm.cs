@@ -444,6 +444,15 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                         LoadApprovedReservationsData();
                     }
                 }
+                else if (e.ColumnIndex == approvedReservationsDataGrid.Columns["UpdateColumn"].Index)
+                {
+                    int reservationId = Convert.ToInt32(approvedReservationsDataGrid.Rows[e.RowIndex].Cells["reservationId_column"].Value);
+                    using (AssignNewMechanicForm updateForm = new AssignNewMechanicForm(reservationId))
+                    {
+                        DialogResult result = updateForm.ShowDialog();
+                        LoadApprovedReservationsData();
+                    }
+                }
             }
             catch (Exception ex)
             {

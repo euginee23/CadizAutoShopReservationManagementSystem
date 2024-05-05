@@ -34,6 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.servicesDataGrid = new System.Windows.Forms.DataGridView();
+            this.serviceId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.laborCost_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clear_btn = new Guna.UI2.WinForms.Guna2Button();
             this.update_btn = new Guna.UI2.WinForms.Guna2Button();
             this.serviceType_txt = new System.Windows.Forms.TextBox();
@@ -53,11 +58,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.serviceId_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.laborCost_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.servicesDataGrid)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,7 +87,7 @@
             this.deleteColumn});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -104,6 +104,51 @@
             this.servicesDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.deleteService_CellContentClick);
             this.servicesDataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.servicesDataGrid_CellFormatting);
             this.servicesDataGrid.SelectionChanged += new System.EventHandler(this.selectService);
+            // 
+            // serviceId_column
+            // 
+            this.serviceId_column.DataPropertyName = "service_id";
+            this.serviceId_column.HeaderText = "ID";
+            this.serviceId_column.Name = "serviceId_column";
+            this.serviceId_column.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "serviceType";
+            this.Column2.HeaderText = "SERVICE TYPE";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "serviceDescription";
+            this.Column3.HeaderText = "DESCRIPTION";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // laborCost_column
+            // 
+            this.laborCost_column.DataPropertyName = "laborCost";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.laborCost_column.DefaultCellStyle = dataGridViewCellStyle3;
+            this.laborCost_column.HeaderText = "LABOR COST";
+            this.laborCost_column.Name = "laborCost_column";
+            this.laborCost_column.ReadOnly = true;
+            this.laborCost_column.Width = 200;
+            // 
+            // deleteColumn
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            this.deleteColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.deleteColumn.HeaderText = "ACTION";
+            this.deleteColumn.Name = "deleteColumn";
+            this.deleteColumn.ReadOnly = true;
+            this.deleteColumn.Text = "REMOVE";
+            this.deleteColumn.UseColumnTextForButtonValue = true;
             // 
             // clear_btn
             // 
@@ -335,51 +380,6 @@
             this.label8.Size = new System.Drawing.Size(59, 20);
             this.label8.TabIndex = 55;
             this.label8.Text = "Search:";
-            // 
-            // serviceId_column
-            // 
-            this.serviceId_column.DataPropertyName = "service_id";
-            this.serviceId_column.HeaderText = "ID";
-            this.serviceId_column.Name = "serviceId_column";
-            this.serviceId_column.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "serviceType";
-            this.Column2.HeaderText = "SERVICE TYPE";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "serviceDescription";
-            this.Column3.HeaderText = "DESCRIPTION";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // laborCost_column
-            // 
-            this.laborCost_column.DataPropertyName = "laborCost";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.laborCost_column.DefaultCellStyle = dataGridViewCellStyle3;
-            this.laborCost_column.HeaderText = "LABOR COST";
-            this.laborCost_column.Name = "laborCost_column";
-            this.laborCost_column.ReadOnly = true;
-            this.laborCost_column.Width = 200;
-            // 
-            // deleteColumn
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            this.deleteColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.deleteColumn.HeaderText = "ACTION";
-            this.deleteColumn.Name = "deleteColumn";
-            this.deleteColumn.ReadOnly = true;
-            this.deleteColumn.Text = "REMOVE";
-            this.deleteColumn.UseColumnTextForButtonValue = true;
             // 
             // ServicesManagementForm
             // 

@@ -260,6 +260,7 @@ namespace CadizAutoShopManagementSystem.UserControlForms
                     {
                         MessageBox.Show("Part updated successfully!");
                         LoadPartsData();
+                        addQuantity_txt.Text = "0";
                     }
                     else
                     {
